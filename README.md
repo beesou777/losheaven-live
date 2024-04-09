@@ -26,7 +26,7 @@ Follow the links below for configuration instructions.
 1. Open the repository in your command line interface.
 2. Run `yarn setup` to run the production server. OR
 3. Run `yarn` to install all dependencies.
-4. Run `yarn dev` to start the development server. The app will be served with hot reload at [localhost:3000](http://localhost:3000/).
+4. Run `yarn dev` to start the development server. The app will be served with hot reload at [localhost:8080](http://localhost:8080/).
 
 ## Resources
 

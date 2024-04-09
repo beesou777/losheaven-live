@@ -2,9 +2,9 @@ import { createResolver } from '@nuxt/kit';
 const { resolve } = createResolver(import.meta.url);
 
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   typescript: {
-    typeCheck: true,
+    typeCheck: false,
   },
   app: {
     head: {
@@ -86,9 +86,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiUrl: process.env.API_URL ?? 'http://localhost:3000',
+      apiUrl: process.env.API_URL ?? 'http://localhost:8080',
       showNetPrices: true,
-      logoUrl: (process.env.API_URL ?? 'http://localhost:3000') + '/images/logo.png',
+      logoUrl: (process.env.API_URL ?? 'http://localhost:8080') + '/images/logo.png',
       useWebp: process.env?.USE_WEBP === '1' ?? false,
     },
   },

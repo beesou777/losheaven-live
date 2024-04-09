@@ -2,7 +2,7 @@
   "ci": {
     "collect": {
       "startServerCommand": "yarn start",
-      "url": ["http://localhost:3000/"],
+      "url": ["http://localhost:8-8-/"],
       "numberOfRuns": 3,
       "assert": {
         "includePassedAssertions": false,
@@ -49,7 +49,7 @@
             }
           },
           {
-            "matchingUrlPattern": "http://localhost:3000/$",
+            "matchingUrlPattern": "http://localhost:8080/$",
             "assertions": {
               "resource-summary:image:size": ["warn", { "maxNumericValue": 210000 }],
               "resource-summary:script:size": ["warn", { "maxNumericValue": 360000 }],

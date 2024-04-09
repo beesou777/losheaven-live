@@ -44,16 +44,6 @@
               Sign in
             </button>
           </form>
-          <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-            Don’t have an account yet?
-            <button
-              @click="router.push('/register')"
-              href="#"
-              class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >
-              Sign up
-            </button>
-          </p>
         </div>
       </div>
     </div>
@@ -61,7 +51,7 @@
 </template>
 
 <script setup lang="ts">
-import { useCookie, useRouter } from 'nuxt/app';
+import { useRouter } from 'nuxt/app';
 import { ref, onMounted, watchEffect } from 'vue';
 
 const router = useRouter();
@@ -72,28 +62,29 @@ useHead({
   meta: [{ name: 'description', content: 'Login page' }],
 });
 
+// page layout
+definePageMeta({
+  layout: 'login-layout',
+});
+
 // variables
 const email = ref<string>('');
 const password = ref<string>('');
-
-onMounted(() => {
-  const cookie = useCookie('customer-access').value;
-  if (cookie) {
-    router.push('/');
-  }
-});
-
-const Login = async (event) => {
+const Login = (event) => {
   event.preventDefault();
+
   const data = {
     email: email.value,
     password: password.value,
   };
-  const response = await authStore.CustomerLogin(data);
-  if (response.status === 200) {
-    router.push('/');
-  } else {
-    console.log('error');
-  }
+  authStore.Login(data);
 };
+
+// mounted
+watchEffect(() => {
+  const cookie = useCookie('access').value;
+  if (cookie) {
+    router.push({ path: '/dashboard' });
+  }
+});
 </script>
