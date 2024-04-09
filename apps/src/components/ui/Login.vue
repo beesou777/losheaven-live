@@ -60,11 +60,7 @@
       </form>
       <p class="text-sm font-light text-gray-500 dark:text-gray-400">
         Don’t have an account yet?
-        <button
-          @click="router.push('/register')"
-          href="#"
-          class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-        >
+        <button @click="register" href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Sign up
         </button>
       </p>
@@ -96,5 +92,10 @@ const Login = async (event) => {
   } else {
     console.log('error');
   }
+};
+
+const register = () => {
+  emit('login-success');
+  router.push('/register');
 };
 </script>
