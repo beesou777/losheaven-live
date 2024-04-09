@@ -36,14 +36,6 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
-    [
-      '@nuxtjs/google-fonts',
-      {
-        families: {
-          'DM Sans': [300, 400, 500, 600],
-        },
-      },
-    ],
     'nuxt-headlessui',
     '@nuxt/image',
     'nuxt-icon',

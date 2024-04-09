@@ -9,7 +9,7 @@
         :key="index"
         :to="item.link"
         class="flex py-4 px-3"
-        :class="currentRoute === item.link ? 'active bg-yellow-500' : ''"
+        :class="currentRoute === item.link ? 'active bg-amber-500' : ''"
       >
         {{ item.name }}
       </NuxtLink>

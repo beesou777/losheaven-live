@@ -16,6 +16,7 @@ export const useCartStore = defineStore('cart', {
           {
             quantity: data.quantity,
             product: data.product,
+            size: data.size,
           },
           {
             headers: {

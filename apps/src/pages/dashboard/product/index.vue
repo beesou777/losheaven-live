@@ -2,7 +2,7 @@
   <div class="py-[27px]">
     <div class="flex justify-between items-center relative">
       <p class="text-[24px]">Product</p>
-      <NuxtLink to="/dashboard/product/add" class="bg-yellow-500 text-white px-[12px] py-[4px] rounded"
+      <NuxtLink to="/dashboard/product/add" class="bg-amber-500 text-white px-[12px] py-[4px] rounded"
         >Add Product</NuxtLink
       >
     </div>
@@ -45,7 +45,7 @@
             >
               Edit
             </button>
-            <button class="bg-red-500 px-5 py-2 rounded-[8px]" @click="productStore.deleteProduct(items._id)">
+            <button class="bg-amber-500 px-5 py-2 rounded-[8px]" @click="productStore.deleteProduct(items._id)">
               Delete
             </button>
           </td>

@@ -1,33 +1,23 @@
 <template>
   <!-- component -->
-  <div class="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
-    <div class="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
-      <div
-        class="max-w-[400px] w-full max-h-[400px] h-full bg-gray-300"
-        v-for="(item, index) in getProduct?.images.slice(0, 2)"
-        :key="index"
-      >
-        <img
-          class="max-w-[400px] w-full max-h-[400px] h-full bg-gray-300 object-cover"
-          alt="image of a girl posing"
-          :src="item"
-          :class="{ 'mt-4': index === 1 }"
-        />
-      </div>
-    </div>
-    <div class="md:hidden">
-      <img
-        class="w-full max-h-[450px] h-full object-cover object-center"
-        alt="image of a girl posing"
-        :src="getProduct?.images[0]"
-      />
-      <div class="flex items-center justify-between mt-3 space-x-4 md:space-x-0">
-        <div class="md:w-48 md:h-48 w-full" v-for="(item, index) in getProduct?.images.slice(1, 3)" :key="index">
-          <img alt="image-tag-one" class="w-full" :src="item" />
+  <div class="grid grid-cols-12 py-12 2xl:px-20 md:px-6 px-4">
+    <div class="col-span-12 lg:col-span-7 pr-0 md:pr-8">
+      <div class="grid grid-cols-8">
+        <div
+          class="max-w-[500px] w-full max-h-[500px] h-full bg-gray-300 col-span-4 [&:nth-child(5)]:col-span-8"
+          v-for="(item, index) in getProduct?.images"
+          :key="index"
+        >
+          <img
+            class="max-w-[500px] w-full max-h-[500px] h-full bg-gray-300 object-cover"
+            alt="image of a girl posing"
+            :src="item"
+            :class="{ 'mt-4': index === 1 }"
+          />
         </div>
       </div>
     </div>
-    <div class="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
+    <div class="col-span-12 lg:col-span-5 md:mt-0 mt-6 sticky top-[100px] overflow-auto h-fit">
       <h2 class="text-sm title-font text-gray-500 tracking-widest">{{ getProduct?.category }}</h2>
       <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ getProduct?.name }}</h1>
       <div class="flex mb-4 items-center">
@@ -82,20 +72,13 @@
         {{ getProduct?.description }}
       </p>
       <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
-        <!-- <div class="flex">
-          <span class="mr-3">Color</span>
-          <button class="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
-          <button class="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
-          <button class="border-2 border-gray-300 ml-1 bg-red-500 rounded-full w-6 h-6 focus:outline-none"></button>
-        </div> -->
-        <!-- <div class="flex ml-6 items-center">
-          <span class="mr-3">Size</span>
+        <div class="flex items-center">
+          <span class="mr-4">Size</span>
           <div class="relative">
             <select
+              v-model="size"
               class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"
             >
-              <option>SM</option>
-              <option>M</option>
               <option>L</option>
               <option>XL</option>
             </select>
@@ -115,13 +98,13 @@
               </svg>
             </span>
           </div>
-        </div> -->
+        </div>
       </div>
-      <div class="flex gap-3">
+      <div class="flex gap-3 flex-col">
         <div class="flex items-center">
           <button
             @click="increaseQuantity"
-            class="border border-black w-36 h-12 text-gray-500 focus:outline-none focus:text-gray-600"
+            class="border border-black h-12 text-gray-500 focus:outline-none focus:text-gray-600 w-full"
           >
             <div class="flex justify-center">
               <div>
@@ -144,7 +127,7 @@
           ><span class="text-2xl mx-2">{{ quantity }}</span
           ><button
             @click="decreaseQuantity"
-            class="border border-black w-36 h-12 text-gray-500 focus:outline-none focus:text-gray-600"
+            class="border border-black w-full h-12 text-gray-500 focus:outline-none focus:text-gray-600"
           >
             <div class="flex justify-center">
               <div>
@@ -163,25 +146,27 @@
         </div>
         <button
           @click="addTOCart"
-          class="w-full text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded"
+          class="w-full text-white bg-amber-500 border-0 py-4 px-6 focus:outline-none hover:bg-amber-600 rounded"
         >
           Add To Cart
         </button>
       </div>
     </div>
-    <ui-login v-if="isLoginShown" :isLoginShown="isLoginShown" @login-success="handleLoginSuccess" />
+    <ui-login v-if="authStore?.isLogined" :isLoginShown="authStore?.isLogined" @login-success="handleLoginSuccess" />
   </div>
 </template>
 <script setup lang="ts">
 import { useRouter } from 'nuxt/app';
 import { computed, onMounted, ref } from 'vue';
+import { useAuthStore } from '../composables/store/auth.store';
 
 const quantity = ref<number>(1);
-
+const size = ref<string>('L');
 const productStore = useProductStore();
+const authStore = useAuthStore();
 const cartStore = useCartStore();
-const isLoginShown = ref(false);
 const router = useRouter();
+
 onMounted(async () => {
   await productStore.getSingleProduct(router.currentRoute.value.params.slug);
 });
@@ -203,12 +188,13 @@ const decreaseQuantity = () => {
 const addTOCart = async () => {
   const cookie = useCookie('customer-access').value;
   if (!cookie) {
-    isLoginShown.value = true;
+    authStore.isLogined = true;
     return;
   }
   const data = {
     product: getProduct.value._id,
     quantity: quantity.value,
+    size: size.value,
   };
   const response = await cartStore.addToCart(data);
   if (response.status === 200) {
@@ -217,6 +203,6 @@ const addTOCart = async () => {
 };
 
 const handleLoginSuccess = () => {
-  isLoginShown.value = false;
+  authStore.isLogined = false;
 };
 </script>

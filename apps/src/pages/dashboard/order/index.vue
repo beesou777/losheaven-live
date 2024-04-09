@@ -38,7 +38,7 @@
               :class="[
                 items?.order_status === 'delivered'
                   ? 'bg-green-500 px-5 py-2 rounded-[8px]'
-                  : 'bg-red-500 px-5 py-2 rounded-[8px]',
+                  : 'bg-amber-500 px-5 py-2 rounded-[8px]',
               ]"
               >{{ items?.order_status || 'unpaid' }}</span
             >
@@ -48,7 +48,7 @@
               :class="[
                 items.payment_status === 'paid'
                   ? 'bg-green-500 px-5 py-2 rounded-[8px]'
-                  : 'bg-red-500 px-5 py-2 rounded-[8px]',
+                  : 'bg-amber-500 px-5 py-2 rounded-[8px]',
               ]"
               >{{ items.payment_status || 'pending' }}</span
             >

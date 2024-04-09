@@ -79,7 +79,7 @@
       </div>
 
       <div class="button-wrapper p-6 w-full bg-white rounded-2">
-        <button class="bg-yellow-500 text-white py-4 rounded-[12px] w-full" @click="updateProduct">Add product</button>
+        <button class="bg-amber-500 text-white py-4 rounded-[12px] w-full" @click="updateProduct">Add product</button>
       </div>
     </div>
   </div>

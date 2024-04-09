@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div
+    <!-- <div
       class="pt-[6rem] pb-[7rem] text-center relative !bg-cover min-h-[200px] text-white !bg-no-repeat w-full bg-center md:px-[5rem] sm:px-0"
       style="background: url(https://i.postimg.cc/KvwXnqkz/postive-caring-relationships-teachers-1.png)"
     >
@@ -34,7 +34,7 @@
         <div class="grid md:grid-col-12 grid-cols-6 py-10">
           <div class="md:col-span-3 col-span-6 max-w-[600px]">
             <p
-              class="font-medium max-w-[400px] text-[24px] lg:text-[28px] pt-10 relative after:content-[''] after:absolute after:h-[18px] after:bg-[#F3F25B] after:bottom-[2px] after:left-0 after:w-[230px] after:opacity-[75%] after:lg:w-[265px]"
+              class="font-medium z-[2] max-w-[400px] text-[24px] lg:text-[28px] pt-10 relative after:content-[''] after:absolute after:h-[18px] after:bg-[#F3F25B] after:bottom-[2px] after:left-0 after:w-[230px] after:opacity-[75%] after:lg:w-[265px] after:z-[-1]"
             >
               Developing Confident and Successful Learners
             </p>
@@ -100,7 +100,10 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+    <h1 class="absolute top-[50%] left-[50%] text-[40px] md:text-[50] translate-x-[-50%] translate-y-[-50%]">
+      Page is under maintainance
+    </h1>
   </div>
 </template>
 <script setup lang="ts">

@@ -1,30 +1,23 @@
 <template>
-  <nav class="flex items-center px-5 md:px-0 justify-between max-w-[1400px] mx-auto py-4 relative h-auto" id="navbar">
+  <nav
+    class="sticky top-0 z-[20] flex w-full flex-wrap items-center justify-between bg-zinc-50 px-5 md:p-10 py-2 dark:bg-neutral-700 lg:py-4 shadow-[0px_0px_24px_rgba(0,0,0,0.15)]"
+    id="navbar"
+  >
     <div class="flex items-center gap-10">
       <ui-logo />
       <div class="items">
-        <div class="flex md:hidden" @click="isToggle = !isToggle">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_1222_36505)">
-              <path d="M13.5 1H0.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M13.5 4H3.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M13.5 7H6.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M13.5 13H0.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M13.5 10H3.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-            </g>
-            <defs>
-              <clipPath id="clip0_1222_36505">
-                <rect width="14" height="14" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
-        </div>
         <ul class="hidden md:flex">
           <li
             class="text-[#282828] p-[8px_12px] font-bold"
             :class="{ 'text-yellow-500': router.currentRoute.value.name === 'index___en' }"
           >
             <NuxtLink to="/" class="text-[18px]">Home</NuxtLink>
+          </li>
+          <li
+            class="text-[#282828] p-[8px_12px] font-bold"
+            :class="{ 'text-yellow-500': router.currentRoute.value.name === 'product___en' }"
+          >
+            <NuxtLink to="/product" class="text-[18px]">Product</NuxtLink>
           </li>
           <!-- <li class="text-[#282828] p-[8px_12px]"><NuxtLink to="/product">Product</NuxtLink></li> -->
           <li class="text-[#282828] p-[8px_12px]">
@@ -33,6 +26,14 @@
               class="text-[18px] font-bold"
               :class="{ 'text-yellow-500': router.currentRoute.value.name === 'about-us___en' }"
               >About us</NuxtLink
+            >
+          </li>
+          <li class="text-[#282828] p-[8px_12px]">
+            <NuxtLink
+              to="/contact"
+              class="text-[18px] font-bold"
+              :class="{ 'text-yellow-500': router.currentRoute.value.name === 'contact___en' }"
+              >Contact us</NuxtLink
             >
           </li>
           <!-- <li class="text-[#282828] p-[8px_12px]"><NuxtLink to="/contact-us">Contact us</NuxtLink></li> -->
@@ -56,10 +57,16 @@
             </svg>
           </div>
           <ul class="flex flex-col p-10">
-            <li @click="isToggle = !isToggle" class="p-[8px_12px] text-yellow-500"><NuxtLink to="/">Home</NuxtLink></li>
+            <li @click="isToggle = !isToggle" class="p-[8px_12px]"><NuxtLink to="/">Home</NuxtLink></li>
             <!-- <li @click="isToggle = !isToggle" class="text-[#282828] p-[8px_12px]"><NuxtLink to="/product">Product</NuxtLink></li> -->
             <li @click="isToggle = !isToggle" class="text-[#282828] p-[8px_12px]">
+              <NuxtLink to="/product">Product</NuxtLink>
+            </li>
+            <li @click="isToggle = !isToggle" class="text-[#282828] p-[8px_12px]">
               <NuxtLink to="/about-us">About us</NuxtLink>
+            </li>
+            <li @click="isToggle = !isToggle" class="text-[#282828] p-[8px_12px]">
+              <NuxtLink to="/contact">Contact us</NuxtLink>
             </li>
             <!-- <li @click="isToggle = !isToggle" class="text-[#282828] p-[8px_12px]"><NuxtLink to="/contact-us">Contact us</NuxtLink></li> -->
           </ul>
@@ -69,7 +76,7 @@
     <div class="flex items-center gap-5">
       <div class="cursor-pointer relative" @click="showCart">
         <span
-          class="absolute top-[-15px] right-[10px] bg-red-500 text-white rounded-full w-5 h-5 flex justify-center items-center"
+          class="absolute top-[-15px] right-[10px] bg-amber-500 text-white rounded-full w-5 h-5 flex justify-center items-center"
           >{{ cartLength || 0 }}</span
         >
         <svg
@@ -92,13 +99,23 @@
           ></path>
         </svg>
       </div>
-      <button
+      <svg
         v-if="userStatus === 'Login'"
-        class="px-6 py-2 font-semibold rounded text-sm outline-none border-2 border-[#333] hover:bg-[#333] hover:text-white transition-all duration-300"
         @click="Login"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        Login
-      </button>
+        <path
+          d="M3 20C5.33579 17.5226 8.50702 16 12 16C15.493 16 18.6642 17.5226 21 20M16.5 7.5C16.5 9.98528 14.4853 12 12 12C9.51472 12 7.5 9.98528 7.5 7.5C7.5 5.01472 9.51472 3 12 3C14.4853 3 16.5 5.01472 16.5 7.5Z"
+          stroke="black"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
       <div
         v-if="userStatus === 'Logout'"
         class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse relative"
@@ -106,17 +123,21 @@
       >
         <button
           type="button"
-          class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+          class="flex text-sm rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-amber-600"
         >
-          <img
-            class="w-8 h-8 rounded-full"
-            src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-            alt="user photo"
-          />
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M3 20C5.33579 17.5226 8.50702 16 12 16C15.493 16 18.6642 17.5226 21 20M16.5 7.5C16.5 9.98528 14.4853 12 12 12C9.51472 12 7.5 9.98528 7.5 7.5C7.5 5.01472 9.51472 3 12 3C14.4853 3 16.5 5.01472 16.5 7.5Z"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
         </button>
         <!-- Dropdown menu -->
         <div
-          class="z-50 absolute hidden user-dropdown top-[33px] left-0 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+          class="z-50 absolute hidden user-dropdown top-[33px] right-0 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
           id="user-dropdown"
         >
           <div class="px-4 py-3">
@@ -127,7 +148,7 @@
             <li>
               <button
                 @click="router.push('/setting')"
-                class="block px-4 py-2 text-sm w-full text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                class="block px-4 py-2 text-sm w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
               >
                 Settings
               </button>
@@ -143,8 +164,25 @@
           </ul>
         </div>
       </div>
+      <div class="flex md:hidden" @click="isToggle = !isToggle">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_1222_36505)">
+            <path d="M13.5 1H0.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M13.5 4H3.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M13.5 7H6.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M13.5 13H0.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M13.5 10H3.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+          <defs>
+            <clipPath id="clip0_1222_36505">
+              <rect width="14" height="14" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
     </div>
     <ui-shopping-cart v-if="cartStore.showCart" @show-cart="showCart" />
+    <ui-login v-if="authStore.isLogined" :isLoginShown="authStore.isLogined" @login-success="handleLoginSuccess" />
   </nav>
 </template>
 <script setup>
@@ -157,15 +195,16 @@ const authStore = useAuthStore();
 
 const router = useRouter();
 const isToggle = ref(false);
+
 const userStatus = ref('');
 onMounted(() => {
-  authStore.getSingleCustomerData();
   if (!useCookie('customer-access').value) return;
+  authStore.getSingleCustomerData();
   cartStore.getCart();
 });
 
 const Login = () => {
-  router.push('/login');
+  authStore.isLogined = true;
 };
 
 const cartLength = computed(() => {
@@ -174,7 +213,7 @@ const cartLength = computed(() => {
 
 const Logout = () => {
   useCookie('customer-access').value = null;
-  router.push('/login');
+  router.push('/');
 };
 
 watchEffect(() => {
@@ -188,5 +227,9 @@ watchEffect(() => {
 
 const showCart = () => {
   cartStore.showCart = !cartStore.showCart;
+};
+
+const handleLoginSuccess = () => {
+  authStore.isLogined = false;
 };
 </script>

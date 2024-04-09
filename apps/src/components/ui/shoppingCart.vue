@@ -23,18 +23,35 @@
           ></path>
         </svg>
       </div>
-      <div class="divide-y mt-4" v-for="(item, index) in cartData" :key="index">
+      <div class="mt-4" v-for="(item, index) in cartData" :key="index">
         <div class="flex items-start justify-between gap-4 py-8">
-          <div class="flex max-sm:flex-col gap-6">
+          <div class="flex gap-6">
             <div class="w-full md:max-w-[126px]">
-              <img :src="item?.product?.images[0]" alt="perfume bottle image" class="mx-auto" />
+              <img :src="item?.product?.images[0]" alt="perfume bottle image" class="mx-auto w-full" />
             </div>
             <div>
-              <p class="text-md font-bold text-[#333]">
-                {{ item?.product?.name.split(' ').slice(0, 10).join(' ') + '...' }}
+              <p class="text-md text-[15px] md:text-[18px] font-bold text-[#333]">
+                {{ item?.product?.name.split(' ').slice(0, 6).join(' ') + '...' }}
               </p>
-              <p class="text-gray-400 text-xs mt-1">{{ item.quantity }} Item</p>
-              <h4 class="text-xl font-bold text-[#333] mt-4">NRS {{ item?.product?.price }}</h4>
+              <div class="flex items-center justify-between">
+                <p class="text-gray-400 text-xs mt-1">{{ item.quantity }} Item</p>
+                <svg
+                  @click="deleteCartData(item._id)"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 fill-red-500 inline cursor-pointer"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19 7a1 1 0 0 0-1 1v11.191A1.92 1.92 0 0 1 15.99 21H8.01A1.92 1.92 0 0 1 6 19.191V8a1 1 0 0 0-2 0v11.191A3.918 3.918 0 0 0 8.01 23h7.98A3.918 3.918 0 0 0 20 19.191V8a1 1 0 0 0-1-1Zm1-3h-4V2a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v2H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2ZM10 4V3h4v1Z"
+                    data-original="#000000"
+                  ></path>
+                  <path
+                    d="M11 17v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Zm4 0v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Z"
+                    data-original="#000000"
+                  ></path>
+                </svg>
+              </div>
+              <h4 class="md:text-xl font-bold text-[#333] mt-4">NRS {{ item?.product?.price }}</h4>
               <div class="mt-6">
                 <button type="button" class="flex items-center flex-wrap gap-2 text-lg text-[#333]">
                   <button
@@ -68,21 +85,6 @@
               </div>
             </div>
           </div>
-          <svg
-            @click="deleteCartData(item._id)"
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-5 fill-red-500 inline cursor-pointer"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M19 7a1 1 0 0 0-1 1v11.191A1.92 1.92 0 0 1 15.99 21H8.01A1.92 1.92 0 0 1 6 19.191V8a1 1 0 0 0-2 0v11.191A3.918 3.918 0 0 0 8.01 23h7.98A3.918 3.918 0 0 0 20 19.191V8a1 1 0 0 0-1-1Zm1-3h-4V2a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v2H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2ZM10 4V3h4v1Z"
-              data-original="#000000"
-            ></path>
-            <path
-              d="M11 17v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Zm4 0v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Z"
-              data-original="#000000"
-            ></path>
-          </svg>
         </div>
       </div>
       <div v-if="cartData?.length === 0" class="mt-10 flex items-center justify-center font-bold">
@@ -100,7 +102,7 @@
         @click="checkoutRoute"
         :disabled="cartData?.length === 0"
         type="button"
-        class="mt-6 text-md px-6 py-2.5 w-full bg-blue-600 hover:bg-blue-700 text-white rounded"
+        class="mt-6 text-md px-6 py-2.5 w-full bg-amber-500 hover:bg-amber-600 text-white rounded"
       >
         Check out
       </button>

@@ -1,7 +1,7 @@
 <template>
-  <div class="overflow-x-hidden w-full" v-if="!isDashboard">
+  <div class="w-full" v-if="!isDashboard">
     <ui-navbar />
-    <main class="min-h-[100dvh]">
+    <main class="min-h-[100dvh] bg-[#FCFBF4]">
       <slot></slot>
     </main>
     <ui-footer />

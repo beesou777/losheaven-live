@@ -177,6 +177,7 @@ const cartData = computed(() => {
   return cartStore?.cartData;
 });
 
+console.log(cartData.value);
 const deleteCartData = async (item: number) => {
   if (item) {
     await cartStore.deleteCart(item);

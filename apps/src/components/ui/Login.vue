@@ -4,7 +4,7 @@
     class="fixed inset-0 p-4 flex flex-wrap justify-center items-center w-full h-full z-[10] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto font-[sans-serif]"
   ></div>
   <div
-    class="w-full max-w-lg bg-white shadow-lg rounded-md p-6 absolute !z-[9999] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+    class="w-full max-w-lg bg-white shadow-lg rounded-md p-6 fixed !z-[9999] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
   >
     <svg
       @click="emit('login-success')"
@@ -53,7 +53,7 @@
         <button
           type="submit"
           @click="Login"
-          class="w-full text-gray-900 text-[18px] bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center dark:bg-yellow-500 dark:hover:bg-yellow-600 dark:focus:ring-primary-800"
+          class="w-full text-gray-900 text-[18px] bg-amber-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center dark:bg-amber-500 dark:hover:bg-yellow-600 dark:focus:ring-primary-800"
         >
           Sign in
         </button>
