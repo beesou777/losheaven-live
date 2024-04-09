@@ -19,6 +19,9 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', href: '/favicon.ico' },
         { rel: 'apple-touch-icon', href: '/favicon.ico' },
+        { rel: 'icon', href: '/favicon-32x32.png', type: '/imgage/png' },
+        { rel: 'icon', href: '/favicon-16x16.png', type: 'image/png' },
+        { rel: 'manifest', href: '/manifest.webmanifest' },
       ],
     },
   },
@@ -39,26 +42,6 @@ export default defineNuxtConfig({
         families: {
           'DM Sans': [300, 400, 500, 600],
         },
-      },
-    ],
-    [
-      '@nuxtjs/i18n',
-      {
-        locales: [
-          {
-            code: 'en',
-            iso: 'en-US',
-            file: 'en.json',
-          },
-          {
-            code: 'de',
-            iso: 'de-DE',
-            file: 'de.json',
-          },
-        ],
-        lazy: true,
-        langDir: 'lang',
-        defaultLocale: 'en',
       },
     ],
     'nuxt-headlessui',
@@ -86,9 +69,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiUrl: process.env.API_URL ?? 'http://localhost:8080',
+      apiUrl: process.env.API_URL ?? 'http://localhost:3000',
       showNetPrices: true,
-      logoUrl: (process.env.API_URL ?? 'http://localhost:8080') + '/images/logo.png',
+      logoUrl: (process.env.API_URL ?? 'http://localhost:3000') + '/images/logo.png',
       useWebp: process.env?.USE_WEBP === '1' ?? false,
     },
   },

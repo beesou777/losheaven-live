@@ -14,16 +14,16 @@ export interface NuxtAppConfig {
 }
 
 export default defineAppConfig({
-  name: 'Nuxt Tailwind PWA',
-  description: 'a starter template for Nuxt 3 with HeadlessUI, Tailwindcss and PWA.',
+  name: 'losheaven',
+  description: 'losheaven is a nepali startup company based on clothing founded by Bishwa Shah and Nayandra Sunwar',
   project: {
-    github: 'https://github.com/Rohan-Shakya/nuxt-tailwind-pwa',
+    github: 'https://github.com/beesou777',
   },
   author: {
     name: 'Rohan Shakya',
     links: {
-      github: 'https://github.com/Rohan-Shakya',
-      website: 'https://www.shakyarohan.com.np',
+      github: 'https://github.com/beesou777/losheaven',
+      website: 'https://www.losheaven.com',
     },
   },
   nuxtIcon: {
