@@ -80,6 +80,13 @@ const router = useRouter();
 const authStore = useAuthStore();
 const email = ref<string>('');
 const password = ref<string>('');
+
+/**
+ * Function for handling login process.
+ *
+ * @param {Event} event - the event triggering the function
+ * @return {void} no return value
+ */
 const Login = async (event) => {
   event.preventDefault();
   const data = {
