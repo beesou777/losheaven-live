@@ -49,7 +49,14 @@ export const useAuthStore = defineStore('auth', {
           city: data.city,
           name: data.name,
         });
-        return response;
+        if (response.status === 200) {
+          const customer = {
+            email: data.email,
+            password: data.password,
+          };
+          const res = this.CustomerLogin(customer);
+          return res;
+        }
       } catch (error) {
         console.log(error);
       }

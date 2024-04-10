@@ -4,6 +4,7 @@
     class="fixed inset-0 flex flex-wrap justify-center items-center w-full h-full z-[10] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto font-[sans-serif]"
   ></div>
   <div
+    v-if="!isRegisterShown"
     class="w-full max-w-lg bg-white shadow-lg rounded-md p-6 fixed !z-[9999] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
   >
     <svg
@@ -74,7 +75,7 @@
               stroke-linejoin="round"
             />
           </svg>
-          <div v-if="showPassword" @click="togglePassword">
+          <div v-else @click="togglePassword">
             <svg
               class="absolute right-5 top-9 cursor-pointer z-[999]"
               width="24"
@@ -101,13 +102,13 @@
           >
             Sign in
           </button>
-          <button
+          <!-- <button
             type="submit"
             @click="guestLogin"
             class="w-full text-nowrap text-gray-900 text-[18px] bg-amber-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center dark:bg-amber-500 dark:hover:bg-yellow-600 dark:focus:ring-primary-800"
           >
             Guest Login
-          </button>
+          </button> -->
         </div>
       </form>
       <p class="text-sm font-light text-gray-500 dark:text-gray-400">
@@ -118,6 +119,7 @@
       </p>
     </div>
   </div>
+  <ui-signup v-else @register-success="closeRegister" />
 </template>
 <script setup lang="ts">
 import { computed, ref } from 'vue';
@@ -133,7 +135,7 @@ const authStore = useAuthStore();
 const email = ref<string>('');
 const password = ref<string>('');
 const showPassword = ref<boolean>(false);
-
+const isRegisterShown = ref<boolean>(false);
 /**
  * Function for handling login process.
  *
@@ -155,24 +157,28 @@ const Login = async (event: any) => {
   }
 };
 
-const guestLogin = async (event: any) => {
-  event.preventDefault();
-  const data = {
-    email: 'losheaven@gmail.com',
-    password: 'losheaven',
-  };
-  const response = await authStore.CustomerLogin(data);
-  if (response.status === 200) {
-    authStore.accessToken = response.data.access;
-    emit('login-success');
-  } else {
-    console.log('error');
-  }
+const closeRegister = () => {
+  isRegisterShown.value = false;
+  emit('login-success');
 };
 
+// const guestLogin = async (event: any) => {
+//   event.preventDefault();
+//   const data = {
+//     email: 'losheaven@gmail.com',
+//     password: 'losheaven',
+//   };
+//   const response = await authStore.CustomerLogin(data);
+//   if (response.status === 200) {
+//     authStore.accessToken = response.data.access;
+//     emit('login-success');
+//   } else {
+//     console.log('error');
+//   }
+// };
+
 const register = () => {
-  emit('login-success');
-  router.push('/register');
+  isRegisterShown.value = true;
 };
 
 const togglePassword = () => {
