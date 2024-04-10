@@ -1,6 +1,6 @@
 <template>
   <section class="text-center lg:text-left overflow-hidden">
-    <div class="text-center lg:text-left md:px-10 px-5 py-16 lg:px-8">
+    <div class="text-center lg:text-left md:px-10 px-5 py-8 md:py-16 lg:px-8">
       <div class="grid md:grid-cols-6 items-center md:gap-4 gap-8 font-[sans-serif] text-[#333]">
         <div class="col-span-3 max-md:order-1 max-md:text-center">
           <h1 class="md:text-4xl text-2xl font-bold">Dressing is the canvas where joy and art merge seamlessly.</h1>
@@ -25,7 +25,7 @@
       </div>
     </div>
     <div id="order">
-      <div class="md:px-10 px-5 py-16 sm:py-24 lg:px-8">
+      <div class="md:px-10 px-5 py-8 md:py-16 sm:py-24 lg:px-8">
         <h2 class="text-[18px] md:text-[28px] font-bold text-center text-gray-600">Our Products</h2>
         <div class="mt-6 grid grid-cols-12 sm:grid-cols-2 lg:grid-cols-4">
           <div class="col-span-12 md:col-span-6 flex items-center flex-col sm:flex-row">
