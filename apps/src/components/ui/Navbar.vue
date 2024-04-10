@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="sticky top-0 z-[20] flex w-full flex-wrap items-center justify-between bg-zinc-50 px-5 md:p-10 py-2 dark:bg-neutral-700 lg:py-4 shadow-[0px_0px_24px_rgba(0,0,0,0.15)]"
+    class="sticky top-0 z-[20] flex w-full flex-wrap items-center justify-between bg-zinc-50 px-5 md:p-10 py-4 dark:bg-neutral-700 lg:py-4 shadow-[0px_0px_24px_rgba(0,0,0,0.15)]"
     id="navbar"
   >
     <div class="flex items-center gap-10">
@@ -9,13 +9,16 @@
         <ul class="hidden md:flex">
           <li
             class="text-[#282828] p-[8px_12px] font-bold"
-            :class="{ 'text-yellow-500': router.currentRoute.value.name === 'index___en' }"
+            :class="{ 'text-yellow-500': router.currentRoute.value.name === 'index' }"
           >
             <NuxtLink to="/" class="text-[18px]">Home</NuxtLink>
           </li>
           <li
             class="text-[#282828] p-[8px_12px] font-bold"
-            :class="{ 'text-yellow-500': router.currentRoute.value.name === 'product___en' }"
+            :class="{
+              'text-yellow-500':
+                router.currentRoute.value.name === 'product' || router.currentRoute.value.name === 'product-slug',
+            }"
           >
             <NuxtLink to="/product" class="text-[18px]">Product</NuxtLink>
           </li>
@@ -24,7 +27,7 @@
             <NuxtLink
               to="/about-us"
               class="text-[18px] font-bold"
-              :class="{ 'text-yellow-500': router.currentRoute.value.name === 'about-us___en' }"
+              :class="{ 'text-yellow-500': router.currentRoute.value.name === 'about-us' }"
               >About us</NuxtLink
             >
           </li>
@@ -32,14 +35,18 @@
             <NuxtLink
               to="/contact"
               class="text-[18px] font-bold"
-              :class="{ 'text-yellow-500': router.currentRoute.value.name === 'contact___en' }"
+              :class="{ 'text-yellow-500': router.currentRoute.value.name === 'contact' }"
               >Contact us</NuxtLink
             >
           </li>
           <!-- <li class="text-[#282828] p-[8px_12px]"><NuxtLink to="/contact-us">Contact us</NuxtLink></li> -->
         </ul>
-
-        <div class="fixed right-0 top-0 bg-white z-[999] min-h-[100vh] w-[250px]" v-if="isToggle">
+        <div
+          @click="isToggle = false"
+          v-if="isToggle"
+          class="fixed inset-0 p-4 flex flex-wrap justify-center items-center w-full h-full z-[10] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto font-[sans-serif]"
+        ></div>
+        <div class="fixed right-0 top-0 bg-white z-[999] min-h-[100vh] w-[350px]" v-if="isToggle">
           <div
             class="flex justify-end p-2 relative top-[30px] right-[10px] rounded-[50%] bg-gray-100 w-fit float-end"
             @click="isToggle = !isToggle"
@@ -57,15 +64,36 @@
             </svg>
           </div>
           <ul class="flex flex-col p-10">
-            <li @click="isToggle = !isToggle" class="p-[8px_12px]"><NuxtLink to="/">Home</NuxtLink></li>
+            <li
+              @click="isToggle = !isToggle"
+              class="p-[8px_12px]"
+              :class="{ 'text-amber-500': router.currentRoute.value.name === 'index' }"
+            >
+              <NuxtLink to="/">Home</NuxtLink>
+            </li>
             <!-- <li @click="isToggle = !isToggle" class="text-[#282828] p-[8px_12px]"><NuxtLink to="/product">Product</NuxtLink></li> -->
-            <li @click="isToggle = !isToggle" class="text-[#282828] p-[8px_12px]">
+            <li
+              @click="isToggle = !isToggle"
+              class="text-[#282828] p-[8px_12px]"
+              :class="{
+                'text-amber-500':
+                  router.currentRoute.value.name === 'product' || router.currentRoute.value.name === 'product-slug',
+              }"
+            >
               <NuxtLink to="/product">Product</NuxtLink>
             </li>
-            <li @click="isToggle = !isToggle" class="text-[#282828] p-[8px_12px]">
+            <li
+              @click="isToggle = !isToggle"
+              class="text-[#282828] p-[8px_12px]"
+              :class="{ 'text-amber-500': router.currentRoute.value.name === 'about-us' }"
+            >
               <NuxtLink to="/about-us">About us</NuxtLink>
             </li>
-            <li @click="isToggle = !isToggle" class="text-[#282828] p-[8px_12px]">
+            <li
+              @click="isToggle = !isToggle"
+              class="text-[#282828] p-[8px_12px]"
+              :class="{ 'text-amber-500': router.currentRoute.value.name === 'contact' }"
+            >
               <NuxtLink to="/contact">Contact us</NuxtLink>
             </li>
             <!-- <li @click="isToggle = !isToggle" class="text-[#282828] p-[8px_12px]"><NuxtLink to="/contact-us">Contact us</NuxtLink></li> -->
@@ -76,7 +104,7 @@
     <div class="flex items-center gap-5">
       <div class="cursor-pointer relative" @click="showCart">
         <span
-          class="absolute top-[-15px] right-[10px] bg-amber-500 text-white rounded-full w-5 h-5 flex justify-center items-center"
+          class="absolute top-[-10px] right-[10px] bg-amber-500 text-white rounded-full w-5 h-5 flex justify-center items-center"
           >{{ cartLength || 0 }}</span
         >
         <svg
@@ -100,7 +128,7 @@
         </svg>
       </div>
       <svg
-        v-if="userStatus === 'Login'"
+        v-if="!isAccessTokenAvailable"
         @click="Login"
         width="24"
         height="24"
@@ -117,7 +145,7 @@
         ></path>
       </svg>
       <div
-        v-if="userStatus === 'Logout'"
+        v-if="isAccessTokenAvailable"
         class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse relative"
         id="user-button"
       >
@@ -137,12 +165,14 @@
         </button>
         <!-- Dropdown menu -->
         <div
-          class="z-50 absolute hidden user-dropdown top-[33px] right-0 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+          class="z-50 absolute hidden user-dropdown top-[25px] right-0 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
           id="user-dropdown"
         >
           <div class="px-4 py-3">
-            <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-            <span class="block text-sm text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+            <span class="block text-sm text-gray-900 dark:text-white">{{ authStore.SingleCustomerData?.name }}</span>
+            <span class="block text-sm text-gray-500 truncate dark:text-gray-400">{{
+              authStore.SingleCustomerData?.email
+            }}</span>
           </div>
           <ul class="py-2" aria-labelledby="user-menu-button">
             <li>
@@ -199,9 +229,12 @@ const isToggle = ref(false);
 const userStatus = ref('');
 onMounted(() => {
   if (!useCookie('customer-access').value) return;
+  authStore.accessToken = useCookie('customer-access').value;
   authStore.getSingleCustomerData();
   cartStore.getCart();
 });
+
+console.log(router.currentRoute.value);
 
 const Login = () => {
   authStore.isLogined = true;
@@ -211,19 +244,15 @@ const cartLength = computed(() => {
   return cartStore.cartData?.length;
 });
 
+const isAccessTokenAvailable = computed(() => {
+  return authStore?.accessToken ? true : false;
+});
+
 const Logout = () => {
   useCookie('customer-access').value = null;
+  authStore.accessToken = null;
   router.push('/');
 };
-
-watchEffect(() => {
-  const cookie = useCookie('customer-access').value;
-  if (cookie && cookie !== undefined && authStore.SingleCustomerData?._id) {
-    userStatus.value = 'Logout';
-  } else {
-    userStatus.value = 'Login';
-  }
-});
 
 const showCart = () => {
   cartStore.showCart = !cartStore.showCart;

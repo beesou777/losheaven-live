@@ -1,7 +1,7 @@
 <template>
   <div
     @click="emit('show-cart')"
-    class="fixed inset-0 w-full h-full z-[10] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] font-[sans-serif]"
+    class="fixed inset-0 w-full h-full overflow-y-auto z-[10] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] font-[sans-serif]"
   ></div>
   <div class="w-full max-w-xl bg-white shadow-lg fixed top-0 right-0 z-[999999] ml-auto h-screen">
     <div class="overflow-auto p-6 h-[calc(100vh-135px)]">

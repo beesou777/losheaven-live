@@ -31,7 +31,7 @@
           <div class="col-span-12 md:col-span-6 flex items-center flex-col sm:flex-row">
             <NuxtLink
               class="w-full h-full max-h-[600px] max-[1225px]:max-h-[440px] max-[992px]:max-h-[380px] max-[772px]:max-h-[330px] group relative bg-white md:m-4 m-0 duration-300 overflow-hidden"
-              to="/66129e932f55c360c94bd721"
+              to="/product/66129e932f55c360c94bd721"
             >
               <div class="w-full rounded-md bg-gray-200 lg:aspect-none overflow-hidden">
                 <img
@@ -49,7 +49,7 @@
 
             <NuxtLink
               class="w-full h-full max-h-[600px] max-[1225px]:max-h-[440px] max-[992px]:max-h-[380px] max-[772px]:max-h-[330px] group relative bg-white m-4 duration-300 overflow-hidden"
-              to="/66129e982f55c360c94bd724"
+              to="/product/66129e982f55c360c94bd724"
             >
               <div class="w-full rounded-md bg-gray-200 lg:aspect-none overflow-hidden">
                 <img
@@ -69,7 +69,7 @@
           <div class="col-span-12 md:col-span-6 flex items-center flex-col sm:flex-row">
             <NuxtLink
               class="w-full h-full max-h-[600px] max-[1225px]:max-h-[440px] max-[992px]:max-h-[380px] max-[772px]:max-h-[330px] group relative bg-white m-4 duration-300 overflow-hidden"
-              to="/66129e9a2f55c360c94bd727"
+              to="/product/66129e9a2f55c360c94bd727"
             >
               <div class="w-full rounded-md bg-gray-200 lg:aspect-none overflow-hidden">
                 <img
@@ -87,7 +87,7 @@
 
             <NuxtLink
               class="w-full h-full max-h-[600px] max-[1225px]:max-h-[440px] max-[992px]:max-h-[380px] max-[772px]:max-h-[330px] group relative bg-white m-4 duration-300 overflow-hidden"
-              to="/66129e9b2f55c360c94bd72a"
+              to="/product/66129e9b2f55c360c94bd72a"
             >
               <div class="w-full rounded-md bg-gray-200 lg:aspect-none overflow-hidden">
                 <img

@@ -6,6 +6,7 @@ export const useAuthStore = defineStore('auth', {
     uuid: null,
     SingleCustomerData: null,
     isLogined: false,
+    accessToken: null,
   }),
   actions: {
     async Login(data: any) {

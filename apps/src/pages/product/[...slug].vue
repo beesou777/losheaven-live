@@ -158,7 +158,7 @@
 <script setup lang="ts">
 import { useRouter } from 'nuxt/app';
 import { computed, onMounted, ref } from 'vue';
-import { useAuthStore } from '../composables/store/auth.store';
+import { useAuthStore } from '../../composables/store/auth.store';
 
 const quantity = ref<number>(1);
 const size = ref<string>('L');
