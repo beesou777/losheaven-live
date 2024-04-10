@@ -1,7 +1,7 @@
 <template>
   <div
     @click="emit('login-success')"
-    class="fixed inset-0 p-4 flex flex-wrap justify-center items-center w-full h-full z-[10] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto font-[sans-serif]"
+    class="fixed inset-0 flex flex-wrap justify-center items-center w-full h-full z-[10] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto font-[sans-serif]"
   ></div>
   <div
     class="w-full max-w-lg bg-white shadow-lg rounded-md p-6 fixed !z-[9999] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
@@ -21,7 +21,7 @@
         data-original="#000000"
       ></path>
     </svg>
-    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+    <div class="space-y-4 md:space-y-6 sm:p-8">
       <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
         Sign in to your account
       </h1>
@@ -104,7 +104,7 @@
           <button
             type="submit"
             @click="guestLogin"
-            class="w-full text-gray-900 text-[18px] bg-amber-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center dark:bg-amber-500 dark:hover:bg-yellow-600 dark:focus:ring-primary-800"
+            class="w-full text-nowrap text-gray-900 text-[18px] bg-amber-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center dark:bg-amber-500 dark:hover:bg-yellow-600 dark:focus:ring-primary-800"
           >
             Guest Login
           </button>

@@ -20,6 +20,6 @@
     />
   </svg> -->
   <NuxtLink to="/">
-    <h1 class="text-3xl font-bold">LOSHEAVEN</h1>
+    <h1 class="text-2xl font-bold md:text-3xl">LOSHEAVEN</h1>
   </NuxtLink>
 </template>

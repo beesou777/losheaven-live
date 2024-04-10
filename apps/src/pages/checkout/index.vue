@@ -124,7 +124,7 @@
             </div>
             <div class="mt-3">
               <h3 class="text-lg font-bold text-[#333] mb-6">Method of Payment</h3>
-              <div class="flex gap-2 max-sm:flex-col">
+              <div class="flex gap-2">
                 <input type="radio" v-model="method_of_payment" value="COD" name="payment" id="cod" checked />
                 <label for="cod">Cash on Delivery</label>
               </div>
@@ -133,7 +133,7 @@
               <button
                 @click="checkout"
                 type="button"
-                class="rounded-md px-6 py-3 w-full text-sm font-semibold bg-[#333] text-white hover:bg-[#222]"
+                class="rounded-md px-6 py-3 w-full text-sm font-semibold bg-amber-500 text-white hover:bg-amber-600"
               >
                 Complete Purchase
               </button>
