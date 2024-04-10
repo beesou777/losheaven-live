@@ -8,10 +8,12 @@
     <DashboardFeatureCard
       title="Total Order"
       title2="Pending Order"
-      title3="Cancelled Order"
-      price="1050"
-      price2="150"
-      price3="100"
+      title3="Success Order"
+      title4="Cancelled Order"
+      :price="featureOrder?.total_order"
+      :price2="featureOrder?.pending_order"
+      :price3="featureOrder?.delivered_order"
+      :price4="featureOrder?.cancelled_order"
       :loading="false"
     />
     <dashboard-data-tables
@@ -33,21 +35,21 @@
           <td>{{ totalOrderPrice(items?.orderItems) }}</td>
           <td>{{ items?.shipping_details?.email || null }}</td>
           <td>{{ items?.shipping_details?.phone || null }}</td>
-          <td class="cursor-pointer">
+          <td class="cursor-pointer" @click="openPaymentAndOrderOverlay(items._id, items)">
             <span
               :class="[
-                items?.order_status === 'delivered'
-                  ? 'bg-green-500 px-5 py-2 rounded-[8px]'
+                items?.order_status === 'Delivered'
+                  ? 'bg-green-500 px-5 py-2 rounded-[8px] text-white'
                   : 'bg-amber-500 px-5 py-2 rounded-[8px]',
               ]"
-              >{{ items?.order_status || 'unpaid' }}</span
+              >{{ items?.order_status || 'Unpaid' }}</span
             >
           </td>
-          <td class="cursor-pointer">
+          <td class="cursor-pointer" @click="openPaymentAndOrderOverlay(items._id, items)">
             <span
               :class="[
-                items.payment_status === 'paid'
-                  ? 'bg-green-500 px-5 py-2 rounded-[8px]'
+                items.payment_status === 'Paid'
+                  ? 'bg-green-500 px-5 py-2 rounded-[8px] text-white'
                   : 'bg-amber-500 px-5 py-2 rounded-[8px]',
               ]"
               >{{ items.payment_status || 'pending' }}</span
@@ -87,6 +89,11 @@
       @toggle-product-overlay="seeProductDetails"
       :productData="singleOrder"
     />
+    <dashboard-order-status-update
+      v-if="isStatusShown"
+      @update-status="updateStatus"
+      @toggle-product-overlay="openPaymentAndOrderOverlay"
+    />
     <dashboard-order-customer-details
       v-if="isCustomerDetails"
       @toggle-customer-overlay="seeCustomerDetails"
@@ -96,7 +103,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useRouter } from 'nuxt/app';
 import { useOrderStore } from '../../../composables/store/order.store';
 
@@ -105,6 +112,8 @@ const orderStore = useOrderStore();
 const isProductsDetails = ref(false);
 const isCustomerDetails = ref(false);
 const router = useRouter();
+const isStatusShown = ref<boolean>(false);
+const customerId = ref<number>();
 
 useHead({
   title: 'LosHeaven Dashboard',
@@ -137,4 +146,20 @@ const seeProductDetails = (item: any) => {
 const singleOrder = computed(() => {
   return orderStore?.singleOrder;
 });
+
+const featureOrder = computed(() => {
+  return orderStore?.orderFeature;
+});
+
+const openPaymentAndOrderOverlay = (id: number, data: any) => {
+  customerId.value = id;
+  isStatusShown.value = !isStatusShown.value;
+};
+
+const updateStatus = async (data: any) => {
+  const response = await orderStore.updateOrderStatus(customerId.value, data);
+  if (response.status === 200) {
+    isStatusShown.value = false;
+  }
+};
 </script>
