@@ -142,7 +142,7 @@ const Login = async (event) => {
   if (response.status === 200) {
     authStore.isLogined = true;
   } else {
-    console.log(response);
+    console.log('error');
   }
 };
 </script>

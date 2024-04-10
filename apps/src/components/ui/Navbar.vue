@@ -102,7 +102,7 @@
       </div>
     </div>
     <div class="flex items-center gap-5">
-      <div class="cursor-pointer relative" @click="showCart">
+      <div class="cursor-pointer relative" @click="showCart" v-if="isAccessTokenAvailable">
         <span
           class="absolute top-[-10px] right-[10px] bg-amber-500 text-white rounded-full w-5 h-5 flex justify-center items-center"
           >{{ cartLength || 0 }}</span
@@ -233,8 +233,6 @@ onMounted(() => {
   authStore.getSingleCustomerData();
   cartStore.getCart();
 });
-
-console.log(router.currentRoute.value);
 
 const Login = () => {
   authStore.isLogined = true;

@@ -6,7 +6,7 @@
   <div class="w-full max-w-xl bg-white shadow-lg fixed top-0 right-0 z-[999999] ml-auto h-screen">
     <div class="overflow-auto p-6 h-[calc(100vh-135px)]">
       <div class="flex items-center gap-4 text-gray-800">
-        <h3 class="text-2xl font-bold flex-1">Shopping cart({{ cartData?.length }})</h3>
+        <h3 class="text-2xl font-bold flex-1">Shopping cart({{ cartData?.length ? cartData?.length : 0 }})</h3>
         <svg
           @click="emit('show-cart')"
           xmlns="http://www.w3.org/2000/svg"
