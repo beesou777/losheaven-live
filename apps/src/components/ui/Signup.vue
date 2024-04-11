@@ -36,7 +36,7 @@
             />
           </div>
           <div class="w-full">
-            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
+            <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
             <input
               type="text"
               name="address"
@@ -84,7 +84,7 @@
               id="email"
               class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="name@gmail.com"
-              required=""
+              required
             />
           </div>
           <div class="w-full relative">
@@ -157,11 +157,11 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { toast } from 'vue3-toastify';
 
 const authStore = useAuthStore();
 const emit = defineEmits(['register-success']);
 const showPassword = ref<boolean>(false);
-
 // variables
 const email = ref<string>('');
 const password = ref<string>('');
@@ -172,6 +172,40 @@ const city = ref<string>('');
 
 const Login = async (event) => {
   event.preventDefault();
+  if (!email.value) {
+    toast.error('Please enter email');
+    return;
+  }
+
+  if (!password.value) {
+    toast.error('Please enter password');
+    return;
+  }
+
+  if (!name.value) {
+    toast.error('Please enter name');
+    return;
+  }
+
+  if (!address.value) {
+    toast.error('Please enter address');
+    return;
+  }
+
+  if (phone.value.length < 10) {
+    toast.error('A phone number must contain at least 10 digits');
+    return;
+  }
+
+  if (!city.value) {
+    toast.error('Please enter city');
+    return;
+  }
+
+  if (password.value.length < 6) {
+    toast.error('Password should be at least 6 characters');
+    return;
+  }
 
   const data = {
     email: email.value,
@@ -182,11 +216,13 @@ const Login = async (event) => {
     city: city.value,
   };
   const response = await authStore.CustomerRegister(data);
-  if (response.status === 200) {
+  if (response?.status === 200) {
     authStore.accessToken = response.data.access;
     authStore.isLogined = true;
+    toast.success('Register Successful!!');
     emit('register-success');
   } else {
+    toast.error('Error occur while registering user');
     console.log('error');
   }
 };

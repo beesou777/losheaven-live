@@ -1,9 +1,9 @@
 <template>
   <div class="font-[sans-serif] bg-gray-50 max-w-[1400px] mx-auto">
     <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 h-full">
-      <div class="bg-[#f6f6f6] lg:h-screen lg:sticky lg:top-0">
+      <div class="bg-[#f6f6f6] lg:h-screen">
         <div class="relative h-full">
-          <div class="p-8 lg:overflow-auto lg:h-[calc(100vh-60px)]">
+          <div class="p-8 lg:overflow-auto lg:h-[calc(100vh-110px)]">
             <h2 class="text-2xl font-bold">Order Summary</h2>
             <div class="space-y-6 mt-10">
               <div class="grid sm:grid-cols-2 items-start" v-for="(item, index) in cartData" :key="index">
@@ -24,12 +24,28 @@
               </div>
             </div>
           </div>
-          <div class="sticky left-0 top-0 bg-[#444] w-full p-4">
-            <h4 class="flex flex-wrap gap-4 text-base text-white">Total <span class="ml-auto">$84.00</span></h4>
+          <div class="sticky bottom-[50px]">
+            <div class="flex items-end">
+              <div class="w-full">
+                <input
+                  type="text"
+                  id="promo_code"
+                  v-model="promo_code"
+                  placeholder="Enter promo code"
+                  class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none"
+                />
+              </div>
+              <div>
+                <button class="bg-gray-200 hover:bg-gray-300 w-full px-4 py-3.5 rounded-[4px]">Apply</button>
+              </div>
+            </div>
+            <div class="bg-amber-500 hover:bg-amber-600 w-full p-4">
+              <h4 class="flex flex-wrap gap-4 text-base text-white">Total <span class="ml-auto"></span></h4>
+            </div>
           </div>
         </div>
       </div>
-      <div class="xl:col-span-2 h-max rounded-md p-8 sticky top-0">
+      <div class="xl:col-span-2 h-max rounded-md p-8">
         <h2 class="text-2xl font-bold text-[#333]">Complete your order</h2>
         <form class="mt-10">
           <div>

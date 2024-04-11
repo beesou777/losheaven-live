@@ -7,23 +7,9 @@ export const useAuthStore = defineStore('auth', {
     SingleCustomerData: null,
     isLogined: false,
     accessToken: null,
+    error: null,
   }),
   actions: {
-    async Login(data: any) {
-      try {
-        const cookie = useCookie('access');
-        const response = await axios.post('/user/login', {
-          email: data.email,
-          password: data.password,
-        });
-        if (cookie && (cookie.value === undefined || cookie.value === null)) {
-          cookie.value = response.data.access;
-        }
-        return response.data;
-      } catch (error) {
-        console.log(error);
-      }
-    },
     async CustomerLogin(data: any) {
       try {
         const cookie = useCookie('customer-access');
@@ -36,6 +22,7 @@ export const useAuthStore = defineStore('auth', {
         }
         return response;
       } catch (error) {
+        this.error = error.response?.data?.message;
         console.log(error);
       }
     },
@@ -58,10 +45,10 @@ export const useAuthStore = defineStore('auth', {
           return res;
         }
       } catch (error) {
+        this.error = error.response?.data?.message;
         console.log(error);
       }
     },
-    async getCustomerData() {},
     async getSingleCustomerData() {
       try {
         const response = await axios.get(`/customer/getCustomerDetails/`, {
@@ -71,6 +58,7 @@ export const useAuthStore = defineStore('auth', {
         });
         this.SingleCustomerData = response.data;
       } catch (error) {
+        this.error = error.response?.data?.message;
         console.log(error);
       }
     },
@@ -91,7 +79,6 @@ export const useAuthStore = defineStore('auth', {
       );
       this.getSingleCustomerData();
     },
-
     Logout() {
       try {
         const access = useCookie('access');
@@ -100,6 +87,7 @@ export const useAuthStore = defineStore('auth', {
         refresh.value = null;
       } catch (error: any) {
         if (error) {
+          this.error = error.response?.data?.message;
           throw new Error('Error while logging out user');
         }
       }

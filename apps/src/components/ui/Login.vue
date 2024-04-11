@@ -123,7 +123,7 @@
 </template>
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-
+import { toast } from 'vue3-toastify';
 const props = defineProps({
   isLoginShown: Boolean,
 });
@@ -149,11 +149,12 @@ const Login = async (event: any) => {
     password: password.value,
   };
   const response = await authStore.CustomerLogin(data);
-  if (response.status === 200) {
+  if (response?.status === 200) {
     authStore.accessToken = response.data.access;
+    toast.success('Login Successful!!');
     emit('login-success');
   } else {
-    console.log('error');
+    toast.error('Invalid user details');
   }
 };
 

@@ -9,6 +9,5 @@
 
 export * from './defaults';
 
-export * from './useBreakpoints';
 export * from './useCsrfToken';
 export * from './usePageTitle';

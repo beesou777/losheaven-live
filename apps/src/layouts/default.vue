@@ -1,30 +1,9 @@
 <template>
-  <div class="w-full" v-if="!isDashboard">
+  <div class="w-full">
     <ui-navbar />
     <main class="min-h-[100dvh] bg-[#FCFBF4]">
       <slot></slot>
     </main>
     <ui-footer />
   </div>
-  <div v-else-if="!isLogin">
-    <dashboard-navbar />
-    <main class="bg-gray-50 min-h-[100dvh] ps-[250px] pe-[100px]">
-      <slot></slot>
-    </main>
-  </div>
 </template>
-
-<script setup lang="ts">
-import { useRouter } from 'nuxt/app';
-import { computed } from 'vue';
-
-const router = useRouter();
-
-const isDashboard = computed(() => {
-  return router.currentRoute.value.path.startsWith('/dashboard');
-});
-
-const isLogin = computed(() => {
-  return router.currentRoute.value.path.startsWith('/dashboard/login');
-});
-</script>

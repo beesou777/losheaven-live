@@ -145,7 +145,7 @@
           </button>
         </div>
         <button
-          @click="addTOCart"
+          @click="addToCart"
           class="w-full text-white bg-amber-500 border-0 py-4 px-6 focus:outline-none hover:bg-amber-600 rounded"
         >
           Add To Cart
@@ -159,6 +159,7 @@
 import { useRouter } from 'nuxt/app';
 import { computed, onMounted, ref } from 'vue';
 import { useAuthStore } from '../../composables/store/auth.store';
+import { toast } from 'vue3-toastify';
 
 const quantity = ref<number>(1);
 const size = ref<string>('L');
@@ -185,9 +186,10 @@ const decreaseQuantity = () => {
   }
 };
 
-const addTOCart = async () => {
+const addToCart = async () => {
   const cookie = useCookie('customer-access').value;
   if (!cookie) {
+    toast.error('Please Login to add product to cart');
     authStore.isLogined = true;
     return;
   }
@@ -198,6 +200,7 @@ const addTOCart = async () => {
   };
   const response = await cartStore.addToCart(data);
   if (response.status === 200) {
+    toast.success('Product added to cart');
     cartStore.showCart = true;
   }
 };

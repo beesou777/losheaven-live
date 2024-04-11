@@ -216,6 +216,7 @@
 import { onMounted, ref, watch, computed } from 'vue';
 import { useCookie, useRouter } from 'nuxt/app';
 import { useAuthStore } from '../../composables/store/auth.store';
+import { toast } from 'vue3-toastify';
 
 const cartStore = useCartStore();
 const authStore = useAuthStore();
@@ -246,6 +247,7 @@ const isAccessTokenAvailable = computed(() => {
 const Logout = () => {
   useCookie('customer-access').value = null;
   authStore.accessToken = null;
+  toast.success('Logout successfully!!');
   router.push('/');
 };
 

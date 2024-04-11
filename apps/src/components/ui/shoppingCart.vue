@@ -112,6 +112,7 @@
 <script setup lang="ts">
 import { useRouter } from 'nuxt/app';
 import { computed, onMounted, ref } from 'vue';
+import { toast } from 'vue3-toastify';
 
 const cartStore = useCartStore();
 const router = useRouter();
@@ -130,6 +131,9 @@ const deleteCartData = async (item: number) => {
   if (item) {
     await cartStore.deleteCart(item);
     cartData.value.splice(item, 1);
+    toast.success('Item deleted successfully');
+  } else {
+    toast.error('Something went wrong');
   }
 };
 
