@@ -1,13 +1,12 @@
 <template>
   <div class="w-full flex justify-center py-1 bg-white">
-    <div class="p-2 md:p-4">
+    <div class="p-2 md:p-4" v-if="userData">
       <div class="w-full px-6 pb-8 mt-8 sm:max-w-xl sm:rounded-lg">
         <h2 class="pl-6 text-2xl font-bold sm:text-xl">Hello {{ authStore.SingleCustomerData?.name }}</h2>
-
         <div class="grid max-w-2xl mx-auto mt-8">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-              Sign up to your account
+              Change your details
             </h1>
             <form class="space-y-4 md:space-y-6" action="#">
               <div class="flex items-center gap-[10px]">
@@ -16,7 +15,7 @@
                   <input
                     type="text"
                     name="name"
-                    v-model="name"
+                    v-model="userData.name"
                     id="name"
                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="losheaven"
@@ -30,7 +29,7 @@
                   <input
                     type="text"
                     name="address"
-                    v-model="address"
+                    v-model="userData.address"
                     id="address"
                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="address"
@@ -43,7 +42,7 @@
                   <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">phone</label>
                   <input
                     type="number"
-                    v-model="phone"
+                    v-model="userData.phone"
                     name="phone"
                     id="phone"
                     placeholder="your number"
@@ -55,7 +54,7 @@
                   <label for="city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">City</label>
                   <input
                     type="text"
-                    v-model="city"
+                    v-model="userData.city"
                     name="city"
                     id="city"
                     placeholder="your city"
@@ -72,7 +71,7 @@
                   <input
                     type="email"
                     name="email"
-                    v-model="email"
+                    v-model="userData.email"
                     disabled
                     id="email"
                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -84,7 +83,7 @@
               <button
                 type="submit"
                 @click="Login"
-                class="w-full text-gray-900 text-[18px] lh-primary hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center dark:lh-primary dark:hover:bg-yellow-600 dark:focus:ring-primary-800"
+                class="w-full text-white text-[18px] lh-primary focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center dark:lh-primary dark:focus:ring-primary-800"
               >
                 Update details
               </button>
@@ -98,7 +97,7 @@
 
 <script setup lang="ts">
 import { useRouter } from 'nuxt/app';
-import { ref, onMounted, watchEffect } from 'vue';
+import { ref, onMounted, watchEffect, computed } from 'vue';
 import { useAuthStore } from '../../composables/store/auth.store';
 
 const router = useRouter();
@@ -110,32 +109,24 @@ useHead({
 });
 
 // variables
-const email = ref<string>('');
-const password = ref<string>('');
-const name = ref<string>('');
-const address = ref<string>('');
-const phone = ref<string>('');
-const city = ref<string>('');
 
 onMounted(async () => {
   if (authStore.SingleCustomerData) {
-    email.value = authStore.SingleCustomerData.email;
-    name.value = authStore.SingleCustomerData.name;
-    address.value = authStore.SingleCustomerData.address;
-    phone.value = authStore.SingleCustomerData.phone;
-    city.value = authStore.SingleCustomerData.city;
-  } else {
     authStore.getSingleCustomerData();
   }
+});
+
+const userData = computed(() => {
+  return authStore?.SingleCustomerData;
 });
 
 const Login = async (event) => {
   event.preventDefault();
   const data = {
-    name: name.value,
-    address: address.value,
-    phone: phone.value,
-    city: city.value,
+    name: userData.value.name,
+    address: userData.value.address,
+    phone: userData.value.phone,
+    city: userData.value.city,
   };
   await authStore.updateCustomerData(data);
 };

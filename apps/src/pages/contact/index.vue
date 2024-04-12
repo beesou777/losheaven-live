@@ -160,6 +160,8 @@
 <script setup lang="ts">
 import axios from 'axios';
 import { ref } from 'vue';
+import { toast } from 'vue3-toastify';
+import { useOrderStore } from '../../composables/store/order.store';
 
 const subject = ref('');
 const email = ref('');
@@ -167,20 +169,21 @@ const message = ref('');
 const success = ref(false);
 const error = ref(false);
 
+const orderStore = useOrderStore();
+
 const handleSubmit = async () => {
   try {
-    const response = await axios.post('/api/contact/contact-us', {
+    const data = {
       email: email.value,
       subject: subject.value,
-      html: message.value,
-    });
+      message: message.value,
+    };
+    const response = await orderStore.contactUs(data);
     if (response.status === 200) {
-      success.value = true;
-      error.value = false;
+      toast.success('Message sent successfully');
     }
   } catch (e) {
-    error.value = true;
-    success.value = false;
+    toast.error('Something went wrong');
   }
 };
 </script>

@@ -39,7 +39,7 @@
                 <button class="bg-gray-200 hover:bg-gray-300 w-full px-4 py-3.5 rounded-[4px]">Apply</button>
               </div>
             </div>
-            <div class="lh-primary hover:bg-amber-600 w-full p-4">
+            <div class="lh-primary w-full p-4">
               <h4 class="flex flex-wrap gap-4 text-base text-white">Total <span class="ml-auto"></span></h4>
             </div>
           </div>

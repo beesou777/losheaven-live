@@ -146,7 +146,7 @@
         <button
           type="submit"
           @click="Login"
-          class="w-full text-gray-900 text-[18px] lh-primary hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center dark:lh-primary dark:hover:bg-yellow-600 dark:focus:ring-primary-800"
+          class="w-full text-gray-900 text-[18px] lh-primary focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center dark:lh-primary dark:focus:ring-primary-800"
         >
           Sign up
         </button>

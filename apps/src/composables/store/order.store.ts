@@ -62,5 +62,17 @@ export const useOrderStore = defineStore('order', {
         console.log(error);
       }
     },
+    async contactUs(data: any) {
+      try {
+        const response = await axios.post('/contact/contact-us', {
+          email: data.email,
+          subject: data.subject,
+          html: data.message,
+        });
+        return response;
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
 });
