@@ -1,0 +1,22 @@
+.lh-primary {
+  background-color: #274c5b !important;
+  &:hover {
+    background-color: rgba(39, 76, 91, 0.9) !important;
+  }
+}
+
+.lh-color {
+  color: #274c5b !important;
+  &:hover {
+    color: rgba(39, 76, 91, 0.9) !important;
+  }
+}
+
+.lh-border {
+  border-color: #274c5b !important;
+}
+
+::selection {
+  background-color: #274c5b;
+  color: white;
+}

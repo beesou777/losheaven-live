@@ -39,7 +39,7 @@
                 <button class="bg-gray-200 hover:bg-gray-300 w-full px-4 py-3.5 rounded-[4px]">Apply</button>
               </div>
             </div>
-            <div class="bg-amber-500 hover:bg-amber-600 w-full p-4">
+            <div class="lh-primary hover:bg-amber-600 w-full p-4">
               <h4 class="flex flex-wrap gap-4 text-base text-white">Total <span class="ml-auto"></span></h4>
             </div>
           </div>
@@ -149,7 +149,7 @@
               <button
                 @click="checkout"
                 type="button"
-                class="rounded-md px-6 py-3 w-full text-sm font-semibold bg-amber-500 text-white hover:bg-amber-600"
+                class="rounded-md px-6 py-3 w-full text-sm font-semibold lh-primary text-white hover:bg-amber-600"
               >
                 Complete Purchase
               </button>

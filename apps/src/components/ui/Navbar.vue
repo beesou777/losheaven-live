@@ -8,15 +8,15 @@
       <div class="items">
         <ul class="hidden md:flex">
           <li
-            class="text-[#282828] p-[8px_12px] font-bold"
-            :class="{ 'text-yellow-500': router.currentRoute.value.name === 'index' }"
+            class="text-[#282828] p-[8px_12px]"
+            :class="{ 'lh-color font-bold': router.currentRoute.value.name === 'index' }"
           >
             <NuxtLink to="/" class="text-[18px]">Home</NuxtLink>
           </li>
           <li
-            class="text-[#282828] p-[8px_12px] font-bold"
+            class="text-[#282828] p-[8px_12px]"
             :class="{
-              'text-yellow-500':
+              'lh-color font-bold':
                 router.currentRoute.value.name === 'product' || router.currentRoute.value.name === 'product-slug',
             }"
           >
@@ -26,16 +26,16 @@
           <li class="text-[#282828] p-[8px_12px]">
             <NuxtLink
               to="/about-us"
-              class="text-[18px] font-bold"
-              :class="{ 'text-yellow-500': router.currentRoute.value.name === 'about-us' }"
+              class="text-[18px]"
+              :class="{ 'lh-color font-bold': router.currentRoute.value.name === 'about-us' }"
               >About us</NuxtLink
             >
           </li>
           <li class="text-[#282828] p-[8px_12px]">
             <NuxtLink
               to="/contact"
-              class="text-[18px] font-bold"
-              :class="{ 'text-yellow-500': router.currentRoute.value.name === 'contact' }"
+              class="text-[18px]"
+              :class="{ 'lh-color font-bold': router.currentRoute.value.name === 'contact' }"
               >Contact us</NuxtLink
             >
           </li>
@@ -67,7 +67,7 @@
             <li
               @click="isToggle = !isToggle"
               class="p-[8px_12px]"
-              :class="{ 'text-amber-500': router.currentRoute.value.name === 'index' }"
+              :class="{ 'lh-color': router.currentRoute.value.name === 'index' }"
             >
               <NuxtLink to="/">Home</NuxtLink>
             </li>
@@ -76,7 +76,7 @@
               @click="isToggle = !isToggle"
               class="text-[#282828] p-[8px_12px]"
               :class="{
-                'text-amber-500':
+                'lh-color':
                   router.currentRoute.value.name === 'product' || router.currentRoute.value.name === 'product-slug',
               }"
             >
@@ -85,14 +85,14 @@
             <li
               @click="isToggle = !isToggle"
               class="text-[#282828] p-[8px_12px]"
-              :class="{ 'text-amber-500': router.currentRoute.value.name === 'about-us' }"
+              :class="{ 'lh-color': router.currentRoute.value.name === 'about-us' }"
             >
               <NuxtLink to="/about-us">About us</NuxtLink>
             </li>
             <li
               @click="isToggle = !isToggle"
               class="text-[#282828] p-[8px_12px]"
-              :class="{ 'text-amber-500': router.currentRoute.value.name === 'contact' }"
+              :class="{ 'lh-color': router.currentRoute.value.name === 'contact' }"
             >
               <NuxtLink to="/contact">Contact us</NuxtLink>
             </li>
@@ -104,7 +104,7 @@
     <div class="flex items-center gap-5">
       <div class="cursor-pointer relative" @click="showCart" v-if="isAccessTokenAvailable">
         <span
-          class="absolute top-[-10px] right-[10px] bg-amber-500 text-white rounded-full w-5 h-5 flex justify-center items-center"
+          class="absolute top-[-10px] right-[10px] lh-primary text-white rounded-full w-5 h-5 flex justify-center items-center"
           >{{ cartLength || 0 }}</span
         >
         <svg

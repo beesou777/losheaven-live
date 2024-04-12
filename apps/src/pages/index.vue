@@ -1,32 +1,19 @@
 <template>
   <section class="text-center lg:text-left overflow-hidden">
-    <div class="text-center lg:text-left md:px-10 px-5 py-8 md:py-16 lg:px-8">
-      <div class="grid md:grid-cols-6 items-center md:gap-4 gap-8 font-[sans-serif] text-[#333]">
-        <div class="col-span-3 max-md:order-1 max-md:text-center">
-          <h1 class="md:text-4xl text-2xl font-bold">Dressing is the canvas where joy and art merge seamlessly.</h1>
-          <p class="mt-4 text-sm">
-            Secure your spot now! Pre-order to be the first in line for exclusive access and early delivery.
-          </p>
-          <NuxtLink to="#order">
-            <button
-              type="button"
-              class="px-6 py-2 mt-8 font-semibold rounded text-sm outline-none border-2 border-amber-500 hover:bg-amber-500 hover:text-white transition-all duration-300"
-            >
-              Explore
-            </button>
-          </NuxtLink>
-        </div>
-        <div class="h-full w-full max-w-[600px] col-span-3 ml-auto">
-          <img
-            src="https://img.fantaskycdn.com/4be0935ceda5a8576cab3163bba6f042_1080x.jpeg"
-            class="w-full h-full md:object-contain object-cover"
-          />
-        </div>
-      </div>
+    <div class="relative h-[90vh]">
+      <video
+        src="./comming.mp4"
+        muted
+        autoplay
+        loop
+        class="w-full h-full max-h-[90vh] min-h-[80vh] min-w-[100%] object-cover object-center"
+      ></video>
+      <div class="absolute top-0 left-0 w-full h-full bg-black opacity-[40%]"></div>
+      <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
     </div>
     <div id="order">
       <div class="md:px-10 px-5 py-8 md:py-16 sm:py-24 lg:px-8">
-        <h2 class="text-[18px] md:text-[28px] font-bold text-center text-gray-600">Our Products</h2>
+        <h2 class="text-[18px] md:text-[28px] font-bold text-center text-gray-600">Our Samples</h2>
         <div class="mt-6 grid grid-cols-12 sm:grid-cols-2 lg:grid-cols-4">
           <div class="col-span-12 md:col-span-6 flex items-center flex-col sm:flex-row">
             <NuxtLink

@@ -66,6 +66,11 @@ export default defineNuxtConfig({
       logoUrl: (process.env.API_URL ?? 'http://localhost:3000') + '/images/logo.png',
       useWebp: process.env?.USE_WEBP === '1' ?? false,
     },
+    MAILHOST: process.env.MAILHOST,
+    MAILPORT: process.env.MAILPORT,
+    MAILUSER: process.env.MAILUSER,
+    MAILPASSWORD: process.env.MAILPASSWORD,
+    CONTACTMAIL: process.env.CONTACTMAIL,
   },
   pwa: {
     registerType: 'autoUpdate',
@@ -94,23 +99,23 @@ export default defineNuxtConfig({
       cleanupOutdatedCaches: true,
     },
     manifest: {
-      name: 'Nuxt Tailwind CSS',
-      short_name: 'NuxtPWA',
-      theme_color: '#018937',
+      name: 'losheaven',
+      short_name: 'lh',
+      theme_color: '#274C5B',
       icons: [
-        {
-          src: 'icons/icon-180x180.png',
-          sizes: '180x180',
-          type: 'image/png',
-        },
         {
           src: 'icons/icon-150x150.png',
           sizes: '150x150',
           type: 'image/png',
         },
         {
-          src: 'icons/icon-310x310.maskable.png',
-          sizes: '310x310',
+          src: 'icons/favicon-32x32.png',
+          sizes: '32x32',
+          type: 'image/png',
+        },
+        {
+          src: 'icons/favicon-16x16.png',
+          sizes: '16x16',
           type: 'image/png',
           purpose: 'maskable',
         },

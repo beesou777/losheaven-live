@@ -146,7 +146,7 @@
         </div>
         <button
           @click="addToCart"
-          class="w-full text-white bg-amber-500 border-0 py-4 px-6 focus:outline-none hover:bg-amber-600 rounded"
+          class="w-full text-white lh-primary border-0 py-4 px-6 focus:outline-none hover:bg-amber-600 rounded"
         >
           Add To Cart
         </button>

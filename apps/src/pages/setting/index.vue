@@ -84,7 +84,7 @@
               <button
                 type="submit"
                 @click="Login"
-                class="w-full text-gray-900 text-[18px] bg-amber-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center dark:bg-amber-500 dark:hover:bg-yellow-600 dark:focus:ring-primary-800"
+                class="w-full text-gray-900 text-[18px] lh-primary hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center dark:lh-primary dark:hover:bg-yellow-600 dark:focus:ring-primary-800"
               >
                 Update details
               </button>

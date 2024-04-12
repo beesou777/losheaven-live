@@ -102,7 +102,7 @@
         @click="checkoutRoute"
         :disabled="cartData?.length === 0"
         type="button"
-        class="mt-6 text-md px-6 py-2.5 w-full bg-amber-500 hover:bg-amber-600 text-white rounded"
+        class="mt-6 text-md px-6 py-2.5 w-full lh-primary hover:bg-amber-600 text-white rounded"
       >
         Check out
       </button>
