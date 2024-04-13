@@ -173,6 +173,10 @@ const orderStore = useOrderStore();
 
 const handleSubmit = async () => {
   try {
+    if (!subject.value || !email.value || !message.value) {
+      toast.error('Please fill all the fields');
+      return;
+    }
     const data = {
       email: email.value,
       subject: subject.value,
