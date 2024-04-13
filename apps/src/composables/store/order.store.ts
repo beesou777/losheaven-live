@@ -10,32 +10,6 @@ export const useOrderStore = defineStore('order', {
     orderFeature: null,
   }),
   actions: {
-    async createOrder(data: any) {
-      try {
-        const response = await axios.post(
-          'order/create-order',
-          {
-            shipping_details: {
-              name: data.name,
-              email: data.email,
-              phone: data.phone,
-              address: data.address,
-              city: data.city,
-              mop: data.mop,
-            },
-            orderItems: data.product,
-          },
-          {
-            headers: {
-              Authorization: `Bearer ${useCookie('customer-access').value}`,
-            },
-          },
-        );
-        return response;
-      } catch (error) {
-        console.log(error);
-      }
-    },
     async createCustomerOrder(data: any) {
       try {
         const response = await axios.post(
@@ -50,6 +24,10 @@ export const useOrderStore = defineStore('order', {
               mop: data.mop,
             },
             orderItems: data.product,
+            redeem_code_price: data.redeem_code_price,
+            orderTotalPrice: data.orderTotalPrice,
+            discount_amount: data.discount_amount,
+            usedCoupon: data.usedCoupon,
           },
           {
             headers: {

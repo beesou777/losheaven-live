@@ -15,8 +15,9 @@ export const useCartStore = defineStore('cart', {
           'cart/create-cart',
           {
             quantity: data.quantity,
-            product: data.product,
+            productId: data.product,
             size: data.size,
+            color: data.color,
           },
           {
             headers: {
@@ -39,7 +40,7 @@ export const useCartStore = defineStore('cart', {
             Authorization: `Bearer ${useCookie('customer-access').value}`,
           },
         });
-        this.cartData = response.data;
+        this.cartData = response.data[0];
       } catch (error) {
         console.log(error);
       } finally {
@@ -95,6 +96,40 @@ export const useCartStore = defineStore('cart', {
         console.log(error);
       } finally {
         this.isLoading = false;
+      }
+    },
+    async redeemCoupon(data: any) {
+      try {
+        const response = await axios.post(
+          `/coupon/redeem-coupon?coupon_name=${data.coupon_name}&cart_id=${data.cart_id}`,
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${useCookie('customer-cookie').value}`,
+            },
+          },
+        );
+        this.getCart();
+        return response;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async removeCounpon(data: any) {
+      try {
+        const response = await axios.post(
+          `/coupon/remove-coupon-code?coupon_name=${data.coupon_name}&cart_id=${data.cart_id}`,
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${useCookie('customer-access').value}`,
+            },
+          },
+        );
+        this.getCart();
+        return response;
+      } catch (error) {
+        console.log(error);
       }
     },
   },

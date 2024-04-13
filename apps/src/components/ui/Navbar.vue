@@ -67,7 +67,7 @@
             <li
               @click="isToggle = !isToggle"
               class="p-[8px_12px]"
-              :class="{ 'lh-color': router.currentRoute.value.name === 'index' }"
+              :class="{ 'lh-color font-bold': router.currentRoute.value.name === 'index' }"
             >
               <NuxtLink to="/">Home</NuxtLink>
             </li>
@@ -76,7 +76,7 @@
               @click="isToggle = !isToggle"
               class="text-[#282828] p-[8px_12px]"
               :class="{
-                'lh-color':
+                'lh-color font-bold':
                   router.currentRoute.value.name === 'product' || router.currentRoute.value.name === 'product-slug',
               }"
             >
@@ -85,14 +85,14 @@
             <li
               @click="isToggle = !isToggle"
               class="text-[#282828] p-[8px_12px]"
-              :class="{ 'lh-color': router.currentRoute.value.name === 'about-us' }"
+              :class="{ 'lh-color font-bold': router.currentRoute.value.name === 'about-us' }"
             >
               <NuxtLink to="/about-us">About us</NuxtLink>
             </li>
             <li
               @click="isToggle = !isToggle"
               class="text-[#282828] p-[8px_12px]"
-              :class="{ 'lh-color': router.currentRoute.value.name === 'contact' }"
+              :class="{ 'lh-color font-bold': router.currentRoute.value.name === 'contact' }"
             >
               <NuxtLink to="/contact">Contact us</NuxtLink>
             </li>
@@ -237,7 +237,7 @@ const Login = () => {
 };
 
 const cartLength = computed(() => {
-  return cartStore.cartData?.length;
+  return cartStore.cartData?.cartData?.length;
 });
 
 const isAccessTokenAvailable = computed(() => {

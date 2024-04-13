@@ -21,10 +21,7 @@
       <h2 class="text-sm title-font text-gray-500 tracking-widest">{{ getProduct?.category }}</h2>
       <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ getProduct?.name }}</h1>
       <div class="flex mb-4 items-center">
-        <span class="title-font font-medium text-2xl text-gray-900"
-          >NRS{{ getProduct?.price - getProduct?.discounted_price }}</span
-        >
-        <span class="title-font font-medium text-2xl line-through text-yellow-500">NRS{{ getProduct?.price }}</span>
+        <span class="title-font font-medium text-2xl text-gray-900">NRS{{ getProduct?.price }}</span>
         <span class="flex py-2 ml-3 pl-3 border-l border-gray-500">
           <a class="text-gray-500">
             <svg
@@ -100,53 +97,16 @@
           </div>
         </div>
       </div>
-      <div class="flex gap-3 flex-col">
-        <div class="flex items-center">
-          <button
-            @click="increaseQuantity"
-            class="border border-black h-12 text-gray-500 focus:outline-none focus:text-gray-600 w-full"
-          >
-            <div class="flex justify-center">
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                  ></path>
-                </svg>
-              </div>
-            </div></button
-          ><span class="text-2xl mx-2">{{ quantity }}</span
-          ><button
-            @click="decreaseQuantity"
-            class="border border-black w-full h-12 text-gray-500 focus:outline-none focus:text-gray-600"
-          >
-            <div class="flex justify-center">
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path>
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
+      <div class="flex gap-3">
+        <NuxtLink
+          to="/checkout"
+          class="w-full text-center cursor-pointer text-white lh-primary border-0 py-4 px-6 focus:outline-none rounded"
+        >
+          Buy Now
+        </NuxtLink>
         <button
           @click="addToCart"
-          class="w-full text-white lh-primary border-0 py-4 px-6 focus:outline-none hover:bg-amber-600 rounded"
+          class="w-full text-[#333] border border-1 py-4 px-6 focus:outline-none hover:bg-[#f6f6f6] ease-in duration-300 rounded"
         >
           Add To Cart
         </button>
@@ -197,6 +157,10 @@ const addToCart = async () => {
     product: getProduct.value._id,
     quantity: quantity.value,
     size: size.value,
+    color: {
+      color_code: null,
+      color_name: null,
+    },
   };
   const response = await cartStore.addToCart(data);
   if (response.status === 200) {

@@ -1,7 +1,7 @@
 <template>
   <div class="font-[sans-serif] bg-gray-50 max-w-[1400px] mx-auto">
     <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 h-full">
-      <div class="bg-[#f6f6f6] lg:h-screen">
+      <div class="bg-[#f6f6f6]">
         <div class="relative h-full">
           <div class="p-8 lg:overflow-auto lg:h-[calc(100vh-110px)]">
             <h2 class="text-2xl font-bold">Order Summary</h2>
@@ -17,6 +17,9 @@
                       Quantity <span class="ml-auto">{{ item.quantity }}</span>
                     </li>
                     <li class="flex flex-wrap gap-4">
+                      Size <span class="ml-auto">{{ item.size }}</span>
+                    </li>
+                    <li class="flex flex-wrap gap-4">
                       Total Price <span class="ml-auto">NRS {{ item?.product?.price }}</span>
                     </li>
                   </ul>
@@ -24,23 +27,46 @@
               </div>
             </div>
           </div>
-          <div class="sticky bottom-[50px]">
+          <div class="sticky bottom-[0]">
             <div class="flex items-end">
               <div class="w-full">
                 <input
                   type="text"
                   id="promo_code"
+                  :disabled="!cartStore.cartData?.isCodeRedeemed"
+                  :class="{
+                    '!bg-gray-300 border border-gray-300 cursor-not-allowed': !cartStore.cartData?.isCodeRedeemed,
+                  }"
                   v-model="promo_code"
                   placeholder="Enter promo code"
-                  class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none"
+                  class="px-4 py-[12px] text-[16px] bg-white text-[#333] w-full border-b-2 focus:border-[#333] outline-none"
                 />
               </div>
               <div>
-                <button class="bg-gray-200 hover:bg-gray-300 w-full px-4 py-3.5 rounded-[4px]">Apply</button>
+                <button
+                  @click="redeemCode"
+                  :class="{ 'bg-red-600 hover:bg-red-500': !cartStore.cartData?.isCodeRedeemed }"
+                  class="bg-gray-200 hover:bg-gray-300 w-full px-4 py-3.5 rounded-[4px]"
+                >
+                  {{ cartStore.cartData?.isCodeRedeemed ? 'Redeem' : 'Remove' }}
+                </button>
               </div>
             </div>
-            <div class="lh-primary w-full p-4">
-              <h4 class="flex flex-wrap gap-4 text-base text-white">Total <span class="ml-auto"></span></h4>
+            <div class="flex items-center justify-between">
+              <div class="lh-primary w-full p-4">
+                <p class="text-sm text-white">Subtotal</p>
+                <p class="text-sm text-white">Discount</p>
+                <p class="text-sm text-white">Shipping</p>
+                <p class="text-lg font-bold text-white">Total</p>
+              </div>
+              <div class="lh-primary w-full p-4">
+                <p class="text-sm text-white">NRS {{ total }}</p>
+                <p class="text-sm text-white">NRS {{ cartStore?.cartData?.redeem_code_price }}</p>
+                <p class="text-sm text-white">NRS 100</p>
+                <p class="text-lg font-bold text-white">
+                  NRS {{ total + 100 - cartStore?.cartData?.redeem_code_price }}
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -163,6 +189,7 @@
 <script setup lang="ts">
 import { useRouter } from 'nuxt/app';
 import { computed, onMounted, ref } from 'vue';
+import { toast } from 'vue3-toastify';
 import { useAuthStore } from '../../composables/store/auth.store';
 import { useOrderStore } from '../../composables/store/order.store';
 
@@ -176,6 +203,7 @@ const address = ref('');
 const phone = ref('');
 const city = ref('');
 const method_of_payment = ref('');
+const promo_code = ref('');
 const emit = defineEmits(['show-cart']);
 
 onMounted(async () => {
@@ -186,35 +214,20 @@ onMounted(async () => {
     address.value = authStore.SingleCustomerData.address;
     phone.value = authStore.SingleCustomerData.phone;
     city.value = authStore.SingleCustomerData.city;
+    promo_code.value = cartStore.cartData?.usedCoupon;
   }
 });
 
 const cartData = computed(() => {
-  return cartStore?.cartData;
+  return cartStore?.cartData?.cartData;
 });
+
+// :disabled="!cartStore.cartData?.isCodeRedeemed"
 
 const deleteCartData = async (item: number) => {
   if (item) {
     await cartStore.deleteCart(item);
     cartData.value.splice(item, 1);
-  }
-};
-
-const increment = async (quantity: number, id: number) => {
-  quantity++;
-  const response = await cartStore.updateCart(quantity, id);
-  if (response.status === 200) {
-    await cartStore.getCart();
-  }
-};
-
-const decrement = async (quantity: number, id: number) => {
-  if (quantity > 1) {
-    quantity--;
-    const response = await cartStore.updateCart(quantity, id);
-    if (response.status === 200) {
-      await cartStore.getCart();
-    }
   }
 };
 
@@ -235,15 +248,49 @@ const checkout = async () => {
     address: address.value,
     phone: phone.value,
     city: city.value,
-    mop: method_of_payment.value,
-    product: cartData.value,
+    mop: method_of_payment.value, // mop
+    product: cartData.value, // order items ko data
+    redeem_code_price: cartStore.cartData?.redeem_code_price,
+    orderTotalPrice: total.value - cartStore.cartData?.redeem_code_price + 100,
+    discount_amount: 100,
+    usedCoupon: promo_code.value,
   };
   const response = await orderStore.createCustomerOrder(data);
-  if (response.status === 200) {
+  if (response?.status === 200) {
     const response = await cartStore.deleteAllCart();
     if (response.status === 200) {
+      toast.success('Order placed successfully');
       cartStore.cartData = null;
       router.push('/');
+    }
+  } else {
+    toast.error('Something went wrong');
+  }
+};
+
+const redeemCode = async () => {
+  if (cartStore.cartData?.isCodeRedeemed) {
+    const data = {
+      coupon_name: promo_code.value.toUpperCase(),
+      cart_id: cartStore.cartData._id,
+    };
+    const response = await cartStore.redeemCoupon(data);
+    if (response.status === 200) {
+      toast.success('Code redeemed successfully');
+    } else {
+      toast.error('Something went wrong');
+    }
+  } else {
+    const data = {
+      coupon_name: promo_code.value.toUpperCase(),
+      cart_id: cartStore.cartData._id,
+    };
+    const response = await cartStore.removeCounpon(data);
+    if (response.status === 200) {
+      toast.success('Code removed successfully');
+      promo_code.value = '';
+    } else {
+      toast.error('Something went wrong');
     }
   }
 };

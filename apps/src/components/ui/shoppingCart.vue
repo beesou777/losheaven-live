@@ -27,14 +27,17 @@
         <div class="flex items-start justify-between gap-4 py-8">
           <div class="flex gap-6">
             <div class="w-full md:max-w-[126px]">
-              <img :src="item?.product?.images[0]" alt="perfume bottle image" class="mx-auto w-full" />
+              <img :src="item?.product?.images[0]" :alt="item?.product?.name" class="mx-auto w-full" />
             </div>
             <div>
               <p class="text-md text-[15px] md:text-[18px] font-bold text-[#333]">
                 {{ item?.product?.name.split(' ').slice(0, 6).join(' ') + '...' }}
               </p>
               <div class="flex items-center justify-between">
-                <p class="text-gray-400 text-xs mt-1">{{ item.quantity }} Item</p>
+                <div>
+                  <p class="text-gray-400 text-xs mt-1">Quantity: {{ item.quantity }}</p>
+                  <p class="text-gray-400 text-xs mt-1">Size: {{ item.size }}</p>
+                </div>
                 <svg
                   @click="deleteCartData(item._id)"
                   xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +127,7 @@ onMounted(async () => {
 });
 
 const cartData = computed(() => {
-  return cartStore?.cartData;
+  return cartStore?.cartData.cartData;
 });
 
 const deleteCartData = async (item: number) => {
@@ -161,7 +164,7 @@ const total = computed(() => {
   }
 
   return cartData.value.reduce((acc, item) => {
-    return acc + item.product.price * item.quantity; // Calculate total amount
+    return acc + item.product?.price * item.quantity; // Calculate total amount
   }, 0);
 });
 
