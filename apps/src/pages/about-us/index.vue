@@ -17,12 +17,12 @@
                 />
               </div>
             </div>
-            <div class="w-full px-3 sm:px-4 xl:w-1/2 md:h-[450px]">
+            <div class="w-full px-3 sm:px-4 xl:w-1/2">
               <div class="relative z-10 my-4 max-h-[500px] h-full">
                 <img
-                  src="https://i.postimg.cc/wTPcHrDP/na.jpg"
+                  src="https://i.postimg.cc/Rh6hVqLr/06549019-020a-4e67-a5cc-a73e69b3d9c4.jpg"
                   alt=""
-                  class="w-full max-w-[340px] rounded-2xl h-full object-cover md:h-[450px]"
+                  class="w-full rounded-2xl h-full object-cover"
                 />
                 <span class="absolute -right-7 -bottom-7 z-[-1]">
                   <svg width="134" height="106" viewBox="0 0 134 106" fill="none" xmlns="http://www.w3.org/2000/svg">
