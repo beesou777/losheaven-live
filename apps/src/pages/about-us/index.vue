@@ -11,7 +11,7 @@
               </div>
               <div class="py-3 sm:py-4">
                 <img
-                  src="https://cdn.tailgrids.com/2.0/image/marketing/images/about/about-01/image-2.jpg"
+                  src="https://i.postimg.cc/T182wMj7/7c06e403-8271-4cf9-968a-87bc805f9456.jpg"
                   alt=""
                   class="w-full rounded-2xl"
                 />
