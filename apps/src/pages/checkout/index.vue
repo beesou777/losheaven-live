@@ -242,6 +242,21 @@ const total = computed(() => {
 });
 
 const checkout = async () => {
+  if (!email.value || !name.value || !address.value || !phone.value || !city.value) {
+    toast.error('Please fill all the required fields');
+    return;
+  }
+
+  if (phone.value.length < 10) {
+    toast.error('A phone number must contain at least 10 digits');
+    return;
+  }
+
+  if (!method_of_payment.value) {
+    toast.error('Please select a method of payment');
+    return;
+  }
+
   const data = {
     email: email.value,
     name: name.value,
