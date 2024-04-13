@@ -1,13 +1,9 @@
 <template>
   <section class="text-center lg:text-left overflow-hidden">
-    <div class="relative h-[90vh]">
-      <video
-        src="./comming.mp4"
-        muted
-        autoplay
-        loop
-        class="w-full h-full max-h-[90vh] min-h-[80vh] min-w-[100%] object-cover object-center"
-      ></video>
+    <div class="relative md:max-h-[90vh] max:height-[50vh] md:h-[90vh] h-[50vh] aspect-w-16 aspect-h-9">
+      <video muted autoplay loop class="absolute inset-0 w-full h-full object-cover">
+        <source src="./comming.mp4" type="video/mp4" />
+      </video>
       <div class="absolute top-0 left-0 w-full h-full bg-black opacity-[40%]"></div>
       <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
     </div>

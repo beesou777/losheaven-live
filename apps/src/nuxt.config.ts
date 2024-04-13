@@ -30,6 +30,7 @@ export default defineNuxtConfig({
   },
   colorMode: {
     classSuffix: '',
+    preference: 'light',
   },
   css: [resolve('./assets/scss/app.scss')],
   modules: [
@@ -98,6 +99,7 @@ export default defineNuxtConfig({
       ],
       cleanupOutdatedCaches: true,
     },
+
     manifest: {
       name: 'losheaven',
       short_name: 'lh',
