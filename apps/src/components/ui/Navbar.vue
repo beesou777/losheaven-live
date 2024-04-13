@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="sticky top-0 z-[20] flex w-full flex-wrap items-center justify-between bg-zinc-50 px-5 md:p-10 py-4 dark:bg-neutral-700 lg:py-4 shadow-[0px_0px_24px_rgba(0,0,0,0.15)]"
+    class="sticky top-0 z-[20] flex w-full flex-wrap items-center justify-between bg-zinc-50 px-5 md:p-10 py-4 lg:py-4 shadow-[0px_0px_24px_rgba(0,0,0,0.15)]"
     id="navbar"
   >
     <div class="flex items-center gap-10">
@@ -162,29 +162,21 @@
         </button>
         <!-- Dropdown menu -->
         <div
-          class="z-50 absolute hidden user-dropdown top-[25px] right-0 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+          class="z-50 absolute hidden user-dropdown top-[25px] right-0 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow"
           id="user-dropdown"
         >
           <div class="px-4 py-3">
-            <span class="block text-sm text-gray-900 dark:text-white">{{ authStore.SingleCustomerData?.name }}</span>
-            <span class="block text-sm text-gray-500 truncate dark:text-gray-400">{{
-              authStore.SingleCustomerData?.email
-            }}</span>
+            <span class="block text-sm text-gray-900">{{ authStore.SingleCustomerData?.name }}</span>
+            <span class="block text-sm text-gray-500 truncate">{{ authStore.SingleCustomerData?.email }}</span>
           </div>
           <ul class="py-2" aria-labelledby="user-menu-button">
             <li>
-              <button
-                @click="router.push('/setting')"
-                class="block px-4 py-2 text-sm w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-              >
+              <button @click="router.push('/setting')" class="block px-4 py-2 text-sm w-full hover:bg-gray-100">
                 Settings
               </button>
             </li>
             <li>
-              <button
-                @click="Logout"
-                class="block px-4 py-2 w-full text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-              >
+              <button @click="Logout" class="block px-4 py-2 w-full text-sm text-gray-700 hover:bg-gray-100">
                 Sign out
               </button>
             </li>

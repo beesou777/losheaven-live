@@ -23,31 +23,29 @@
       ></path>
     </svg>
     <div class="space-y-4 md:space-y-6 sm:p-8">
-      <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-        Sign in to your account
-      </h1>
+      <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">Sign in to your account</h1>
       <form class="space-y-4 md:space-y-6" action="#">
         <div>
-          <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+          <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
           <input
             type="email"
             name="email"
             v-model="email"
             id="email"
-            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
             placeholder="name@gmail.com"
             required=""
           />
         </div>
         <div class="relative">
-          <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+          <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
           <input
             :type="showPassword ? 'text' : 'password'"
             v-model="password"
             name="password"
             id="password"
             placeholder="••••••••"
-            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
             required=""
           />
           <svg
@@ -98,24 +96,22 @@
           <button
             type="submit"
             @click="Login"
-            class="w-full text-white text-[18px] lh-primary focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center dark:lh-primary dark:focus:ring-primary-800"
+            class="w-full text-white text-[18px] lh-primary focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center"
           >
             Sign in
           </button>
           <!-- <button
             type="submit"
             @click="guestLogin"
-            class="w-full text-nowrap text-gray-900 text-[18px] lh-primary hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center dark:lh-primary dark:hover:bg-yellow-600 dark:focus:ring-primary-800"
+            class="w-full text-nowrap text-gray-900 text-[18px] lh-primary hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center "
           >
             Guest Login
           </button> -->
         </div>
       </form>
-      <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+      <p class="text-sm font-light text-gray-500">
         Don’t have an account yet?
-        <button @click="register" href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
-          Sign up
-        </button>
+        <button @click="register" href="#" class="font-medium text-primary-600 hover:underline">Sign up</button>
       </p>
     </div>
   </div>

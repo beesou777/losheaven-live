@@ -5,33 +5,31 @@
         <h2 class="pl-6 text-2xl font-bold sm:text-xl">Hello {{ authStore.SingleCustomerData?.name }}</h2>
         <div class="grid max-w-2xl mx-auto mt-8">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+            <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
               Change your details
             </h1>
             <form class="space-y-4 md:space-y-6" action="#">
               <div class="flex items-center gap-[10px]">
                 <div>
-                  <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                  <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Name</label>
                   <input
                     type="text"
                     name="name"
                     v-model="userData.name"
                     id="name"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                     placeholder="losheaven"
                     required=""
                   />
                 </div>
                 <div>
-                  <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >Address</label
-                  >
+                  <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Address</label>
                   <input
                     type="text"
                     name="address"
                     v-model="userData.address"
                     id="address"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                     placeholder="address"
                     required=""
                   />
@@ -39,42 +37,40 @@
               </div>
               <div class="flex items-center gap-[10px]">
                 <div>
-                  <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">phone</label>
+                  <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">phone</label>
                   <input
                     type="number"
                     v-model="userData.phone"
                     name="phone"
                     id="phone"
                     placeholder="your number"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                     required=""
                   />
                 </div>
                 <div>
-                  <label for="city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">City</label>
+                  <label for="city" class="block mb-2 text-sm font-medium text-gray-900">City</label>
                   <input
                     type="text"
                     v-model="userData.city"
                     name="city"
                     id="city"
                     placeholder="your city"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                     required=""
                   />
                 </div>
               </div>
               <div class="flex">
                 <div class="w-full">
-                  <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >Your email</label
-                  >
+                  <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
                   <input
                     type="email"
                     name="email"
                     v-model="userData.email"
                     disabled
                     id="email"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                     placeholder="name@gmail.com"
                     required=""
                   />
@@ -83,7 +79,7 @@
               <button
                 type="submit"
                 @click="Login"
-                class="w-full text-white text-[18px] lh-primary focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center dark:lh-primary dark:focus:ring-primary-800"
+                class="w-full text-white text-[18px] lh-primary focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center"
               >
                 Update details
               </button>

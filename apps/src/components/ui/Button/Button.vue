@@ -25,7 +25,7 @@ const props = defineProps({
 const defaultStyle = `
   cursor-pointer
   border transition-color duration-300
-  focus:outline-none focus:ring-1 focus:ring-offset-1 focus:dark:ring-offset-gray-50 focus:dark:ring-gray-400 focus:ring-gray-600/[0.6] focus:ring-offset-gray-800/[0.6]
+  focus:outline-none focus:ring-1 focus:ring-offset-1   focus:ring-gray-600/[0.6] focus:ring-offset-gray-800/[0.6]
   flex items-center justify-center font-semibold
 `;
 const styles = reactive<{
@@ -33,10 +33,8 @@ const styles = reactive<{
 }>({
   none: '',
   primary: 'text-white bg-primary-500 hover:bg-primary-400 border-primary-500',
-  secondary:
-    'text-gray-800 bg-gray-200 border-gray-200 hover:bg-gray-300 dark:text-white dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700',
-  opposite:
-    'text-white bg-gray-800 hover:bg-white hover:text-gray-800 hover:border-gray-900 dark:text-gray-800 dark:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-100 dark:border-white',
+  secondary: 'text-gray-800 bg-gray-200 border-gray-200 hover:bg-gray-300 ',
+  opposite: 'text-white bg-gray-800 hover:bg-white hover:text-gray-800 hover:border-gray-900 ',
   danger: 'text-white lh-primary hover:bg-amber-400 border-red-500',
 });
 const sizes = reactive<{

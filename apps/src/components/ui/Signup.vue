@@ -18,31 +18,29 @@
           data-original="#000000"
         ></path>
       </svg>
-      <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-        Sign up to your account
-      </h1>
+      <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">Sign up to your account</h1>
       <form class="space-y-4 md:space-y-6" action="#">
         <div class="flex items-center gap-[10px] flex-col md:flex-row">
           <div class="w-full">
-            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-full">Name</label>
+            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 w-full">Name</label>
             <input
               type="text"
               name="name"
               v-model="name"
               id="name"
-              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
               placeholder="losheaven"
               required=""
             />
           </div>
           <div class="w-full">
-            <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
+            <label for="address" class="block mb-2 text-sm font-medium text-gray-900">Address</label>
             <input
               type="text"
               name="address"
               v-model="address"
               id="address"
-              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
               placeholder="address"
               required=""
             />
@@ -50,52 +48,52 @@
         </div>
         <div class="flex items-center gap-[10px] flex-col md:flex-row">
           <div class="w-full">
-            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">phone</label>
+            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">phone</label>
             <input
               type="number"
               v-model="phone"
               name="phone"
               id="phone"
               placeholder="your number"
-              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
               required=""
             />
           </div>
           <div class="w-full">
-            <label for="city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">City</label>
+            <label for="city" class="block mb-2 text-sm font-medium text-gray-900">City</label>
             <input
               type="text"
               v-model="city"
               name="city"
               id="city"
               placeholder="your city"
-              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
               required=""
             />
           </div>
         </div>
         <div class="flex items-center gap-[10px] flex-col md:flex-row">
           <div class="w-full">
-            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
             <input
               type="email"
               name="email"
               v-model="email"
               id="email"
-              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
               placeholder="name@gmail.com"
               required
             />
           </div>
           <div class="w-full relative">
-            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+            <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
             <input
               :type="showPassword ? 'text' : 'password'"
               v-model="password"
               name="password"
               id="password"
               placeholder="••••••••"
-              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
               required=""
             />
             <svg
@@ -146,7 +144,7 @@
         <button
           type="submit"
           @click="Login"
-          class="w-full text-white text-[18px] lh-primary focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center dark:lh-primary dark:focus:ring-primary-800"
+          class="w-full text-white text-[18px] lh-primary focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center"
         >
           Sign up
         </button>

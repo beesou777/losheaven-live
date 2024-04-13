@@ -174,16 +174,28 @@ const handleLoginSuccess = () => {
 };
 
 const checkout = async () => {
-  const isLoggedIn = !!useCookie('customer-access').value;
-  const hasProductsInCart = cartStore.cartData && cartStore.cartData.cartData.length > 0;
+  try {
+    const isLoggedIn = !!useCookie('customer-access').value;
+    if (!isLoggedIn) {
+      toast.error('Please Login to view cart');
+      authStore.isLogined = true;
+      return;
+    }
 
-  if (isLoggedIn && !hasProductsInCart) {
-    // If user is logged in but has no products in cart
-    toast.error('At least one product is required to view cart');
-    return;
+    // Check if cart data is available and has products
+    const hasProductsInCart =
+      cartStore.cartData && cartStore.cartData.cartData && cartStore.cartData.cartData.length > 0;
+
+    if (!hasProductsInCart) {
+      toast.error('You need to have products in your cart to view your cart');
+      return;
+    }
+
+    cartStore.showCart = true;
+  } catch (error) {
+    // Handle error fetching cart data
+    console.error('Error fetching cart data:', error);
+    toast.error('Error fetching cart data. Please try again later.');
   }
-
-  // If user is logged in and has products in cart, or user is not logged in
-  cartStore.showCart = true;
 };
 </script>

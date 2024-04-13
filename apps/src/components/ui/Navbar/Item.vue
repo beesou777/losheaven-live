@@ -1,8 +1,8 @@
 <template>
   <span
     :class="{
-      'text-gray-900 dark:text-gray-100 font-bold': isActive,
-      'text-gray-900 dark:text-gray-100': !isActive,
+      'text-gray-900  font-bold': isActive,
+      'text-gray-900 ': !isActive,
     }"
   >
     {{ menu.name }}

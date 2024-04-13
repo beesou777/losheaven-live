@@ -1,9 +1,5 @@
 <template>
-  <!-- <footer class="bg-[#FCFBF4] rounded-lg dark:bg-gray-900 shadow-[0px_0px_24px_rgba(0,0,0,0.15)]">
-    
-  </footer> -->
-
-  <footer class="bg-white dark:bg-gray-900">
+  <footer class="bg-white">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
       <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
@@ -11,8 +7,8 @@
         </div>
         <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Short Links</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Short Links</h2>
+            <ul class="text-gray-500 font-medium">
               <li>
                 <NuxtLink to="/" class="text-[18px]">Home</NuxtLink>
               </li>
@@ -28,8 +24,8 @@
             </ul>
           </div>
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Follow us</h2>
+            <ul class="text-gray-500 font-medium">
               <li class="mb-4">
                 <a href="https://www.facebook.com/profile.php?id=61557557091843" class="hover:underline">Facebook</a>
               </li>
@@ -39,8 +35,8 @@
             </ul>
           </div>
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
+            <ul class="text-gray-500 font-medium">
               <li class="mb-4">
                 <a href="#" class="hover:underline">Privacy Policy</a>
               </li>
@@ -51,16 +47,16 @@
           </div>
         </div>
       </div>
-      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
       <div class="sm:flex sm:items-center sm:justify-between">
-        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+        <span class="text-sm text-gray-500 sm:text-center"
           >© 2024 <a href="#" class="hover:underline">LOSHEAVEN</a>. All Rights Reserved.
         </span>
         <div class="flex mt-4 sm:justify-center sm:mt-0">
           <a
             target="_blank"
             href="https://www.facebook.com/profile.php?id=61557557091843"
-            class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            class="text-gray-500 hover:text-gray-900"
           >
             <svg
               class="w-4 h-4"
@@ -80,7 +76,7 @@
           <a
             target="_blank"
             href="https://www.instagram.com/losheaven17/"
-            class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+            class="text-gray-500 hover:text-gray-900 ms-5"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24">
               <path
