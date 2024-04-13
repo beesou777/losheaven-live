@@ -98,12 +98,12 @@
         </div>
       </div>
       <div class="flex gap-3">
-        <NuxtLink
-          to="/checkout"
+        <button
+          @click="checkout"
           class="w-full text-center cursor-pointer text-white lh-primary border-0 py-4 px-6 focus:outline-none rounded"
         >
-          Buy Now
-        </NuxtLink>
+          View Cart
+        </button>
         <button
           @click="addToCart"
           class="w-full text-[#333] border border-1 py-4 px-6 focus:outline-none hover:bg-[#f6f6f6] ease-in duration-300 rounded"
@@ -171,5 +171,19 @@ const addToCart = async () => {
 
 const handleLoginSuccess = () => {
   authStore.isLogined = false;
+};
+
+const checkout = async () => {
+  const isLoggedIn = !!useCookie('customer-access').value;
+  const hasProductsInCart = cartStore.cartData && cartStore.cartData.cartData.length > 0;
+
+  if (isLoggedIn && !hasProductsInCart) {
+    // If user is logged in but has no products in cart
+    toast.error('At least one product is required to view cart');
+    return;
+  }
+
+  // If user is logged in and has products in cart, or user is not logged in
+  cartStore.showCart = true;
 };
 </script>

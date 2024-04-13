@@ -127,7 +127,7 @@ onMounted(async () => {
 });
 
 const cartData = computed(() => {
-  return cartStore?.cartData.cartData;
+  return cartStore?.cartData?.cartData;
 });
 
 const deleteCartData = async (item: number) => {
@@ -159,11 +159,11 @@ const decrement = async (quantity: number, id: number) => {
 };
 
 const total = computed(() => {
-  if (!cartData.value || cartData.value.length === 0) {
+  if (!cartData.value || cartData.value?.length === 0) {
     return 0; // Return 0 if cartData is empty or undefined
   }
 
-  return cartData.value.reduce((acc, item) => {
+  return cartData.value?.reduce((acc, item) => {
     return acc + item.product?.price * item.quantity; // Calculate total amount
   }, 0);
 });
