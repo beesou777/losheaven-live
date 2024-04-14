@@ -8,9 +8,13 @@
       <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
     </div>
     <h1 class="text-xl text-center font-bold py-10 leading-tight tracking-tight text-gray-900 md:text-2xl">
-      Note : This is only for testing we do not encourage visitor to purchase product as of now
+      Comming Soon
     </h1>
-    <div id="order">
+    <h1 class="text-xl text-center font-bold pt-5 pb-10 leading-tight tracking-tight text-gray-900 md:text-2xl">
+      Join our fashion movement today
+      <NuxtLink to="https://forms.gle/WShzaRzCtJSURELt5" class="underline text-xl md:text-2xl">Join Us</NuxtLink>
+    </h1>
+    <!-- <div id="order">
       <div class="md:px-10 px-5 py-8 md:py-16 sm:py-24 lg:px-8">
         <h2 class="text-[18px] md:text-[28px] font-bold text-center text-gray-600">Our Samples</h2>
         <div class="mt-6 grid grid-cols-12 sm:grid-cols-2 lg:grid-cols-4">
@@ -91,7 +95,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
 </template>
 <script setup lang="ts">

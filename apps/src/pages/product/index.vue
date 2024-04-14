@@ -1,8 +1,9 @@
 <template>
-  <div class="font-[sans-serif] bg-gray-100">
+  <div class="font-[sans-serif]">
     <div class="p-4 mx-auto max-w-[1480px]">
       <h2 class="text-4xl font-extrabold text-gray-800 mb-12">Premium Oversized T-shirt(Samples)</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+      <!-- <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <div
           v-for="(items, index) in getProducts"
           :key="index"
@@ -23,9 +24,11 @@
             </div>
           </NuxtLink>
         </div>
-      </div>
-      <h1 class="text-xl font-bold py-10 leading-tight tracking-tight text-gray-900 md:text-2xl">
-        Note : This is only for testing we do not encourage visitor to purchase this as of now
+      </div> -->
+      <h1 class="text-xl font-bold py-10 leading-tight tracking-tight text-gray-900 md:text-2xl">Comming soon</h1>
+      <h1 class="text-xl text-center font-bold pt-5 pb-10 leading-tight tracking-tight text-gray-900 md:text-2xl">
+        Join our fashion movement today
+        <NuxtLink to="https://forms.gle/WShzaRzCtJSURELt5" class="underline text-xl md:text-2xl">Join Us</NuxtLink>
       </h1>
     </div>
   </div>
