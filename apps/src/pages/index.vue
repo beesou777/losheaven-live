@@ -7,6 +7,9 @@
       <div class="absolute top-0 left-0 w-full h-full bg-black opacity-[40%]"></div>
       <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></div>
     </div>
+    <h1 class="text-xl text-center font-bold py-10 leading-tight tracking-tight text-gray-900 md:text-2xl">
+      Note : This is only for testing we do not encourage visitor to purchase product as of now
+    </h1>
     <div id="order">
       <div class="md:px-10 px-5 py-8 md:py-16 sm:py-24 lg:px-8">
         <h2 class="text-[18px] md:text-[28px] font-bold text-center text-gray-600">Our Samples</h2>

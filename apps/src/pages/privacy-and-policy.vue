@@ -2,14 +2,14 @@
   <div class="max-w-[1400px] mx-auto">
     <h1 class="text-[32px] font-bold pt-10">Privacy Policy</h1>
     <p class="text-gray-500 text-[18px]">
-      Protecting your personal information is our priority at LosHeaven. This Privacy Policy outlines the types of
+      Protecting your personal information is our priority at losheaven. This Privacy Policy outlines the types of
       personal information we collect, how it is used, and your choices regarding your data. By using our website, you
       consent to the data practices described in this statement.
     </p>
     <h2 class="text-[28px] font-bold pt-10">1. Information We Collect</h2>
     <ul class="text-gray-500 text-[18px] list-disc ms-5">
       <li>
-        Personal Information: When you make a purchase or register an account on LosHeaven, we may collect personal
+        Personal Information: When you make a purchase or register an account on losheaven, we may collect personal
         information such as your name, email address, shipping address, and payment details.
       </li>
       <li>
@@ -39,7 +39,7 @@
     </ul>
     <h2 class="text-[28px] font-bold pt-10">3. Data Security</h2>
     <p class="text-gray-500 text-[18px]">
-      LosHeaven takes the security of your personal information seriously. We implement a variety of security measures
+      losheaven takes the security of your personal information seriously. We implement a variety of security measures
       to safeguard your data against unauthorized access, alteration, disclosure, or destruction.
     </p>
     <h2 class="text-[28px] font-bold pt-10">4. Sharing Your Information</h2>
@@ -54,12 +54,12 @@
     </p>
     <h2 class="text-[28px] font-bold pt-10">6. Children's Privacy</h2>
     <p class="text-gray-500 text-[18px]">
-      LosHeaven does not knowingly collect personal information from children under the age of 13. If you believe that
+      losheaven does not knowingly collect personal information from children under the age of 13. If you believe that
       we have inadvertently collected such information, please contact us immediately so that we can delete it.
     </p>
     <h2 class="text-[28px] font-bold pt-10">7. Changes to This Policy</h2>
     <p class="text-gray-500 text-[18px]">
-      LosHeaven reserves the right to update or change this Privacy Policy at any time. Any changes will be posted on
+      losheaven reserves the right to update or change this Privacy Policy at any time. Any changes will be posted on
       this page, and your continued use of our website after such modifications signifies your acceptance of the updated
       policy.
     </p>
