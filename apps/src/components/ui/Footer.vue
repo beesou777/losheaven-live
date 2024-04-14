@@ -38,10 +38,10 @@
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
             <ul class="text-gray-500 font-medium">
               <li class="mb-4">
-                <a href="#" class="hover:underline">Privacy Policy</a>
+                <NuxtLink to="/privacy-and-policy" class="hover:underline">Privacy Policy</NuxtLink>
               </li>
               <li>
-                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                <NuxtLink to="/term-and-condition" class="hover:underline">Terms &amp; Conditions</NuxtLink>
               </li>
             </ul>
           </div>
