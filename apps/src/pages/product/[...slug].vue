@@ -97,7 +97,7 @@
           </div>
         </div>
       </div>
-      <div class="flex gap-3">
+      <div class="flex gap-3 max-[512px]:flex-col">
         <button
           @click="checkout"
           class="w-full text-center cursor-pointer text-white lh-primary border-0 py-4 px-6 focus:outline-none rounded"

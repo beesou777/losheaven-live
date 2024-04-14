@@ -21,6 +21,9 @@
               <li>
                 <NuxtLink to="/contact" class="text-[18px]">Contact</NuxtLink>
               </li>
+              <li>
+                <NuxtLink to="https://forms.gle/WShzaRzCtJSURELt5" class="text-[18px]">Join Us</NuxtLink>
+              </li>
             </ul>
           </div>
           <div>

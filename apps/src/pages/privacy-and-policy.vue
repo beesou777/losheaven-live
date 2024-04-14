@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-[1400px] mx-auto">
+  <div class="max-w-[1400px] mx-auto md:px-[40px] px-4">
     <h1 class="text-[32px] font-bold pt-10">Privacy Policy</h1>
     <p class="text-gray-500 text-[18px]">
       Protecting your personal information is our priority at losheaven. This Privacy Policy outlines the types of

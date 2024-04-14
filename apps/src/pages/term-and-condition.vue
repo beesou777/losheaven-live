@@ -1,5 +1,5 @@
 <template>
-  <div class="px-[40px] max-w-[1400px] mx-auto">
+  <div class="md:px-[40px] px-4 max-w-[1400px] mx-auto">
     <h1 class="text-[32px] font-bold pt-10">Terms and Conditions</h1>
     <p class="text-gray-500 text-[18px]">
       Welcome to losheaven, your ultimate destination for fashion-forward oversized t-shirts and more. By accessing our
