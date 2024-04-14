@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.10",
     "axios": "^1.6.8",
     "nodemailer": "^6.9.13",
     "validator": "^13.11.0",
