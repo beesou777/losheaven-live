@@ -413,16 +413,16 @@
               Making Customers Happy with Exceptional Fashion Services
             </h2>
             <p class="mb-5 text-base text-body-color">
-              Welcome to losheaven, where comfort and style converge seamlessly. As a newly launched clothing brand,
-              we're dedicated to providing you with the best of both worlds. Our focus is on crafting reliable and
-              comfortable outfits that elevate your daily wardrobe. From cozy loungewear to chic essentials, each piece
-              is meticulously designed to ensure both style and comfort.
+              Welcome to Losheaven, where comfort and style come together seamlessly. As a newly launched clothing
+              brand, our focus is on providing you with the best of both worlds. We are dedicated to crafting
+              comfortable and reliable outfits that elevate your everyday wardrobe.
             </p>
             <p class="mb-8 text-base text-body-color">
-              From versatile basics to trendy statement pieces, our collection is designed to cater to the modern
-              individual who values both style and comfort. Whether you're lounging at home or out and about, our
-              clothing is tailored to provide you with the confidence and ease you deserve. Thank you for choosing
-              losheaven as your trusted source for fashion that feels as good as it looks.
+              From cozy loungewear to chic essentials, each piece is meticulously designed to ensure both style and
+              comfort. Our collection is designed to cater to the modern individual who values both style and comfort.
+              We offer versatile basics as well as trendy statement pieces for any occasion. Our clothing is tailored to
+              provide you with the confidence and ease you deserve whether you're lounging at home or out and about.
+              Thank you for choosing Losheaven as your trusted source for fashion that feels as good as it looks
             </p>
             <NuxtLink
               to="/contact"
