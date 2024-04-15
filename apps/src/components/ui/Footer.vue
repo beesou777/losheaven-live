@@ -46,6 +46,9 @@
               <li>
                 <NuxtLink to="/term-and-condition" class="hover:underline">Terms &amp; Conditions</NuxtLink>
               </li>
+              <li>
+                <NuxtLink to="/reviews" class="hover:underline">Reviews Section</NuxtLink>
+              </li>
             </ul>
           </div>
         </div>
