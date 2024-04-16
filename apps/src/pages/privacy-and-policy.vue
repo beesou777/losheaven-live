@@ -64,7 +64,7 @@
       policy.
     </p>
     <p class="text-gray-500 text-[18px] py-[20px]">
-      If you have any questions or concerns about our Privacy Policy, please contact us at 9862531293.
+      If you have any questions or concerns about our Privacy Policy, please contact us at 9862531293,9823875770.
     </p>
   </div>
 </template>

@@ -18,7 +18,7 @@
           data-original="#000000"
         ></path>
       </svg>
-      <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">Sign up to your account</h1>
+      <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">Register to your account</h1>
       <form class="space-y-4 md:space-y-6" action="#">
         <div class="flex items-center gap-[10px] flex-col md:flex-row">
           <div class="w-full">
@@ -146,7 +146,7 @@
           @click="Login"
           class="w-full text-white text-[18px] lh-primary focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center"
         >
-          Sign up
+          Register
         </button>
       </form>
     </div>

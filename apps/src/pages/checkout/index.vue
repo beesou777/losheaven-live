@@ -281,9 +281,11 @@ const checkout = async () => {
   if (response?.status === 200) {
     const response = await cartStore.deleteAllCart();
     if (response.status === 200) {
-      toast.success('Order placed successfully');
       cartStore.cartData = null;
       router.push('/');
+      setTimeout(() => {
+        toast.success('Your Order has been placed successfully!!');
+      }, 10);
     }
   } else {
     toast.error('Something went wrong');

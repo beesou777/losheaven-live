@@ -7,35 +7,39 @@
       <ui-logo />
       <div class="items">
         <ul class="hidden md:flex">
-          <li
-            class="text-[#282828] p-[8px_12px]"
-            :class="{ 'lh-color font-bold': router.currentRoute.value.name === 'index' }"
-          >
-            <NuxtLink to="/" class="text-[18px]">Home</NuxtLink>
+          <li class="text-[#282828] p-[8px_12px]">
+            <NuxtLink
+              to="/"
+              class="text-[18px] nav_hover"
+              :class="{ 'lh-color font-bold nav_active': router.currentRoute.value.name === 'index' }"
+              >Home</NuxtLink
+            >
           </li>
-          <li
-            class="text-[#282828] p-[8px_12px]"
-            :class="{
-              'lh-color font-bold':
-                router.currentRoute.value.name === 'product' || router.currentRoute.value.name === 'product-slug',
-            }"
-          >
-            <NuxtLink to="/product" class="text-[18px]">Product</NuxtLink>
+          <li class="text-[#282828] p-[8px_12px]">
+            <NuxtLink
+              to="/product"
+              class="text-[18px] nav_hover"
+              :class="{
+                'lh-color font-bold nav_active':
+                  router.currentRoute.value.name === 'product' || router.currentRoute.value.name === 'product-slug',
+              }"
+              >Product</NuxtLink
+            >
           </li>
           <!-- <li class="text-[#282828] p-[8px_12px]"><NuxtLink to="/product">Product</NuxtLink></li> -->
           <li class="text-[#282828] p-[8px_12px]">
             <NuxtLink
+              :class="{ 'lh-color font-bold nav_active': router.currentRoute.value.name === 'about-us' }"
               to="/about-us"
-              class="text-[18px]"
-              :class="{ 'lh-color font-bold': router.currentRoute.value.name === 'about-us' }"
+              class="text-[18px] nav_hover"
               >About us</NuxtLink
             >
           </li>
           <li class="text-[#282828] p-[8px_12px]">
             <NuxtLink
+              :class="{ 'lh-color font-bold ': router.currentRoute.value.name === 'contact' }"
               to="/contact"
-              class="text-[18px]"
-              :class="{ 'lh-color font-bold': router.currentRoute.value.name === 'contact' }"
+              class="text-[18px] nav_hover"
               >Contact us</NuxtLink
             >
           </li>
@@ -102,9 +106,13 @@
       </div>
     </div>
     <div class="flex items-center gap-5">
-      <div class="cursor-pointer relative" @click="showCart" v-if="isAccessTokenAvailable">
+      <div
+        class="cursor-pointer relative hover:bg-gray-200 p-2 rounded-full"
+        @click="showCart"
+        v-if="isAccessTokenAvailable"
+      >
         <span
-          class="absolute top-[-10px] right-[10px] lh-primary text-white rounded-full w-5 h-5 flex justify-center items-center"
+          class="absolute top-[-4px] right-[20px] lh-primary text-white rounded-full w-5 h-5 flex justify-center items-center"
           >{{ cartLength || 0 }}</span
         >
         <svg
@@ -127,23 +135,28 @@
           ></path>
         </svg>
       </div>
-      <svg
+      <div
         v-if="!isAccessTokenAvailable"
         @click="Login"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        class="cursor-pointer relative hover:bg-gray-200 p-2 rounded-full"
       >
-        <path
-          d="M3 20C5.33579 17.5226 8.50702 16 12 16C15.493 16 18.6642 17.5226 21 20M16.5 7.5C16.5 9.98528 14.4853 12 12 12C9.51472 12 7.5 9.98528 7.5 7.5C7.5 5.01472 9.51472 3 12 3C14.4853 3 16.5 5.01472 16.5 7.5Z"
-          stroke="black"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
+        <svg
+          class="cursor-pointe"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3 20C5.33579 17.5226 8.50702 16 12 16C15.493 16 18.6642 17.5226 21 20M16.5 7.5C16.5 9.98528 14.4853 12 12 12C9.51472 12 7.5 9.98528 7.5 7.5C7.5 5.01472 9.51472 3 12 3C14.4853 3 16.5 5.01472 16.5 7.5Z"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
+      </div>
       <div
         v-if="isAccessTokenAvailable"
         class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse relative"
@@ -177,7 +190,7 @@
             </li>
             <li>
               <button @click="Logout" class="block px-4 py-2 w-full text-sm text-gray-700 hover:bg-gray-100">
-                Sign out
+                Logout
               </button>
             </li>
           </ul>
@@ -239,8 +252,11 @@ const isAccessTokenAvailable = computed(() => {
 const Logout = () => {
   useCookie('customer-access').value = null;
   authStore.accessToken = null;
-  toast.success('Logout successfully!!');
+  authStore.SingleCustomerData = null;
   router.push('/');
+  setTimeout(() => {
+    toast.success('Logout successfully!!');
+  }, 10);
 };
 
 const showCart = () => {

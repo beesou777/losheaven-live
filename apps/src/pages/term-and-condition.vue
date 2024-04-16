@@ -64,7 +64,7 @@
     <p class="text-gray-500 text-[18px]">
       By using losheaven, you signify your acceptance of these terms and conditions. If you do not agree to these terms,
       please do not use our website. If you have any questions or concerns regarding these terms and conditions, please
-      contact us at 9862531293.
+      contact us at 9862531293,9823875770.
     </p>
   </div>
 </template>

@@ -14,13 +14,13 @@ export interface NuxtAppConfig {
 }
 
 export default defineAppConfig({
-  name: 'losheaven',
+  name: 'losheaven trust the process',
   description: 'losheaven is a nepali startup company based on clothing founded by Bishwa Shah and Nayandra Sunwar',
   project: {
     github: 'https://github.com/beesou777',
   },
   author: {
-    name: 'Rohan Shakya',
+    name: 'Rohan Shakylosheavena',
     links: {
       github: 'https://github.com/beesou777/losheaven',
       website: 'https://www.losheaven.com',

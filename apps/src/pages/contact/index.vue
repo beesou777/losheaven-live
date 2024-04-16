@@ -117,8 +117,8 @@
                   <div class="ml-6 grow">
                     <p class="mb-2 font-bold">Address</p>
                     <p class="text-sm text-neutral-500">
-                      lalitpur, <br />
-                      mulpani <br />
+                      Bhaisepati, <br />
+                      Mulpani <br />
                     </p>
                   </div>
                 </div>
@@ -146,6 +146,7 @@
                   <div class="ml-6 grow">
                     <p class="mb-2 font-bold">Mobile</p>
                     <p class="text-neutral-500">+977 9862531293</p>
+                    <p class="text-neutral-500">+977 9823875770</p>
                   </div>
                 </div>
               </div>
@@ -184,6 +185,9 @@ const handleSubmit = async () => {
     };
     const response = await orderStore.contactUs(data);
     if (response.status === 200) {
+      email.value = '';
+      subject.value = '';
+      message.value = '';
       toast.success('Message sent successfully');
     }
   } catch (e) {

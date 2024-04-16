@@ -23,7 +23,7 @@
       ></path>
     </svg>
     <div class="space-y-4 md:space-y-6 sm:p-8">
-      <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">Sign in to your account</h1>
+      <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">Login to your account</h1>
       <form class="space-y-4 md:space-y-6" action="#">
         <div>
           <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
@@ -98,7 +98,7 @@
             @click="Login"
             class="w-full text-white text-[18px] lh-primary focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center"
           >
-            Sign in
+            Login
           </button>
           <!-- <button
             type="submit"
@@ -111,7 +111,7 @@
       </form>
       <p class="text-sm font-light text-gray-500">
         Don’t have an account yet?
-        <button @click="register" href="#" class="font-medium text-primary-600 hover:underline">Sign up</button>
+        <button @click="register" href="#" class="font-medium text-primary-600 hover:underline">Register</button>
       </p>
     </div>
   </div>
@@ -128,8 +128,8 @@ const emit = defineEmits(['login-success']);
 const router = useRouter();
 
 const authStore = useAuthStore();
-const email = ref<string>('');
-const password = ref<string>('');
+const email = ref<string>('admin@gmail.com');
+const password = ref<string>('losheaven');
 const showPassword = ref<boolean>(false);
 const isRegisterShown = ref<boolean>(false);
 /**
