@@ -15,21 +15,18 @@
         <h2 class="text-[18px] md:text-[28px] font-bold text-center text-gray-600">Check out our varied samples!</h2>
         <div class="mt-6 grid sm:grid-cols-12 grid-cols-6 aspect-1">
           <div class="col-span-6 md:col-span-6 flex items-center flex-col sm:flex-row">
-            <div class="w-full h-full max-h-[800px] bg-gray-200 lg:aspect-none overflow-hidden">
+            <div class="w-full h-full bg-gray-200 lg:aspect-none overflow-hidden">
               <img
-                class="h-full w-full max-h-[800px] object-cover lg:h-full lg:w-full"
+                class="h-full w-full object-cover lg:h-full lg:w-full"
                 src="https://i.pinimg.com/564x/bf/9e/15/bf9e15b11ab3ff8df4ca6e441ab20fb6.jpg"
                 alt="Trainers"
               />
             </div>
           </div>
-          <div
-            class="col-span-6 md:col-span-6 flex items-center flex-col sm:flex-row"
-            to="/product/66129e982f55c360c94bd724"
-          >
-            <div class="w-full h-full max-h-[800px] bg-gray-200 lg:aspect-none overflow-hidden">
+          <div class="col-span-6 md:col-span-6 flex items-center flex-col sm:flex-row">
+            <div class="w-full h-full bg-gray-200 lg:aspect-none overflow-hidden">
               <img
-                class="h-full w-full max-h-[800px] object-cover object-top lg:h-full lg:w-full"
+                class="h-full w-full object-cover lg:h-full lg:w-full"
                 src="https://i.postimg.cc/P5GbRRRS/packaging-box.jpg"
                 alt="Trainers"
               />
@@ -38,19 +35,16 @@
           <div class="col-span-6 md:col-span-6 flex items-center flex-col sm:flex-row">
             <div class="w-full h-full bg-gray-200 lg:aspect-none overflow-hidden">
               <img
-                class="h-full w-full max-h-[800px] object-cover lg:h-full lg:w-full"
+                class="h-full w-full object-cover lg:h-full lg:w-full"
                 src="https://i.pinimg.com/564x/56/0f/bc/560fbcb050dc41564204ace231bb9b49.jpg"
                 alt="Trainers"
               />
             </div>
           </div>
-          <div
-            class="col-span-6 md:col-span-6 flex items-center flex-col sm:flex-row"
-            to="/product/66129e9b2f55c360c94bd72a"
-          >
-            <div class="w-full h-full max-h-[800px] bg-gray-200 lg:aspect-none overflow-hidden">
+          <div class="col-span-6 md:col-span-6 flex items-center flex-col sm:flex-row">
+            <div class="w-full h-full bg-gray-200 lg:aspect-none overflow-hidden">
               <img
-                class="h-full w-full object-cover object-top lg:h-full lg:w-full"
+                class="h-full w-full object-cover lg:h-full lg:w-full"
                 src="https://i.pinimg.com/564x/f9/b7/e2/f9b7e29b791f7643c52cf4f0e2ea05e2.jpg"
                 alt="Trainers"
               />
