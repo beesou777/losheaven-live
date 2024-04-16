@@ -252,7 +252,6 @@ const isAccessTokenAvailable = computed(() => {
 const Logout = () => {
   useCookie('customer-access').value = null;
   authStore.accessToken = null;
-  authStore.SingleCustomerData = null;
   router.push('/');
   setTimeout(() => {
     toast.success('Logout successfully!!');
