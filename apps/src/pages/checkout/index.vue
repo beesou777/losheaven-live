@@ -366,10 +366,10 @@ const redeemCode = async () => {
       cart_id: cartStore.cartData._id,
     };
     const response = await cartStore.redeemCoupon(data);
-    if (response.status === 200) {
+    if (response?.status === 200) {
       toast.success('Code redeemed successfully');
     } else {
-      toast.error('Something went wrong');
+      toast.error('Enter a valid coupon');
     }
   } else {
     const data = {
