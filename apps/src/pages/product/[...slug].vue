@@ -1,19 +1,81 @@
 <template>
   <!-- component -->
-  <div class="grid grid-cols-12 py-12 2xl:px-20 md:px-6 px-4">
+  <nav class="flex pt-10 px-[30px]" aria-label="Breadcrumb">
+    <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+      <li class="inline-flex items-center">
+        <NuxtLink
+          to=""
+          class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
+        >
+          <svg
+            class="w-3 h-3 me-2.5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"
+            />
+          </svg>
+          Home
+        </NuxtLink>
+      </li>
+      <li>
+        <div class="flex items-center">
+          <svg
+            class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 9 4-4-4-4"
+            />
+          </svg>
+          <NuxtLink
+            to="/product"
+            class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white"
+            >Product</NuxtLink
+          >
+        </div>
+      </li>
+      <li aria-current="page">
+        <div class="flex items-center">
+          <svg
+            class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 9 4-4-4-4"
+            />
+          </svg>
+          <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">{{ getProduct?.name }}</span>
+        </div>
+      </li>
+    </ol>
+  </nav>
+  <div class="grid grid-cols-12 py-8 2xl:px-20 md:px-6 px-4">
     <div class="col-span-12 lg:col-span-7 pr-0 md:pr-8">
-      <div class="grid grid-cols-8">
+      <div class="grid grid-cols-4 aspect-1">
         <div
-          class="max-w-[500px] w-full max-h-[500px] h-full bg-gray-300 col-span-4 [&:nth-child(5)]:col-span-8"
+          class="col-span-2 flex items-center flex-col sm:flex-row"
           v-for="(item, index) in getProduct?.images"
           :key="index"
         >
-          <img
-            class="max-w-[500px] w-full max-h-[500px] h-full bg-gray-300 object-cover"
-            alt="image of a girl posing"
-            :src="item"
-            :class="{ 'mt-4': index === 1 }"
-          />
+          <img class="h-full w-full object-cover lg:h-full lg:w-full" alt="losheaven" :src="item" />
         </div>
       </div>
     </div>
@@ -68,33 +130,47 @@
       <p class="leading-relaxed">
         {{ getProduct?.description }}
       </p>
-      <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
-        <div class="flex items-center">
-          <span class="mr-4">Size</span>
-          <div class="relative">
-            <select
-              v-model="size"
-              class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"
+      <div class="mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
+        <div>
+          <h3 class="text-lg font-bold text-gray-800">Select a Size</h3>
+          <div class="flex flex-wrap gap-4 mt-4">
+            <button
+              @click="updateSize('L')"
+              :class="{ 'border-gray-800': size === 'L' }"
+              type="button"
+              class="w-12 h-12 border-2 hover:border-gray-800 font-bold text-sm rounded-full flex items-center justify-center shrink-0"
             >
-              <option>L</option>
-              <option>XL</option>
-            </select>
-            <span
-              class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center"
+              L
+            </button>
+            <button
+              @click="updateSize('XL')"
+              :class="{ 'border-gray-800': size === 'XL' }"
+              type="button"
+              class="w-12 h-12 border-2 hover:border-gray-800 font-bold text-sm rounded-full flex items-center justify-center shrink-0"
             >
-              <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-4 h-4"
-                viewBox="0 0 24 24"
-              >
-                <path d="M6 9l6 6 6-6"></path>
-              </svg>
-            </span>
+              XL
+            </button>
           </div>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-gray-800">Color</h3>
+          <div class="flex flex-wrap gap-4 mt-4">
+            <button
+              type="button"
+              class="w-12 h-12 border-2 hover:border-gray-800 border-gray-800 rounded-full shrink-0"
+              :style="{ backgroundColor: getProduct && getProduct.color ? '#' + getProduct.color.color_code : '#fff' }"
+            ></button>
+          </div>
+        </div>
+        <div class="mt-6">
+          <p>
+            Unlock exclusive discounts on this product with code <strong>LOSHEAVEN17</strong>. For even greater savings,
+            visit our
+            <strong>
+              <a class="underline" href="https://www.instagram.com/losheaven17/" target="_blank">Instagram profile</a>
+            </strong>
+            for a secret coupon code promoted by our influencers!
+          </p>
         </div>
       </div>
       <div class="flex gap-3 max-[512px]:flex-col">
@@ -123,6 +199,7 @@ import { toast } from 'vue3-toastify';
 
 const quantity = ref<number>(1);
 const size = ref<string>('L');
+const color = ref<string>('');
 const productStore = useProductStore();
 const authStore = useAuthStore();
 const cartStore = useCartStore();
@@ -158,8 +235,8 @@ const addToCart = async () => {
     quantity: quantity.value,
     size: size.value,
     color: {
-      color_code: null,
-      color_name: null,
+      color_code: getProduct.value.color.color_code,
+      color_name: getProduct.value.color.color_name,
     },
   };
   const response = await cartStore.addToCart(data);
@@ -197,5 +274,9 @@ const checkout = async () => {
     console.error('Error fetching cart data:', error);
     toast.error('Error fetching cart data. Please try again later.');
   }
+};
+
+const updateSize = (color: any) => {
+  size.value = color;
 };
 </script>

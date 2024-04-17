@@ -1,16 +1,83 @@
 <template>
-  <div class="font-[sans-serif] bg-gray-50 max-w-[1400px] mx-auto">
+  <div class="font-[sans-serif] max-w-[1400px] mx-auto">
+    <nav class="flex pt-10 px-[30px]" aria-label="Breadcrumb">
+      <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+        <li class="inline-flex items-center">
+          <NuxtLink
+            to=""
+            class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
+          >
+            <svg
+              class="w-3 h-3 me-2.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"
+              />
+            </svg>
+            Home
+          </NuxtLink>
+        </li>
+        <li>
+          <div class="flex items-center">
+            <svg
+              class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+            <NuxtLink
+              to="/product"
+              class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white"
+              >Product</NuxtLink
+            >
+          </div>
+        </li>
+        <li aria-current="page">
+          <div class="flex items-center">
+            <svg
+              class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+            <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Checkout</span>
+          </div>
+        </li>
+      </ol>
+    </nav>
     <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 h-full">
-      <div class="bg-[#f6f6f6]">
+      <div class="">
         <div class="relative h-full">
           <div class="p-8 lg:overflow-auto lg:h-[calc(100vh-110px)]">
             <h2 class="text-2xl font-bold">Order Summary</h2>
             <div class="space-y-6 mt-10">
-              <div class="grid sm:grid-cols-2 items-start" v-for="(item, index) in cartData" :key="index">
-                <div class="w-full max-w-[150px] md:max-w-[126px]">
+              <div class="grid sm:grid-cols-3 items-start" v-for="(item, index) in cartData" :key="index">
+                <div class="w-full max-w-[150px] col-span-1 md:max-w-[126px]">
                   <img :src="item?.product?.images[0]" alt="perfume bottle image" class="w-full" />
                 </div>
-                <div class="text-left w-full">
+                <div class="text-left w-full col-span-2">
                   <h3 class="text-base">{{ item?.product?.name.split(' ').slice(0, 10).join(' ') + '...' }}</h3>
                   <ul class="text-xs space-y-3 mt-4">
                     <li class="flex flex-wrap gap-4">
@@ -39,7 +106,7 @@
                   }"
                   v-model="promo_code"
                   placeholder="Enter promo code"
-                  class="px-4 py-[12px] text-[16px] bg-white text-[#333] w-full border-b-2 focus:border-[#333] outline-none"
+                  class="px-4 py-[12px] text-[16px] bg-white text-[#333] w-full border-t-[1px] border-l-[1px] outline-none"
                 />
               </div>
               <div>
@@ -64,7 +131,7 @@
                 <p class="text-sm text-white">NRS {{ cartStore?.cartData?.redeem_code_price }}</p>
                 <p class="text-sm text-white">NRS 100</p>
                 <p class="text-lg font-bold text-white">
-                  NRS {{ total + 100 - cartStore?.cartData?.redeem_code_price }}
+                  NRS {{ (total + 100 - cartStore?.cartData?.redeem_code_price).toFixed(0) }}
                 </p>
               </div>
             </div>
