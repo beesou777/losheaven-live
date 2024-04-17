@@ -24,7 +24,7 @@
               <img
                 class="h-full w-full object-cover lg:h-full lg:w-full"
                 src="https://i.pinimg.com/564x/78/43/ec/7843ec2518693010f7ad2d9003b9e6bd.jpg"
-                alt="Trainers"
+                alt="Stylish oversized t-shirt for men"
               />
             </div>
           </div>
@@ -33,7 +33,7 @@
               <img
                 class="h-full w-full object-cover lg:h-full lg:w-full"
                 src="https://i.postimg.cc/P5GbRRRS/packaging-box.jpg"
-                alt="Trainers"
+                alt="Stylish oversized t-shirt for men"
               />
             </div>
           </div>
@@ -42,7 +42,7 @@
               <img
                 class="h-full w-full object-cover lg:h-full lg:w-full"
                 src="https://i.pinimg.com/564x/56/0f/bc/560fbcb050dc41564204ace231bb9b49.jpg"
-                alt="Trainers"
+                alt="Stylish oversized t-shirt for men"
               />
             </div>
           </div>
@@ -51,7 +51,7 @@
               <img
                 class="h-full w-full object-cover lg:h-full lg:w-full"
                 src="https://i.pinimg.com/564x/f9/b7/e2/f9b7e29b791f7643c52cf4f0e2ea05e2.jpg"
-                alt="Trainers"
+                alt="Stylish oversized t-shirt for men"
               />
             </div>
           </div>
@@ -65,8 +65,19 @@ import { onMounted } from 'vue';
 const productStore = useProductStore();
 
 useHead({
-  title: '',
-  meta: [{ name: 'description', content: 'losheaven a Nepali Startup owned by Bishwa Jung Shah And Nayendra Sunuwar' }],
+  title: 'Shop Stylish Oversized Clothing in Nepal at Losheaven - Nepali Startup',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Discover a wide range of trendy oversized clothing in Nepal at Losheaven. Shop now for the latest oversized t-shirts, hoodies, and more.',
+    },
+    {
+      name: 'keywords',
+      content:
+        'oversized clothing in Nepal, stylish clothing Nepal, Nepali fashion, oversized t-shirts Nepal, losheaven clothing Nepal, losheaven Nepal clothing',
+    },
+  ],
 });
 </script>
 
@@ -76,6 +87,7 @@ useHead({
     transform: rotate(6deg);
   }
 }
+
 .fancy-border-radius {
   border-radius: 53% 47% 52% 48% / 36% 41% 59% 64%;
 }

@@ -20,12 +20,12 @@
               <div class="relative mb-6" data-te-input-wrapper-init>
                 <input
                   type="email"
-                  class="peer block pt-[20px] min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
+                  class="peer block pt-[20px] min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:lh-color data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
                   id="exampleInput90"
                   v-model="email"
                 />
                 <label
-                  class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
+                  class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:lh-color peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
                   for="exampleInput90"
                   >E-mail
                 </label>
@@ -33,12 +33,12 @@
               <div class="relative mb-6" data-te-input-wrapper-init>
                 <input
                   type="text"
-                  class="peer block pt-[20px] min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
+                  class="peer block pt-[20px] min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:lh-color data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
                   id="exampleInput91"
                   v-model="subject"
                 />
                 <label
-                  class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
+                  class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:lh-color peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
                   for="exampleInput91"
                   >subject
                 </label>
@@ -52,7 +52,7 @@
                 ></textarea>
                 <label
                   for="exampleFormControlTextarea1"
-                  class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
+                  class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:lh-color peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
                   >Message</label
                 >
               </div>
@@ -70,7 +70,7 @@
               <div class="mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:w-6/12">
                 <div class="flex items-start">
                   <div class="shrink-0">
-                    <div class="inline-block rounded-md bg-sky-200 p-4 text-primary">
+                    <div class="inline-block rounded-md bg-sky-200 p-4 lh-color">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -97,7 +97,7 @@
               <div class="mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:w-6/12">
                 <div class="flex items-start">
                   <div class="srink-0">
-                    <div class="inline-block rounded-md bg-sky-200 p-4 text-primary">
+                    <div class="inline-block rounded-md bg-sky-200 p-4 lh-color">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -126,7 +126,7 @@
               <div class="w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:mb-12 xl:w-6/12">
                 <div class="align-start flex">
                   <div class="shrink-0">
-                    <div class="inline-block rounded-md bg-sky-200 p-4 text-primary">
+                    <div class="inline-block rounded-md bg-sky-200 p-4 lh-color">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -194,4 +194,21 @@ const handleSubmit = async () => {
     toast.error('Something went wrong');
   }
 };
+
+useHead({
+  title: 'Contact Us', // Page title
+  meta: [
+    { name: 'description', content: 'Contact us for technical support or inquiries.' },
+    { name: 'keywords', content: 'contact, support, inquiries, customer service' },
+    { name: 'robots', content: 'index, follow' },
+    { name: 'author', content: 'losheaven' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: 'format-detection', content: 'telephone=no' },
+    { name: 'apple-mobile-web-app-capable', content: 'yes' },
+    { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
+    { name: 'msapplication-TileColor', content: '#ffffff' },
+    { name: 'msapplication-TileImage', content: '/ms-icon-144x144.png' },
+    { name: 'theme-color', content: '#ffffff' },
+  ],
+});
 </script>

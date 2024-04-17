@@ -13,8 +13,8 @@ export default defineNuxtConfig({
         lang: 'en',
       },
       meta: [
-        { name: 'description', content: 'Nuxt PWA' },
-        { name: 'theme-color', content: '#018937' },
+        { name: 'description', content: 'losheaven' },
+        { name: 'theme-color', content: '#274c5b' },
       ],
       link: [
         { rel: 'icon', href: '/favicon.ico' },

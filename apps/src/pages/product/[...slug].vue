@@ -2,9 +2,9 @@
   <!-- component -->
   <nav class="flex pt-10 px-[30px]" aria-label="Breadcrumb">
     <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
-      <li class="inline-flex items-center">
+      <li class="inline-flex items-center whitespace-nowrap overflow-hidden text-ellipsis max-w-[120px]">
         <NuxtLink
-          to=""
+          to="/"
           class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
         >
           <svg
@@ -21,7 +21,7 @@
           Home
         </NuxtLink>
       </li>
-      <li>
+      <li class="whitespace-nowrap overflow-hidden text-ellipsis max-w-[120px]">
         <div class="flex items-center">
           <svg
             class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
@@ -45,7 +45,7 @@
           >
         </div>
       </li>
-      <li aria-current="page">
+      <li aria-current="page whitespace-nowrap overflow-hidden text-ellipsis max-w-[100px]">
         <div class="flex items-center">
           <svg
             class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
@@ -62,7 +62,9 @@
               d="m1 9 4-4-4-4"
             />
           </svg>
-          <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">{{ getProduct?.name }}</span>
+          <span class="ms-1 whitespace-nowrap text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">{{
+            getProduct?.name
+          }}</span>
         </div>
       </li>
     </ol>
@@ -138,17 +140,9 @@
               @click="updateSize('L')"
               :class="{ 'border-gray-800': size === 'L' }"
               type="button"
-              class="w-12 h-12 border-2 hover:border-gray-800 font-bold text-sm rounded-full flex items-center justify-center shrink-0"
+              class="w-[100px] h-12 border-2 hover:border-gray-800 font-bold text-sm rounded-[8px] flex items-center justify-center shrink-0"
             >
-              L
-            </button>
-            <button
-              @click="updateSize('XL')"
-              :class="{ 'border-gray-800': size === 'XL' }"
-              type="button"
-              class="w-12 h-12 border-2 hover:border-gray-800 font-bold text-sm rounded-full flex items-center justify-center shrink-0"
-            >
-              XL
+              FREE SIZE
             </button>
           </div>
         </div>
@@ -279,4 +273,18 @@ const checkout = async () => {
 const updateSize = (color: any) => {
   size.value = color;
 };
+
+useHead({
+  title: getProduct.value?.name,
+  meta: [
+    { name: 'description', content: getProduct.value?.description },
+    { property: 'og:title', content: getProduct.value?.name },
+    { property: 'og:description', content: getProduct.value?.description },
+    { property: 'og:image', content: getProduct.value?.image },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: getProduct.value?.name },
+    { name: 'twitter:description', content: getProduct.value?.description },
+    { name: 'twitter:image', content: getProduct.value?.image },
+  ],
+});
 </script>
