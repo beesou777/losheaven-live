@@ -2,6 +2,7 @@
   <div class="font-[sans-serif]">
     <div class="p-4 mx-auto max-w-[1480px]">
       <h2 class="text-4xl font-extrabold text-gray-800">Premium Oversized T-shirt Samples</h2>
+      <h1 class="text-xl font-bold py-3 leading-tight tracking-tight text-gray-900 md:text-2xl">Product Coming soon</h1>
       <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2 loading-skeleton"
         v-if="!getProducts"
@@ -12,7 +13,6 @@
           class="relative bg-white max-h-[400px] h-[400px] rounded-2xl p-2 cursor-pointer group transition-all loader"
         ></div>
       </div>
-      <h1 class="text-xl font-bold py-3 leading-tight tracking-tight text-gray-900 md:text-2xl">Product Coming soon</h1>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
         <div
           v-for="(items, index) in getProducts"
