@@ -14,15 +14,24 @@ export default defineNuxtConfig({
         lang: 'en',
       },
       meta: [
-        { name: 'description', content: 'losheaven' },
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: 'losheaven Clothing - Discover the latest fashion trends' },
         { name: 'theme-color', content: '#274c5b' },
+        {
+          name: 'keywords',
+          content:
+            'losheaven, losheaven Clothing, fashion, apparel, Kathmandu Valley,bishwa shah,bishwa jung shah, bishow shah,beesou shah,bisho shah,oversized tshirt ,oversized clothing,',
+        },
+        { name: 'author', content: 'bishwa shah' },
+        { name: 'robots', content: 'index, follow' },
       ],
       link: [
         { rel: 'icon', href: '/favicon.ico' },
         { rel: 'apple-touch-icon', href: '/favicon.ico' },
         { rel: 'icon', href: '/favicon-32x32.png', type: '/imgage/png' },
         { rel: 'icon', href: '/favicon-16x16.png', type: 'image/png' },
-        { rel: 'manifest', href: '/manifest.webmanifest' },
+        { rel: 'manifest', href: '/apps/src/public/icons/site.webmanifest' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com', crossorigin: true },
       ],

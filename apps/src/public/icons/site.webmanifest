@@ -1,9 +1,14 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "losheaven",
+  "short_name": "lh",
+  "background_color": "#274c5b",
+  "orientation": "portrait",
+  "display": "standalone",
+  "scope": "https://www.losheaven.com",
+  "start_url": "https://www.losheaven.com",
   "icons": [
     {
-      "src": "/favicon-180x180.png",
+      "src": "/icon-180x180.png",
       "sizes": "180x180",
       "type": "image/png"
     },
@@ -11,9 +16,11 @@
       "src": "/favicon-32x32.png",
       "sizes": "32x32",
       "type": "image/png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
     }
-  ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  ]
 }
