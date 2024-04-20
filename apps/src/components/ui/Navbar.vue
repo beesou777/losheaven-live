@@ -1,49 +1,49 @@
 <template>
   <nav
-    class="sticky top-0 z-[20] flex w-full flex-wrap items-center justify-between bg-zinc-50 px-5 md:p-10 py-4 lg:py-4 shadow-[0px_0px_24px_rgba(0,0,0,0.15)]"
+    class="sticky top-0 z-[20] bg-gray-100 flex w-full flex-wrap items-center justify-between px-5 md:p-10 py-4 lg:py-4"
     id="navbar"
   >
     <div class="flex items-center gap-10">
       <ui-logo />
       <div class="items">
         <ul class="hidden md:flex">
-          <li class="text-[#282828] p-[8px_12px]">
+          <li class="text-gray-800 p-[8px_12px]">
             <NuxtLink
               to="/"
               class="text-[18px] nav_hover"
-              :class="{ 'lh-color font-bold nav_active': router.currentRoute.value.name === 'index' }"
+              :class="{ 'font-bold nav_active': router.currentRoute.value.name === 'index' }"
               >Home</NuxtLink
             >
           </li>
-          <li class="text-[#282828] p-[8px_12px]">
+          <li class="text-gray-800 p-[8px_12px]">
             <NuxtLink
               to="/product"
               class="text-[18px] nav_hover"
               :class="{
-                'lh-color font-bold nav_active':
+                'font-bold nav_active':
                   router.currentRoute.value.name === 'product' || router.currentRoute.value.name === 'product-slug',
               }"
               >Product</NuxtLink
             >
           </li>
-          <!-- <li class="text-[#282828] p-[8px_12px]"><NuxtLink to="/product">Product</NuxtLink></li> -->
-          <li class="text-[#282828] p-[8px_12px]">
+          <!-- <li class="text-gray-800 p-[8px_12px]"><NuxtLink to="/product">Product</NuxtLink></li> -->
+          <li class="text-gray-800 p-[8px_12px]">
             <NuxtLink
-              :class="{ 'lh-color font-bold nav_active': router.currentRoute.value.name === 'about-us' }"
+              :class="{ 'font-bold nav_active': router.currentRoute.value.name === 'about-us' }"
               to="/about-us"
               class="text-[18px] nav_hover"
               >About us</NuxtLink
             >
           </li>
-          <li class="text-[#282828] p-[8px_12px]">
+          <li class="text-gray-800 p-[8px_12px]">
             <NuxtLink
-              :class="{ 'lh-color font-bold ': router.currentRoute.value.name === 'contact' }"
+              :class="{ 'font-bold nav_active': router.currentRoute.value.name === 'contact' }"
               to="/contact"
               class="text-[18px] nav_hover"
               >Contact us</NuxtLink
             >
           </li>
-          <!-- <li class="text-[#282828] p-[8px_12px]"><NuxtLink to="/contact-us">Contact us</NuxtLink></li> -->
+          <!-- <li class="text-gray-800 p-[8px_12px]"><NuxtLink to="/contact-us">Contact us</NuxtLink></li> -->
         </ul>
         <div
           @click="isToggle = false"
@@ -71,16 +71,16 @@
             <li
               @click="isToggle = !isToggle"
               class="p-[8px_12px]"
-              :class="{ 'lh-color font-bold': router.currentRoute.value.name === 'index' }"
+              :class="{ 'font-bold': router.currentRoute.value.name === 'index' }"
             >
               <NuxtLink to="/">Home</NuxtLink>
             </li>
-            <!-- <li @click="isToggle = !isToggle" class="text-[#282828] p-[8px_12px]"><NuxtLink to="/product">Product</NuxtLink></li> -->
+            <!-- <li @click="isToggle = !isToggle" class="text-gray-800 p-[8px_12px]"><NuxtLink to="/product">Product</NuxtLink></li> -->
             <li
               @click="isToggle = !isToggle"
-              class="text-[#282828] p-[8px_12px]"
+              class="text-gray-800 p-[8px_12px]"
               :class="{
-                'lh-color font-bold':
+                'font-bold':
                   router.currentRoute.value.name === 'product' || router.currentRoute.value.name === 'product-slug',
               }"
             >
@@ -88,19 +88,19 @@
             </li>
             <li
               @click="isToggle = !isToggle"
-              class="text-[#282828] p-[8px_12px]"
-              :class="{ 'lh-color font-bold': router.currentRoute.value.name === 'about-us' }"
+              class="text-gray-800 p-[8px_12px]"
+              :class="{ 'font-bold': router.currentRoute.value.name === 'about-us' }"
             >
               <NuxtLink to="/about-us">About us</NuxtLink>
             </li>
             <li
               @click="isToggle = !isToggle"
-              class="text-[#282828] p-[8px_12px]"
-              :class="{ 'lh-color font-bold': router.currentRoute.value.name === 'contact' }"
+              class="text-gray-800 p-[8px_12px]"
+              :class="{ 'font-bold': router.currentRoute.value.name === 'contact' }"
             >
               <NuxtLink to="/contact">Contact us</NuxtLink>
             </li>
-            <!-- <li @click="isToggle = !isToggle" class="text-[#282828] p-[8px_12px]"><NuxtLink to="/contact-us">Contact us</NuxtLink></li> -->
+            <!-- <li @click="isToggle = !isToggle" class="text-gray-800 p-[8px_12px]"><NuxtLink to="/contact-us">Contact us</NuxtLink></li> -->
           </ul>
         </div>
       </div>

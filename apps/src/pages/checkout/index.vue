@@ -129,9 +129,9 @@
               <div class="lh-primary w-full p-4">
                 <p class="text-sm text-white">NRS {{ total }}</p>
                 <p class="text-sm text-white">NRS {{ cartStore?.cartData?.redeem_code_price }}</p>
-                <p class="text-sm text-white">NRS 100</p>
+                <p class="text-sm text-white">NRS 90</p>
                 <p class="text-lg font-bold text-white">
-                  NRS {{ (total + 100 - cartStore?.cartData?.redeem_code_price).toFixed(0) }}
+                  NRS {{ (total + 90 - cartStore?.cartData?.redeem_code_price).toFixed(0) }}
                 </p>
               </div>
             </div>
@@ -244,6 +244,21 @@
                 />
                 <label for="checked-checkbox" class="ms-2 text-sm font-medium text-gray-900">Cash On Delivery</label>
               </div>
+              <div class="flex items-center">
+                <input
+                  checked
+                  id="terms-condition"
+                  type="checkbox"
+                  v-model="terms"
+                  value="COD"
+                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                />
+                <label for="terms-condition" class="ms-2 text-sm font-medium text-gray-900"
+                  >By completing this checkout, I hereby accept and agree to abide by all
+                  <NuxtLink to="/term-and-condition" class="underline"> <strong>terms and conditions</strong></NuxtLink
+                  >.</label
+                >
+              </div>
             </div>
             <div class="flex gap-6 max-sm:flex-col mt-10">
               <button
@@ -262,7 +277,7 @@
 </template>
 <script setup lang="ts">
 import { useRouter } from 'nuxt/app';
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, watchEffect } from 'vue';
 import { toast } from 'vue3-toastify';
 import { useAuthStore } from '../../composables/store/auth.store';
 import { useOrderStore } from '../../composables/store/order.store';
@@ -278,6 +293,7 @@ const phone = ref('');
 const city = ref('');
 const method_of_payment = ref('');
 const promo_code = ref('');
+const terms = ref(false);
 const emit = defineEmits(['show-cart']);
 
 onMounted(async () => {
@@ -288,6 +304,9 @@ onMounted(async () => {
     address.value = authStore.SingleCustomerData.address;
     phone.value = authStore.SingleCustomerData.phone;
     city.value = authStore.SingleCustomerData.city;
+  }
+
+  if (cartStore.cartData?.usedCoupon?.length > 0) {
     promo_code.value = cartStore.cartData?.usedCoupon;
   }
 });
@@ -321,6 +340,11 @@ const checkout = async () => {
     return;
   }
 
+  if (!terms.value) {
+    toast.error('Please accept our terms and condition');
+    return;
+  }
+
   if (phone.value.length < 10) {
     toast.error('A phone number must contain at least 10 digits');
     return;
@@ -340,8 +364,8 @@ const checkout = async () => {
     mop: method_of_payment.value, // mop
     product: cartData.value, // order items ko data
     redeem_code_price: cartStore.cartData?.redeem_code_price,
-    orderTotalPrice: total.value - cartStore.cartData?.redeem_code_price + 100,
-    discount_amount: 100,
+    orderTotalPrice: total.value - cartStore.cartData?.redeem_code_price + 90,
+    discount_amount: cartStore.cartData?.discount_amount,
     usedCoupon: promo_code.value,
   };
   const response = await orderStore.createCustomerOrder(data);

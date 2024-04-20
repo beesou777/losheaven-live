@@ -128,8 +128,8 @@ const emit = defineEmits(['login-success']);
 const router = useRouter();
 
 const authStore = useAuthStore();
-const email = ref<string>('admin@gmail.com');
-const password = ref<string>('losheaven');
+const email = ref<string>('');
+const password = ref<string>('');
 const showPassword = ref<boolean>(false);
 const isRegisterShown = ref<boolean>(false);
 /**

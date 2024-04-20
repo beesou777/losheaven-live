@@ -135,12 +135,11 @@
       <div class="mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
         <div>
           <h3 class="text-lg font-bold text-gray-800">Select a Size</h3>
-          <div class="flex flex-wrap gap-4 mt-4">
+          <div class="flex flex-wrap gap-4 mt-4 mb-4">
             <button
-              @click="updateSize('L')"
-              :class="{ 'border-gray-800': size === 'L' }"
+              @click="updateSize('FREE SIZE')"
               type="button"
-              class="w-[100px] h-12 border-2 hover:border-gray-800 font-bold text-sm rounded-[8px] flex items-center justify-center shrink-0"
+              class="w-[100px] border-gray-800 h-12 border-2 hover:border-gray-800 font-bold text-sm rounded-[8px] flex items-center justify-center shrink-0"
             >
               FREE SIZE
             </button>
@@ -158,12 +157,11 @@
         </div>
         <div class="mt-6">
           <p>
-            Unlock exclusive discounts on this product with code <strong>LOSHEAVEN17</strong>. For even greater savings,
             visit our
             <strong>
               <a class="underline" href="https://www.instagram.com/losheaven17/" target="_blank">Instagram profile</a>
             </strong>
-            for a secret coupon code promoted by our influencers!
+            for a <strong>10%</strong> coupon code promoted by our influencers!
           </p>
         </div>
       </div>
@@ -192,7 +190,7 @@ import { useAuthStore } from '../../composables/store/auth.store';
 import { toast } from 'vue3-toastify';
 
 const quantity = ref<number>(1);
-const size = ref<string>('L');
+const size = ref<string>('FREE SIZE');
 const color = ref<string>('');
 const productStore = useProductStore();
 const authStore = useAuthStore();
