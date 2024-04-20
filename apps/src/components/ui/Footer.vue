@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-[#111111]">
+  <footer class="bg-gray-900 text-white">
     <div class="mx-auto w-full max-w-[1440px] p-4 py-6 lg:py-8">
       <div class="md:flex md:justify-between">
         <div class="mb-8 md:mb-0">
@@ -43,8 +43,8 @@
         </div>
         <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
           <div>
-            <h2 class="mb-4 text-sm font-semibold text-gray-300 uppercase">Short Links</h2>
-            <ul class="text-gray-500 font-medium">
+            <h2 class="mb-4 text-sm font-semibold uppercase">Short Links</h2>
+            <ul class="text-gray-300 font-medium">
               <li class="my-2">
                 <NuxtLink to="/" class="text-[18px] py-2 md:hover:underline">Home</NuxtLink>
               </li>
@@ -65,8 +65,8 @@
             </ul>
           </div>
           <div>
-            <h2 class="mb-4 text-sm font-semibold text-gray-200 uppercase">Follow us</h2>
-            <ul class="text-gray-500 font-medium">
+            <h2 class="mb-4 text-sm font-semibold uppercase">Follow us</h2>
+            <ul class="text-gray-300 font-medium">
               <li class="my-2">
                 <a href="https://www.facebook.com/profile.php?id=61557557091843" class="hover:underline py-2"
                   >Facebook</a
@@ -80,8 +80,8 @@
             </ul>
           </div>
           <div>
-            <h2 class="mb-4 text-sm font-semibold text-gray-200 uppercase">Legal</h2>
-            <ul class="text-gray-500 font-medium">
+            <h2 class="mb-4 text-sm font-semibold uppercase">Legal</h2>
+            <ul class="text-gray-300 font-medium">
               <li class="my-2">
                 <NuxtLink to="/privacy-and-policy" class="hover:underline py-2 md:hover:underline"
                   >Privacy Policy</NuxtLink

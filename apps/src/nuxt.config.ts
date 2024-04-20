@@ -2,6 +2,7 @@ import { createResolver } from '@nuxt/kit';
 const { resolve } = createResolver(import.meta.url);
 
 export default defineNuxtConfig({
+  serverMiddleware: ['compression'],
   devtools: { enabled: false },
   typescript: {
     typeCheck: false,
@@ -22,6 +23,8 @@ export default defineNuxtConfig({
         { rel: 'icon', href: '/favicon-32x32.png', type: '/imgage/png' },
         { rel: 'icon', href: '/favicon-16x16.png', type: 'image/png' },
         { rel: 'manifest', href: '/manifest.webmanifest' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com', crossorigin: true },
       ],
     },
   },

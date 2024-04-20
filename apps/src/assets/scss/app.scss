@@ -29,12 +29,5 @@ body {
   background-color: theme('colors.slate.800');
 }
 
-#user-button {
-  &:hover {
-    .user-dropdown {
-      display: block;
-    }
-  }
-}
 // components
 @import 'animations/transitions';

@@ -10,6 +10,7 @@
           <li class="text-gray-800 p-[8px_12px]">
             <NuxtLink
               to="/"
+              aria-current="page"
               class="text-[18px] nav_hover"
               :class="{ 'font-bold nav_active': router.currentRoute.value.name === 'index' }"
               >Home</NuxtLink
@@ -162,7 +163,7 @@
         class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse relative"
         id="user-button"
       >
-        <button type="button" class="flex text-sm rounded-full md:me-0 focus:ring-gray-300">
+        <button aria-label="User Menu" type="button" class="flex text-sm rounded-full md:me-0 focus:ring-gray-300">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M3 20C5.33579 17.5226 8.50702 16 12 16C15.493 16 18.6642 17.5226 21 20M16.5 7.5C16.5 9.98528 14.4853 12 12 12C9.51472 12 7.5 9.98528 7.5 7.5C7.5 5.01472 9.51472 3 12 3C14.4853 3 16.5 5.01472 16.5 7.5Z"
@@ -184,12 +185,20 @@
           </div>
           <ul class="py-2" aria-labelledby="user-menu-button">
             <li>
-              <button @click="router.push('/setting')" class="block px-4 py-2 text-sm w-full hover:bg-gray-100">
+              <button
+                aria-label="setting"
+                @click="router.push('/setting')"
+                class="block px-4 py-2 text-sm w-full hover:bg-gray-100"
+              >
                 Settings
               </button>
             </li>
             <li>
-              <button @click="Logout" class="block px-4 py-2 w-full text-sm text-gray-700 hover:bg-gray-100">
+              <button
+                aria-label="logout"
+                @click="Logout"
+                class="block px-4 py-2 w-full text-sm text-gray-700 hover:bg-gray-100"
+              >
                 Logout
               </button>
             </li>

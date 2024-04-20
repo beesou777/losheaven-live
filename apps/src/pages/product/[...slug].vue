@@ -87,7 +87,12 @@
       <div class="flex mb-4 items-center">
         <span class="title-font font-medium text-2xl text-gray-900">NRS{{ getProduct?.price }}</span>
         <span class="flex py-2 ml-3 pl-3 border-l border-gray-500">
-          <a class="text-gray-500">
+          <a
+            href="https://www.facebook.com/profile.php?id=61557557091843"
+            target="_blank"
+            area-label="Facebook"
+            class="text-gray-500"
+          >
             <svg
               fill="currentColor"
               stroke-linecap="round"
@@ -99,21 +104,8 @@
               <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
             </svg>
           </a>
-          <a class="ml-2 text-gray-500">
-            <svg
-              fill="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
-              ></path>
-            </svg>
-          </a>
-          <a class="ml-2 text-gray-500">
+
+          <a href="/contact" area-label="Contact" class="ml-2 text-gray-500">
             <svg
               fill="currentColor"
               stroke-linecap="round"
@@ -134,9 +126,10 @@
       </p>
       <div class="mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
         <div>
-          <h3 class="text-lg font-bold text-gray-800">Select a Size</h3>
+          <h2 class="text-lg font-bold text-gray-800">Select a Size</h2>
           <div class="flex flex-wrap gap-4 mt-4 mb-4">
             <button
+              aria-label="sizes"
               @click="updateSize('FREE SIZE')"
               type="button"
               class="w-[100px] border-gray-800 h-12 border-2 hover:border-gray-800 font-bold text-sm rounded-[8px] flex items-center justify-center shrink-0"
@@ -146,9 +139,10 @@
           </div>
         </div>
         <div>
-          <h3 class="text-lg font-bold text-gray-800">Color</h3>
+          <h2 class="text-lg font-bold text-gray-800">Color</h2>
           <div class="flex flex-wrap gap-4 mt-4">
             <button
+              aria-label="color"
               type="button"
               class="w-12 h-12 border-2 hover:border-gray-800 border-gray-800 rounded-full shrink-0"
               :style="{ backgroundColor: getProduct && getProduct.color ? '#' + getProduct.color.color_code : '#fff' }"
@@ -167,12 +161,14 @@
       </div>
       <div class="flex gap-3 max-[512px]:flex-col">
         <button
+          aria-label="ciew cart"
           @click="checkout"
           class="w-full text-center cursor-pointer text-white lh-primary border-0 py-4 px-6 focus:outline-none rounded"
         >
           View Cart
         </button>
         <button
+          aria-label="add to cart"
           @click="addToCart"
           class="w-full text-[#333] border border-1 py-4 px-6 focus:outline-none hover:bg-[#f6f6f6] ease-in duration-300 rounded"
         >
@@ -273,16 +269,47 @@ const updateSize = (color: any) => {
 };
 
 useHead({
-  title: getProduct.value?.name,
+  title: getProduct.value?.name || "Loose Fit Men's Figure Print Drop Shoulder black T-Shirt",
   meta: [
-    { name: 'description', content: getProduct.value?.description },
-    { property: 'og:title', content: getProduct.value?.name },
-    { property: 'og:description', content: getProduct.value?.description },
-    { property: 'og:image', content: getProduct.value?.image },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:title', content: getProduct.value?.name },
-    { name: 'twitter:description', content: getProduct.value?.description },
-    { name: 'twitter:image', content: getProduct.value?.image },
+    {
+      name: 'description',
+      content:
+        getProduct.value?.description ||
+        'Preto Casual Collar Meia manga Tecido de malha Desenho Animado,Slogan Embellished Elasticidade Baixa Tops Masculino',
+    },
+    {
+      property: 'og:title',
+      content: getProduct.value?.name || "Loose Fit Men's Figure Print Drop Shoulder black T-Shirt",
+    },
+    {
+      property: 'og:description',
+      content:
+        getProduct.value?.description ||
+        'Preto Casual Collar Meia manga Tecido de malha Desenho Animado,Slogan Embellished Elasticidade Baixa Tops Masculino',
+    },
+    {
+      property: 'og:image',
+      content: getProduct.value?.images[0] || 'https://i.pinimg.com/564x/78/43/ec/7843ec2518693010f7ad2d9003b9e6bd.jpg',
+    },
+    {
+      name: 'twitter:card',
+      content:
+        'https://img.ltwebstatic.com/images3_pi/2023/05/30/168541035154da22a2dc571e2fd77b13b21581a969_thumbnail_720x.webp',
+    },
+    {
+      name: 'twitter:title',
+      content: getProduct.value?.name || "Loose Fit Men's Figure Print Drop Shoulder black T-Shirt",
+    },
+    {
+      name: 'twitter:description',
+      content:
+        getProduct.value?.description ||
+        'Preto Casual Collar Meia manga Tecido de malha Desenho Animado,Slogan Embellished Elasticidade Baixa Tops Masculino',
+    },
+    {
+      name: 'twitter:image',
+      content: getProduct.value?.images[0] || 'https://i.pinimg.com/564x/78/43/ec/7843ec2518693010f7ad2d9003b9e6bd.jpg',
+    },
   ],
 });
 </script>
