@@ -1,5 +1,9 @@
 <template>
-  <h1 class="text-[18px] text-center pt-8 pb-8">OUR NEW ARRIVAL</h1>
+  <h1
+    class="text-[18px] w-fit mx-auto text-center pt-8 pb-8 relative after:content-[''] after:absolute after:bottom-[20px] after:left-0 after:w-full after:h-[2px] after:bg-black"
+  >
+    OUR NEW ARRIVAL
+  </h1>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
     <div class="col-span-1 relative max-h-[500px] h-[500px]">
       <img

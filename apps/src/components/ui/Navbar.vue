@@ -12,7 +12,7 @@
               to="/"
               aria-current="page"
               class="text-[18px] nav_hover"
-              :class="{ 'font-bold nav_active': router.currentRoute.value.name === 'index' }"
+              :class="{ 'font-semibold nav_active': router.currentRoute.value.name === 'index' }"
               >Home</NuxtLink
             >
           </li>
@@ -21,7 +21,7 @@
               to="/product"
               class="text-[18px] nav_hover"
               :class="{
-                'font-bold nav_active':
+                'font-semibold nav_active':
                   router.currentRoute.value.name === 'product' || router.currentRoute.value.name === 'product-slug',
               }"
               >Product</NuxtLink
@@ -30,7 +30,7 @@
           <!-- <li class="text-gray-800 p-[8px_12px]"><NuxtLink to="/product">Product</NuxtLink></li> -->
           <li class="text-gray-800 p-[8px_12px]">
             <NuxtLink
-              :class="{ 'font-bold nav_active': router.currentRoute.value.name === 'about-us' }"
+              :class="{ 'font-semibold nav_active': router.currentRoute.value.name === 'about-us' }"
               to="/about-us"
               class="text-[18px] nav_hover"
               >About us</NuxtLink
@@ -38,7 +38,7 @@
           </li>
           <li class="text-gray-800 p-[8px_12px]">
             <NuxtLink
-              :class="{ 'font-bold nav_active': router.currentRoute.value.name === 'contact' }"
+              :class="{ 'font-semibold nav_active': router.currentRoute.value.name === 'contact' }"
               to="/contact"
               class="text-[18px] nav_hover"
               >Contact us</NuxtLink
@@ -72,7 +72,7 @@
             <li
               @click="isToggle = !isToggle"
               class="p-[8px_12px]"
-              :class="{ 'font-bold': router.currentRoute.value.name === 'index' }"
+              :class="{ 'font-semibold': router.currentRoute.value.name === 'index' }"
             >
               <NuxtLink to="/">Home</NuxtLink>
             </li>
@@ -81,7 +81,7 @@
               @click="isToggle = !isToggle"
               class="text-gray-800 p-[8px_12px]"
               :class="{
-                'font-bold':
+                'font-semibold':
                   router.currentRoute.value.name === 'product' || router.currentRoute.value.name === 'product-slug',
               }"
             >
@@ -90,14 +90,14 @@
             <li
               @click="isToggle = !isToggle"
               class="text-gray-800 p-[8px_12px]"
-              :class="{ 'font-bold': router.currentRoute.value.name === 'about-us' }"
+              :class="{ 'font-semibold': router.currentRoute.value.name === 'about-us' }"
             >
               <NuxtLink to="/about-us">About us</NuxtLink>
             </li>
             <li
               @click="isToggle = !isToggle"
               class="text-gray-800 p-[8px_12px]"
-              :class="{ 'font-bold': router.currentRoute.value.name === 'contact' }"
+              :class="{ 'font-semibold': router.currentRoute.value.name === 'contact' }"
             >
               <NuxtLink to="/contact">Contact us</NuxtLink>
             </li>

@@ -8,6 +8,7 @@
       :loading="'lazy'"
       format="jpg"
     />
+    <div class="absolute top-0 left-0 h-full w-full bg-gray-900 opacity-[15%]"></div>
     <div
       class="max-w-[800px] w-full p-5 mx-auto absolute text-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
     >

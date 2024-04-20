@@ -1,6 +1,6 @@
 <template>
   <!-- component -->
-  <nav class="flex pt-10 px-[30px]" aria-label="Breadcrumb">
+  <nav class="flex pt-10 px-[30px] overflow-x-hidden" aria-label="Breadcrumb">
     <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
       <li class="inline-flex items-center whitespace-nowrap overflow-hidden text-ellipsis max-w-[120px]">
         <NuxtLink
@@ -81,7 +81,7 @@
         </div>
       </div>
     </div>
-    <div class="col-span-12 lg:col-span-5 md:mt-0 mt-6 sticky top-[100px] overflow-auto h-fit">
+    <div class="col-span-12 lg:col-span-5 md:mt-0 mt-6 top-[100px] overflow-auto h-fit">
       <h2 class="text-sm title-font text-gray-500 tracking-widest">{{ getProduct?.category }}</h2>
       <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ getProduct?.name }}</h1>
       <div class="flex mb-4 items-center">
@@ -175,7 +175,37 @@
           Add To Cart
         </button>
       </div>
+
+      <!-- other detils -->
+      <div class="py-3 border-t-2 mt-6">
+        <h2 class="text-[24px] font-medium">Other Details</h2>
+        <div class="mt-4">
+          <h2 class="text-[18px] font-semibold">Fabric & Care:</h2>
+          <ul class="list-disc list-inside">
+            <li>Made from 100% cotton <strong>(Thai cotton terry)</strong></li>
+            <li>Ethically crafted in Nepal</li>
+            <li>For best care, wash cold and lay flat to dry</li>
+          </ul>
+        </div>
+        <div class="mt-4">
+          <h2 class="text-[18px] font-semibold">Size & Fit :</h2>
+          <p>One size fits all, suitable for individuals of any gender, age, and body type.</p>
+        </div>
+        <div class="mt-4">
+          <h2 class="text-[18px] font-semibold">Shipping & Returns :</h2>
+          <p>
+            The shipping cost is <strong>NRS 90</strong>, with free shipping for purchases of 2 or more items within
+            Kathmandu Valley. For returns, please refer to our terms and conditions at
+            <strong
+              ><a href="/term-and-condition" area-label="term and condition"
+                >https://www.losheaven.com/term-and-condition</a
+              ></strong
+            >.
+          </p>
+        </div>
+      </div>
     </div>
+
     <ui-login v-if="authStore?.isLogined" :isLoginShown="authStore?.isLogined" @login-success="handleLoginSuccess" />
   </div>
 </template>

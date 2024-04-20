@@ -94,7 +94,7 @@
               </div>
             </div>
           </div>
-          <div class="sticky bottom-[0]">
+          <div class="sticky bottom-[10px]">
             <div class="flex items-end">
               <div class="w-full">
                 <input

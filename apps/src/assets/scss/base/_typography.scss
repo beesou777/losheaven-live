@@ -1,22 +1,22 @@
 .lh-primary {
-  background-color: #274c5b !important;
+  background-color: theme('colors.gray.900') !important;
   &:hover {
-    background-color: rgba(39, 76, 91, 0.9) !important;
+    background-color: theme('colors.gray.900') !important;
   }
 }
 
 .lh-color {
-  color: #274c5b !important;
+  color: theme('colors.gray.900') !important;
   &:hover {
-    color: rgba(39, 76, 91, 0.9) !important;
+    color: theme('colors.gray.800') !important;
   }
 }
 
 .lh-border {
-  border-color: #274c5b !important;
+  border-color: theme('colors.gray.900') !important;
 }
 
 ::selection {
-  background-color: #274c5b;
+  background-color: theme('colors.gray.900');
   color: white;
 }
