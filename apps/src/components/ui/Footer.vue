@@ -8,7 +8,7 @@
         Get 5% off using our code <strong>LOSHEAVEN</strong> as thanks for staying in touch.
       </p>
       <ul
-        class="mx-auto max-w-[700px] text-gray-300 font-medium flex flex-wrap justify-center gap-[0px_20px] mt-[2.5rem]"
+        class="mx-auto max-w-[600px] text-gray-300 font-medium flex flex-wrap justify-center gap-[0px_20px] mt-[2.5rem]"
       >
         <li class="my-2">
           <NuxtLink to="/" class="text-[14px] py-2 md:hover:underline md:text-[16px]">Home</NuxtLink>
@@ -28,18 +28,18 @@
           >
         </li>
         <li class="my-2">
+          <a href="https://www.facebook.com/profile.php?id=61557557091843" class="hover:underline py-2">Facebook</a>
+        </li>
+        <li class="my-2">
+          <a href="https://www.instagram.com/losheaven17/" class="hover:underline py-2 md:hover:underline">Instagram</a>
+        </li>
+        <li class="my-2">
           <NuxtLink to="/privacy-and-policy" class="hover:underline py-2 md:hover:underline">Privacy Policy</NuxtLink>
         </li>
         <li class="my-2">
           <NuxtLink to="/term-and-condition" class="hover:underline py-2 md:hover:underline"
             >Terms &amp; Conditions</NuxtLink
           >
-        </li>
-        <li class="my-2">
-          <a href="https://www.facebook.com/profile.php?id=61557557091843" class="hover:underline py-2">Facebook</a>
-        </li>
-        <li class="my-2">
-          <a href="https://www.instagram.com/losheaven17/" class="hover:underline py-2 md:hover:underline">Instagram</a>
         </li>
       </ul>
       <div class="mt-8 flex justify-center">
