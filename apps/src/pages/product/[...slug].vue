@@ -224,7 +224,7 @@ const cartStore = useCartStore();
 const router = useRouter();
 
 onMounted(async () => {
-  await productStore.getSingleProduct(router.currentRoute.value.params.slug);
+  await productStore.getSingleProduct(router.currentRoute.value.params.slug[1]);
 });
 
 const getProduct = computed(() => {

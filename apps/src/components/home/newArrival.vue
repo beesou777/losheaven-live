@@ -12,7 +12,11 @@
         class="h-full w-full object-cover"
       />
       <div class="absolute top-[50%] left-[50%] translate-x-[-50%] z-[2] text-white">
-        <NuxtLink to="product/661efcd7b9cbf45920cbe56b" class="text-[18px] cursor-pointer">SHOP NOW</NuxtLink>
+        <NuxtLink
+          to="product/loose-fit-men's-figure-print-drop-shoulder--skin-color-t-shirt/661efcd7b9cbf45920cbe56b"
+          class="text-[18px] cursor-pointer"
+          >SHOP NOW</NuxtLink
+        >
       </div>
       <div class="absolute top-0 left-0 h-full w-full hover:bg-gray-900 hover:opacity-[10%]"></div>
     </div>
@@ -23,7 +27,11 @@
         class="h-full w-full object-cover"
       />
       <div class="absolute top-[50%] left-[50%] translate-x-[-50%] z-[2] text-white">
-        <NuxtLink to="product/661f02b121fd285dba1c4686" class="cursor-pointer text-[18px]">SHOP NOW</NuxtLink>
+        <NuxtLink
+          to="product/loose-fit-men's-figure-print-drop-shoulder-black-t-shirt/661f02b121fd285dba1c4686"
+          class="cursor-pointer text-[18px]"
+          >SHOP NOW</NuxtLink
+        >
       </div>
       <div class="absolute top-0 left-0 h-full w-full hover:bg-gray-900 hover:opacity-[10%]"></div>
     </div>
@@ -34,7 +42,11 @@
         class="h-full w-full object-cover"
       />
       <div class="absolute top-[50%] left-[50%] translate-x-[-50%] z-[2] text-white">
-        <NuxtLink to="product/661f03cb21fd285dba1c468e" class="cursor-pointer text-[18px]">SHOP NOW</NuxtLink>
+        <NuxtLink
+          to="product/loose-fit-men's-figure-print-drop-shoulder-royal-blue-t-shirt/661f03cb21fd285dba1c468e"
+          class="cursor-pointer text-[18px]"
+          >SHOP NOW</NuxtLink
+        >
       </div>
       <div class="absolute top-0 left-0 h-full w-full hover:bg-gray-900 hover:opacity-[10%]"></div>
     </div>

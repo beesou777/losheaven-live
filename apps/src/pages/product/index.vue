@@ -21,7 +21,7 @@
           class="relative bg-white rounded-2xl p-2 cursor-pointer group transition-all"
         >
           <NuxtLink
-            :to="`/product/${items._id}`"
+            :to="`/product/${items.name.toLowerCase().split(' ').join('-')}/${items._id}`"
             class="pb-4 text-decoration-none flex items-center flex-col hover:bg-gray-100 rounded"
           >
             <div class="w-full max-h max-h-[400px] h-full bg-gray-200 lg:aspect-none overflow-hidden">
