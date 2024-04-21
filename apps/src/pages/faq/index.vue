@@ -3,7 +3,7 @@
     <section class="max-w-5xl mx-auto py-10 sm:py-20">
       <div class="flex items-center justify-center flex-col gap-y-2 py-5">
         <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold">Frequently asked questions</h2>
-        <p class="text-lg font-medium text-slate-700/70">Questions related to web hosting</p>
+        <p class="text-lg font-medium text-slate-700/70">Questions related to losheaven clothing</p>
       </div>
       <div class="w-full px-7 md:px-10 xl:px-2 py-4">
         <div class="mx-auto w-full max-w-5xl border border-slate-400/20 rounded-lg bg-white">
