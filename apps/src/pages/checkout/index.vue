@@ -370,10 +370,10 @@ const checkout = async () => {
   };
   const response = await orderStore.createCustomerOrder(data);
   if (response?.status === 200) {
-    const response = await cartStore.deleteAllCart();
-    if (response.status === 200) {
+    const res = await cartStore.deleteAllCart();
+    if (res.status === 200) {
       cartStore.cartData = null;
-      router.push('/');
+      router.push(`/invoice?orderId=${response.data?.order?._id}`);
       setTimeout(() => {
         toast.success('Your Order has been placed successfully!!');
       }, 10);

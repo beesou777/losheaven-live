@@ -52,5 +52,20 @@ export const useOrderStore = defineStore('order', {
         console.log(error);
       }
     },
+    async customerReceipt(id: number) {
+      try {
+        const response = await axios.get(`order/customer-receipt/${id}`, {
+          headers: {
+            Authorization: `Bearer ${useCookie('customer-access').value}`,
+          },
+        });
+        if (response.status == 200) {
+          this.order = response.data.order;
+          return response;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
 });
