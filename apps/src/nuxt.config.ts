@@ -54,7 +54,9 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@vite-pwa/nuxt',
     'nuxt-lazy-hydrate',
+    'nuxt-schema-org',
   ],
+
   // module::pinia
   pinia: {
     storesDirs: ['~/stores/**', '#/stores/**', '@/stores/**'],
@@ -84,6 +86,14 @@ export default defineNuxtConfig({
     MAILUSER: process.env.MAILUSER,
     MAILPASSWORD: process.env.MAILPASSWORD,
     CONTACTMAIL: process.env.CONTACTMAIL,
+  },
+  schemaOrg: {
+    identity: {
+      type: 'Organization',
+      name: 'losheaven',
+      url: 'https://www.losheaven.com',
+      logo: 'https://www.losheaven.com/images/logo.png',
+    },
   },
   pwa: {
     registerType: 'autoUpdate',

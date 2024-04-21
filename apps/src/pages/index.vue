@@ -34,6 +34,19 @@ useHead({
     },
   ],
 });
+
+useSchemaOrg([
+  {
+    '@context': 'http://schema.org',
+    '@type': 'Organization',
+    brand: 'losheaven',
+    name: 'losheaven',
+    url: 'https://www.losheaven.com/',
+    logo: 'https://www.losheaven.com/images/logo.png',
+    description: '',
+    sameAs: ['https://www.facebook.com/profile.php?id=61557557091843', 'https://www.instagram.com/losheaven17/'],
+  },
+]);
 </script>
 
 <style scoped lang="scss">

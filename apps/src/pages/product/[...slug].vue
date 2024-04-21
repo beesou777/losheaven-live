@@ -342,4 +342,23 @@ useHead({
     },
   ],
 });
+
+useSchemaOrg([
+  {
+    '@context': 'http://schema.org/',
+    '@type': 'Product',
+    '@id': getProduct.value?._id,
+    name: getProduct.value?.name,
+    category: 't-shirt',
+    releaseDate: '',
+    image: getProduct.value?.images[0],
+    identifier: getProduct.value?._id,
+    description: getProduct.value?.description,
+    disambiguatingDescription: 't-shirt',
+    manufacturer: {
+      '@type': 'Organization',
+      name: 'losheaven',
+    },
+  },
+]);
 </script>
