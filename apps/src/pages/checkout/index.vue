@@ -129,9 +129,9 @@
               <div class="lh-primary w-full p-4">
                 <p class="text-sm text-white">NRS {{ total }}</p>
                 <p class="text-sm text-white">NRS {{ cartStore?.cartData?.redeem_code_price }}</p>
-                <p class="text-sm text-white">NRS 90</p>
+                <p class="text-sm text-white">FREE</p>
                 <p class="text-lg font-bold text-white">
-                  NRS {{ (total + 90 - cartStore?.cartData?.redeem_code_price).toFixed(0) }}
+                  NRS {{ (total - cartStore?.cartData?.redeem_code_price).toFixed(0) }}
                 </p>
               </div>
             </div>
@@ -364,7 +364,7 @@ const checkout = async () => {
     mop: method_of_payment.value, // mop
     product: cartData.value, // order items ko data
     redeem_code_price: cartStore.cartData?.redeem_code_price,
-    orderTotalPrice: total.value - cartStore.cartData?.redeem_code_price + 90,
+    orderTotalPrice: total.value - cartStore.cartData?.redeem_code_price,
     discount_amount: cartStore.cartData?.discount_amount,
     usedCoupon: promo_code.value,
   };

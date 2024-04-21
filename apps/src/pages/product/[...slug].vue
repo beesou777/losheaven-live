@@ -194,8 +194,8 @@
         <div class="mt-4">
           <h2 class="text-[18px] font-semibold">Shipping & Returns :</h2>
           <p>
-            The shipping cost is <strong>NRS 90</strong>, with free shipping for purchases of 2 or more items within
-            Kathmandu Valley. For returns, please refer to our terms and conditions at
+            The shipping cost is <strong>FREE</strong> within Kathmandu Valley. For returns, please refer to our terms
+            and conditions at
             <strong
               ><a href="/term-and-condition" area-label="term and condition"
                 >https://www.losheaven.com/term-and-condition</a
