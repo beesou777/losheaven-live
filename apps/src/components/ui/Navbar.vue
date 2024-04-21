@@ -44,14 +44,7 @@
               >Contact us</NuxtLink
             >
           </li>
-          <li class="text-gray-800 p-[8px_12px]">
-            <NuxtLink
-              :class="{ 'font-semibold nav_active': router.currentRoute.value.name === 'faq' }"
-              to="/faq"
-              class="text-[18px] nav_hover"
-              >FAQ</NuxtLink
-            >
-          </li>
+
           <!-- <li class="text-gray-800 p-[8px_12px]"><NuxtLink to="/contact-us">Contact us</NuxtLink></li> -->
         </ul>
         <div
@@ -108,13 +101,6 @@
               :class="{ 'font-semibold': router.currentRoute.value.name === 'contact' }"
             >
               <NuxtLink to="/contact">Contact us</NuxtLink>
-            </li>
-            <li
-              @click="isToggle = !isToggle"
-              class="text-gray-800 p-[8px_12px]"
-              :class="{ 'font-semibold': router.currentRoute.value.name === 'faq' }"
-            >
-              <NuxtLink to="/faq">FAQ</NuxtLink>
             </li>
           </ul>
         </div>
