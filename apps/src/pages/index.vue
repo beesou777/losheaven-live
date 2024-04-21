@@ -1,26 +1,39 @@
 <template>
   <section class="text-center lg:text-left overflow-hidden">
     <home-feature />
-    <!-- <div class="text-center mx-auto max-w-[1500px] py-10">
-      <div class="max-h-[200px] max-w-[400px] mx-auto h-full w-full">
-        <img src="https://i.postimg.cc/KzL8qkP1/Untitled-design.png" alt="losheaven" class="w-full h-full" />
-      </div>
-      <NuxtLink to="/product" class="rounded-md px-6 p-3 text-sm font-semibold bg-black text-white hover:bg-gray-800"
-        >Shop Now</NuxtLink
-      >
-    </div> -->
     <home-gallery />
-    <!-- <home-founder-review/> -->
     <home-new-arrival />
     <home-help-section />
+    <div class="bg-gray-300 p-8">
+      <div class="max-w-[1450px] mx-auto">
+        <h1 class="text-3xl font-semibold mb-3">Discover Trendy Losheaven Clothing in Nepal</h1>
+        <p class="md:text-[18px] text-[16px]">
+          Explore a diverse collection of stylish
+          <a href="/product" class="underline font-semibold">oversized t-shirts</a> and clothing in Nepal at losheaven.
+        </p>
+        <p class="md:text-[18px] text-[16px]">
+          Losheaven offers a wide range of oversized clothing t-shirts designed to elevate your fashion statement.
+        </p>
+        <p class="md:text-[18px] text-[16px]">
+          Shop now to stay ahead in Nepali fashion trends with losheaven's premium quality clothing line.
+        </p>
+        <p class="md:text-[18px] text-[16px]">
+          Experience the perfect blend of comfort and style with Losheaven's exclusive collection of oversized clothing.
+        </p>
+        <p class="md:text-[18px] text-[16px]">
+          Visit Losheaven today and redefine your wardrobe with our latest arrivals.
+        </p>
+      </div>
+    </div>
   </section>
 </template>
+
 <script setup lang="ts">
 import { onMounted } from 'vue';
 const productStore = useProductStore();
 
 useHead({
-  title: 'Shop Stylish Oversized Clothing in Nepal at Losheaven - Nepali Startup',
+  title: 'Losheaven Clothing in Nepal - Trendy Oversized T-shirts',
   meta: [
     {
       name: 'description',
@@ -30,7 +43,11 @@ useHead({
     {
       name: 'keywords',
       content:
-        'oversized clothing in Nepal, stylish clothing Nepal, Nepali fashion, oversized t-shirts Nepal, losheaven clothing Nepal, losheaven Nepal clothing',
+        'losheaven clothing, losheaven clothing Nepal, oversized clothing, trendy clothing Nepal, oversized t-shirts Nepal, Nepali fashion',
+    },
+    {
+      name: 'canonical',
+      content: 'https://www.losheaven.com/',
     },
   ],
 });
@@ -43,7 +60,8 @@ useSchemaOrg([
     name: 'losheaven',
     url: 'https://www.losheaven.com/',
     logo: 'https://www.losheaven.com/images/logo.png',
-    description: '',
+    description:
+      'Discover trendy Losheaven clothing in Nepal. Shop now for oversized t-shirts, hoodies, and more. Elevate your fashion with Losheaven.',
     sameAs: ['https://www.facebook.com/profile.php?id=61557557091843', 'https://www.instagram.com/losheaven17/'],
   },
 ]);
@@ -58,5 +76,9 @@ useSchemaOrg([
 
 .fancy-border-radius {
   border-radius: 53% 47% 52% 48% / 36% 41% 59% 64%;
+}
+
+.content {
+  margin-top: 30px;
 }
 </style>

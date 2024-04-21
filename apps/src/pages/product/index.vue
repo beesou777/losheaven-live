@@ -58,7 +58,7 @@ const getProducts = computed(() => {
 watch(getProducts, (newProducts) => {
   newProducts.forEach((product) => {
     useHead({
-      title: product?.name,
+      title: 'oversized clothing in Nepal',
       meta: [
         { name: 'description', content: product?.description },
         { property: 'og:title', content: product?.name },
