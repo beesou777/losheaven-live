@@ -34,6 +34,9 @@
           <a href="https://www.instagram.com/losheaven17/" class="hover:underline py-2 md:hover:underline">Instagram</a>
         </li>
         <li class="my-2">
+          <a href="/faq" class="hover:underline py-2 md:hover:underline">FAQ</a>
+        </li>
+        <li class="my-2">
           <NuxtLink to="/privacy-and-policy" class="hover:underline py-2 md:hover:underline">Privacy Policy</NuxtLink>
         </li>
         <li class="my-2">
