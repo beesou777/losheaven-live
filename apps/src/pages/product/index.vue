@@ -7,7 +7,7 @@
         fabric. Made in the Nepal.
       </p>
     </div>
-    <div class="p-4">
+    <div>
       <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2 loading-skeleton"
         v-if="!getProducts"
@@ -18,30 +18,35 @@
           class="relative bg-white max-h-[400px] h-[400px] rounded-2xl p-2 cursor-pointer group transition-all loader"
         ></div>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
         <div
           v-for="(items, index) in getProducts"
           :key="index"
-          class="relative bg-white rounded-2xl p-2 cursor-pointer group transition-all"
+          class="relative bg-white rounded-2xl cursor-pointer group transition-all"
         >
           <NuxtLink
             :to="`/product/${items.name.toLowerCase().split(' ').join('-')}/${items._id}`"
             class="pb-4 text-decoration-none flex items-center flex-col hover:bg-gray-100 rounded"
           >
-            <div class="w-full max-h max-h-[400px] h-full bg-gray-200 lg:aspect-none overflow-hidden">
+            <div
+              class="w-full max-h max-h-[800px] h-full bg-gray-200 lg:aspect-none overflow-hidden"
+              @mouseover="showFirstImage[index] = true"
+              @mouseleave="showFirstImage[index] = false"
+            >
               <nuxt-img
                 loading="lazy"
-                :src="items?.images[0]"
+                :src="showFirstImage[index] ? items?.images[0] : items?.images[1]"
                 :alt="items?.name"
-                class="h-full w-full object-cover max-h-[400px] lg:h-full lg:w-full hover:scale-[1.1] duration-300 ease-in"
+                class="h-full w-full object-cover max-h-[800px] lg:h-full lg:w-full hover:scale-[1.02] duration-300 ease-in"
               />
             </div>
-            <div class="px-3 pt-3 pb-4">
-              <p class="text-[13px] pt-3 text-gray-700">{{ items?.category }}</p>
-              <h3 class="text-[15px] md:text-[16px] font-medium text-gray-800 group-hover:underline">
+
+            <div class="px-3 py-1">
+              <p class="text-[13px] text-gray-700">{{ items?.category }}</p>
+              <h3 class="text-[14px] md:text-[16px] font-medium text-gray-800 group-hover:underline">
                 {{ items?.name }}
               </h3>
-              <h4 class="text-lg text-gray-700 font-bold mt-4">NRS {{ items.price }}</h4>
+              <h4 class="text-lg text-gray-700 font-bold py-1">NRS {{ items.price }}</h4>
             </div>
           </NuxtLink>
         </div>
@@ -53,6 +58,7 @@
 import { computed, onMounted, ref, watch } from 'vue';
 
 const productStore = useProductStore();
+const showFirstImage = ref([]);
 
 onMounted(async () => {
   await productStore.getProducts();

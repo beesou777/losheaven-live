@@ -5,7 +5,7 @@
         A world of timeless designs that honour the people  who make them and the places they’re made.
       </h2>
       <p class="mt-[32px] text-[14px] md:text-[16px]">
-        Get 5% off using our code <strong>LOSHEAVEN</strong> as thanks for staying in touch.
+        Get 8% off using our code <strong>LOSHEAVEN</strong> as thanks for staying in touch.
       </p>
       <ul
         class="mx-auto max-w-[600px] text-gray-300 font-medium flex flex-wrap justify-center gap-[0px_20px] mt-[2.5rem]"

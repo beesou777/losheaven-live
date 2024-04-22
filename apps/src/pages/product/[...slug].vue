@@ -130,19 +130,8 @@
         {{ getProduct?.description }}
       </p>
       <div class="mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
-        <div>
-          <h2 class="text-lg font-bold text-gray-800">Select a Size</h2>
-          <div class="flex flex-wrap gap-4 mt-4 mb-4">
-            <button
-              aria-label="sizes"
-              @click="updateSize('FREE SIZE')"
-              type="button"
-              class="w-[100px] border-gray-800 h-12 border-2 hover:border-gray-800 font-bold text-sm rounded-[8px] flex items-center justify-center shrink-0"
-            >
-              FREE SIZE
-            </button>
-          </div>
-        </div>
+        <h2 class="text-lg font-bold text-gray-800">SIZE : FREE SIZE</h2>
+
         <div>
           <h2 class="text-lg font-bold text-gray-800">Color</h2>
           <div class="flex flex-wrap gap-4 mt-4">
@@ -214,32 +203,32 @@
     <ui-login v-if="authStore?.isLogined" :isLoginShown="authStore?.isLogined" @login-success="handleLoginSuccess" />
   </div>
   <!-- related product -->
-  <div class="py-8 2xl:px-20 md:px-6 px-4">
+  <div class="py-8 2xl:px-20 md:px-6">
     <h2 class="text-[24px] font-semibold pb-3">Similar Product</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       <div
         v-for="(items, index) in relatedProducts"
         :key="index"
-        class="relative bg-white rounded-2xl p-2 cursor-pointer group transition-all"
+        class="relative bg-white rounded-2xl cursor-pointer group transition-all"
       >
         <NuxtLink
           :to="`/product/${items.name.toLowerCase().split(' ').join('-')}/${items._id}`"
           class="pb-4 text-decoration-none flex items-center flex-col hover:bg-gray-100 rounded"
         >
-          <div class="w-full max-h max-h-[400px] h-full bg-gray-200 lg:aspect-none overflow-hidden">
+          <div class="w-full max-h max-h-[800px] h-full bg-gray-200 lg:aspect-none overflow-hidden">
             <nuxt-img
               loading="lazy"
               :src="items?.images[0]"
               :alt="items?.name"
-              class="h-full w-full object-cover max-h-[400px] lg:h-full lg:w-full hover:scale-[1.1] duration-300 ease-in"
+              class="h-full w-full object-cover max-h-[800px] lg:h-full lg:w-full hover:scale-[1.02] duration-300 ease-in"
             />
           </div>
-          <div class="px-3 pt-3 pb-4">
-            <p class="text-[12px] md:text-[14px] pt-3 text-gray-700">{{ items?.category }}</p>
-            <h3 class="text-[15px] md:text-[16px] font-medium text-gray-800 group-hover:underline">
+          <div class="py-2">
+            <p class="text-[12px] md:text-[14px] text-gray-700">{{ items?.category }}</p>
+            <h3 class="text-[14px] md:text-[16px] font-medium text-gray-800 group-hover:underline">
               {{ items?.name }}
             </h3>
-            <h4 class="text-lg text-gray-700 font-bold mt-4">NRS {{ items.price }}</h4>
+            <h4 class="text-lg text-gray-700 font-bold py-1">NRS {{ items.price }}</h4>
           </div>
         </NuxtLink>
       </div>

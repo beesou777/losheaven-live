@@ -9,14 +9,18 @@
     <div
       class="max-w-[800px] w-full p-5 mx-auto absolute text-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
     >
-      <h1 class="md:text-[64px] py-3 text-[42px] font-medium text-white md:leading-[4rem]">
+      <h1 class="md:text-[70px] uppercase py-3 text-[42px] font-bold text-white leading-[3rem] md:leading-[4rem]">
         Beat the Heat with Oversized Tees!
       </h1>
-      <p class="text-white text-[16px] md:text-[20px]">
+      <p class="text-white text-[16px] md:text-[20px] pb-4">
         Get summer-ready with our oversized tees! Nab a cool 10% off using our influencer code. But move fast, we've
         only got a limited amount!
       </p>
-      <NuxtLink to="/product" class="text-white px-6 underline text-[18px] pt-5">SHOP NOW</NuxtLink>
+      <NuxtLink
+        to="/product"
+        class="text-white px-6 text-[18px] font-bold py-2 hover:border-gray-900 duration-300 hover:bg-gray-900 rounded border my-3"
+        >SHOP NOW</NuxtLink
+      >
     </div>
   </div>
   <div class="w-full bg-gray-200">
