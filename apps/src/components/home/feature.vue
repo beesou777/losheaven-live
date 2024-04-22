@@ -1,12 +1,9 @@
 <template>
   <div class="relative w-full h-screen">
-    <NuxtImg
+    <img
       src="https://i.postimg.cc/1RVXphJb/63364c192129093-65d6b06bbb968.jpg"
       alt="losheaven oversize thsirt"
       class="w-full h-full object-cover"
-      :quantity="85"
-      :loading="'lazy'"
-      format="jpg"
     />
     <div class="absolute top-0 left-0 h-full w-full bg-gray-900 opacity-[15%]"></div>
     <div

@@ -5,10 +5,11 @@
     OUR NEW ARRIVAL
   </h1>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
-    <div class="col-span-1 relative max-h-[500px] h-[500px]">
-      <img
+    <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
+      <nuxt-img
         src="https://img.ltwebstatic.com/images3_pi/2022/12/06/1670320316c244babfdf3f4854f15c90231ce7f060_thumbnail_720x.webp"
         alt=""
+        loading="lazy"
         class="h-full w-full object-cover"
       />
       <div class="absolute top-[50%] left-[50%] translate-x-[-50%] z-[2] text-white">
@@ -20,11 +21,12 @@
       </div>
       <div class="absolute top-0 left-0 h-full w-full hover:bg-gray-900 hover:opacity-[10%]"></div>
     </div>
-    <div class="col-span-1 relative max-h-[500px] h-[500px]">
-      <img
+    <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
+      <nuxt-img
         src="https://img.ltwebstatic.com/images3_pi/2023/05/30/168541035154da22a2dc571e2fd77b13b21581a969_thumbnail_720x.webp"
         alt=""
         class="h-full w-full object-cover"
+        loading="lazy"
       />
       <div class="absolute top-[50%] left-[50%] translate-x-[-50%] z-[2] text-white">
         <NuxtLink
@@ -35,11 +37,13 @@
       </div>
       <div class="absolute top-0 left-0 h-full w-full hover:bg-gray-900 hover:opacity-[10%]"></div>
     </div>
-    <div class="col-span-1 relative max-h-[500px] h-[500px]">
-      <img
+    <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
+      <nuxt-img
         src="https://i.pinimg.com/564x/5d/fd/8e/5dfd8eb07ff15fd9721a94b3a6e8c62f.jpg"
         alt=""
         class="h-full w-full object-cover"
+        loading="lazy"
+        format="jpg"
       />
       <div class="absolute top-[50%] left-[50%] translate-x-[-50%] z-[2] text-white">
         <NuxtLink

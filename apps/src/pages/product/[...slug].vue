@@ -73,11 +73,16 @@
     <div class="col-span-12 lg:col-span-7 pr-0 md:pr-8">
       <div class="grid grid-cols-4 aspect-1">
         <div
-          class="col-span-2 flex items-center flex-col sm:flex-row"
+          class="col-span-2 flex items-center flex-col sm:flex-row bg-gray-100 aspect-1 min-h-[400px] h-full"
           v-for="(item, index) in getProduct?.images"
           :key="index"
         >
-          <img class="h-full w-full object-cover lg:h-full lg:w-full" alt="losheaven" :src="item" />
+          <nuxt-img
+            loading="lazy"
+            class="h-full w-full object-cover lg:h-full lg:w-full"
+            :alt="getProduct?.name"
+            :src="item"
+          />
         </div>
       </div>
     </div>

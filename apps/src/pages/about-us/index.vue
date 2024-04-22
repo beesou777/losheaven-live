@@ -6,22 +6,29 @@
         <div class="w-full px-4 lg:w-6/12">
           <div class="flex items-center -mx-3 sm:-mx-4">
             <div class="w-full px-3 sm:px-4 xl:w-1/2">
-              <div class="py-3 sm:py-4">
-                <img src="https://i.postimg.cc/xTcbc7qG/6.jpg" alt="Comfortable clothing" class="w-full rounded-2xl" />
+              <div class="py-3 sm:py-4 bg-gray-100">
+                <nuxt-img
+                  loading="lazy"
+                  src="https://i.postimg.cc/xTcbc7qG/6.jpg"
+                  alt="bishwa shah"
+                  class="w-full rounded-2xl"
+                />
               </div>
-              <div class="py-3 sm:py-4">
-                <img
+              <div class="py-3 sm:py-4 bg-gray-100">
+                <nuxt-img
+                  loading="lazy"
                   src="https://i.postimg.cc/T182wMj7/7c06e403-8271-4cf9-968a-87bc805f9456.jpg"
-                  alt="Trendy fashion"
+                  alt="Asmita"
                   class="w-full rounded-2xl"
                 />
               </div>
             </div>
             <div class="w-full px-3 sm:px-4 xl:w-1/2">
-              <div class="relative z-10 my-4 max-h-[500px] h-full">
-                <img
+              <div class="relative z-10 my-4 max-h-[500px] h-full bg-gray-100">
+                <nuxt-img
+                  loading="lazy"
                   src="https://i.postimg.cc/Rh6hVqLr/06549019-020a-4e67-a5cc-a73e69b3d9c4.jpg"
-                  alt="Fashionable clothing"
+                  alt="Nayandra sunuwar"
                   class="w-full rounded-2xl h-full object-cover"
                 />
                 <span class="absolute -right-7 -bottom-7 z-[-1]">

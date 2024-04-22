@@ -25,7 +25,8 @@
             class="pb-4 text-decoration-none flex items-center flex-col hover:bg-gray-100 rounded"
           >
             <div class="w-full max-h max-h-[400px] h-full bg-gray-200 lg:aspect-none overflow-hidden">
-              <img
+              <nuxt-img
+                loading="lazy"
                 :src="items?.images[0]"
                 :alt="items?.name"
                 class="h-full w-full object-cover max-h-[400px] lg:h-full lg:w-full hover:scale-[1.1] duration-300 ease-in"
