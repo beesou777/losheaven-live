@@ -213,6 +213,38 @@
 
     <ui-login v-if="authStore?.isLogined" :isLoginShown="authStore?.isLogined" @login-success="handleLoginSuccess" />
   </div>
+  <!-- related product -->
+  <div class="py-8 2xl:px-20 md:px-6 px-4">
+    <h2 class="text-[24px] font-semibold pb-3">Similar Product</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
+      <div
+        v-for="(items, index) in relatedProducts"
+        :key="index"
+        class="relative bg-white rounded-2xl p-2 cursor-pointer group transition-all"
+      >
+        <NuxtLink
+          :to="`/product/${items.name.toLowerCase().split(' ').join('-')}/${items._id}`"
+          class="pb-4 text-decoration-none flex items-center flex-col hover:bg-gray-100 rounded"
+        >
+          <div class="w-full max-h max-h-[400px] h-full bg-gray-200 lg:aspect-none overflow-hidden">
+            <nuxt-img
+              loading="lazy"
+              :src="items?.images[0]"
+              :alt="items?.name"
+              class="h-full w-full object-cover max-h-[400px] lg:h-full lg:w-full hover:scale-[1.1] duration-300 ease-in"
+            />
+          </div>
+          <div class="px-3 pt-3 pb-4">
+            <p class="text-[12px] md:text-[14px] pt-3 text-gray-700">{{ items?.category }}</p>
+            <h3 class="text-[15px] md:text-[16px] font-medium text-gray-800 group-hover:underline">
+              {{ items?.name }}
+            </h3>
+            <h4 class="text-lg text-gray-700 font-bold mt-4">NRS {{ items.price }}</h4>
+          </div>
+        </NuxtLink>
+      </div>
+    </div>
+  </div>
 </template>
 <script setup lang="ts">
 import { useRouter } from 'nuxt/app';
@@ -227,9 +259,22 @@ const productStore = useProductStore();
 const authStore = useAuthStore();
 const cartStore = useCartStore();
 const router = useRouter();
+const axios = useApi();
+
+const relatedProducts = ref([]);
 
 onMounted(async () => {
   await productStore.getSingleProduct(router.currentRoute.value.params.slug[1]);
+  try {
+    const category = 't-shirt'; // You can extract the category from getProduct.value or set it statically
+    const productId = router.currentRoute.value.params.slug[1];
+    const { data } = await axios.get(`/product/get-related-category-product`, {
+      params: { category, productId },
+    });
+    relatedProducts.value = data;
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 const getProduct = computed(() => {

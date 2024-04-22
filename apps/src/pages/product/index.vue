@@ -1,9 +1,13 @@
 <template>
   <div class="font-[sans-serif]">
-    <div class="p-4 mx-auto max-w-[1480px]">
-      <h1 class="text-xl font-bold py-3 leading-tight tracking-tight text-gray-900 md:text-2xl">
-        Premium Oversize Tees Samples
-      </h1>
+    <div class="text-center bg-gray-50 px-4 py-10">
+      <h1 class="text-xl py-3 leading-tight tracking-tight text-gray-900 md:text-2xl">Premium Oversize Tees Samples</h1>
+      <p class="text-[15px] md:text-[16px] max-w-[700px] mx-auto">
+        To simplify your every day. A collection of better basics, built to last from the finest Thai cotton terry
+        fabric. Made in the Nepal.
+      </p>
+    </div>
+    <div class="p-4">
       <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2 loading-skeleton"
         v-if="!getProducts"
@@ -14,7 +18,7 @@
           class="relative bg-white max-h-[400px] h-[400px] rounded-2xl p-2 cursor-pointer group transition-all loader"
         ></div>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
         <div
           v-for="(items, index) in getProducts"
           :key="index"
@@ -33,8 +37,10 @@
               />
             </div>
             <div class="px-3 pt-3 pb-4">
-              <p class="text-sm pt-3 text-gray-700">{{ items?.category }}</p>
-              <h3 class="text-lg font-medium text-gray-800 group-hover:underline">{{ items?.name }}</h3>
+              <p class="text-[13px] pt-3 text-gray-700">{{ items?.category }}</p>
+              <h3 class="text-[15px] md:text-[16px] font-medium text-gray-800 group-hover:underline">
+                {{ items?.name }}
+              </h3>
               <h4 class="text-lg text-gray-700 font-bold mt-4">NRS {{ items.price }}</h4>
             </div>
           </NuxtLink>
