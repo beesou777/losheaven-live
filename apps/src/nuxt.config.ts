@@ -29,6 +29,12 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com', crossorigin: true },
       ],
+      script: [
+        {
+          src: 'https://www.clarity.ms/tag/m0es86o0n6',
+          async: true,
+        },
+      ],
     },
   },
   imports: {
