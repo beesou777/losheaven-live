@@ -8,7 +8,7 @@
       <div class="flex items-center gap-10">
         <div class="items uppercase">
           <ul class="hidden md:flex">
-            <li class="text-gray-800 p-[8px_12px]">
+            <li class="text-gray-900 p-[8px_12px]">
               <NuxtLink
                 to="/"
                 aria-current="page"
@@ -17,7 +17,7 @@
                 >Home</NuxtLink
               >
             </li>
-            <li class="text-gray-800 p-[8px_12px]">
+            <li class="text-gray-190 p-[8px_12px]">
               <NuxtLink
                 to="/product"
                 class="text-[14px] nav_hover"
@@ -45,8 +45,6 @@
                 >Contact us</NuxtLink
               >
             </li>
-
-            <!-- <li class="text-gray-800 p-[8px_12px]"><NuxtLink to="/contact-us">Contact us</NuxtLink></li> -->
           </ul>
           <div
             @click="isToggle = false"
