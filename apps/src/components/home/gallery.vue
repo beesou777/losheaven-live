@@ -1,9 +1,9 @@
 <template>
-  <h1
+  <h2
     class="text-[18px] w-fit mx-auto text-center pt-8 pb-8 relative after:content-[''] after:absolute after:bottom-[20px] after:left-0 after:w-full after:h-[2px] after:bg-black"
   >
     A FEW OF OUR FAVOURITES
-  </h1>
+  </h2>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
     <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
       <nuxt-img

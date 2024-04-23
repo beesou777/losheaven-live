@@ -9,9 +9,9 @@
     <div
       class="max-w-[800px] w-full p-5 mx-auto absolute text-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
     >
-      <h1 class="md:text-[70px] uppercase py-3 text-[42px] font-bold text-white leading-[3rem] md:leading-[4rem]">
+      <h2 class="md:text-[70px] uppercase py-3 text-[42px] font-bold text-white leading-[3rem] md:leading-[4rem]">
         Beat the Heat with Oversized Tees!
-      </h1>
+      </h2>
       <p class="text-white text-[16px] md:text-[20px] pb-4">
         Get summer-ready with our oversized tees! Nab a cool 10% off using our influencer code. But move fast, we've
         only got a limited amount!
