@@ -2,7 +2,7 @@
   <footer class="text-center bg-gray-900 text-white">
     <div class="py-[50px] max-w-[90vw_42em] mx-auto px-3">
       <h2 class="text-[20px] md:text-[2rem] mx-auto max-w-[700px]">
-        A world of timeless designs that honour the people  who make them and the places they’re made.
+        A world of timeless designs that honour the people who make them and the places they’re made.
       </h2>
       <p class="mt-[32px] text-[14px] md:text-[16px]">
         Get 8% off using our code <strong>LOSHEAVEN</strong> as thanks for staying in touch.
