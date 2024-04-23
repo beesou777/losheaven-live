@@ -9,13 +9,13 @@
         <h1 class="text-3xl font-semibold mb-3">Discover Trendy Losheaven Clothing in Nepal</h1>
         <p class="md:text-[18px] text-[16px]">
           Explore a diverse collection of stylish
-          <a href="/product" class="underline font-semibold">oversized t-shirts</a> and clothing in Nepal at losheaven.
+          <a href="/product" class="underline font-semibold">oversized t-shirts</a> and clothing in Nepal at Losheaven.
         </p>
         <p class="md:text-[18px] text-[16px]">
           Losheaven offers a wide range of oversized clothing t-shirts designed to elevate your fashion statement.
         </p>
         <p class="md:text-[18px] text-[16px]">
-          Shop now to stay ahead in Nepali fashion trends with losheaven's premium quality clothing line.
+          Shop now to stay ahead in Nepali fashion trends with Losheaven's premium quality clothing line.
         </p>
         <p class="md:text-[18px] text-[16px]">
           Experience the perfect blend of comfort and style with Losheaven's exclusive collection of oversized clothing.
@@ -33,12 +33,12 @@ import { onMounted } from 'vue';
 const productStore = useProductStore();
 
 useHead({
-  title: 'Losheaven Clothing in Nepal - Trendy Oversized T-shirts',
+  title: 'Losheaven Clothing in Nepal',
   meta: [
     {
       name: 'description',
       content:
-        'Discover a wide range of trendy oversized clothing in Nepal at Losheaven. Shop now for the latest oversized t-shirts, hoodies, and more.',
+        'Losheaven crafts unique apparel experiences. Discover trendy, oversized clothing designed to empower your style and individuality. Shop now!',
     },
     {
       name: 'keywords',
@@ -48,6 +48,14 @@ useHead({
     {
       name: 'canonical',
       content: 'https://www.losheaven.com/',
+    },
+    {
+      name: 'Publisher',
+      content: 'Losheaven Clothing',
+    },
+    {
+      name: 'X-Robots-Tag',
+      content: 'index, follow',
     },
   ],
 });

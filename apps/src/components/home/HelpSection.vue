@@ -11,7 +11,7 @@
         </svg>
       </div>
       <div class="flex flex-col">
-        <p class="font-medium">Fast Delivery</p>
+        <p class="font-medium">Free Delivery</p>
         <p>Delivery happens within: 2-3 days</p>
       </div>
     </div>

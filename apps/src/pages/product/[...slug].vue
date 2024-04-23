@@ -69,7 +69,7 @@
       </li>
     </ol>
   </nav>
-  <div class="grid grid-cols-12 py-8 2xl:px-20 md:px-6 px-4">
+  <div class="grid grid-cols-12 py-8 2xl:px-20 md:px-6 px-2">
     <div class="col-span-12 lg:col-span-7 pr-0 md:pr-8">
       <div class="grid grid-cols-4 aspect-1">
         <div
@@ -86,9 +86,9 @@
         </div>
       </div>
     </div>
-    <div class="col-span-12 lg:col-span-5 md:mt-0 mt-6 top-[100px] overflow-auto h-fit">
-      <h2 class="text-sm title-font text-gray-500 tracking-widest">{{ getProduct?.category }}</h2>
-      <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ getProduct?.name }}</h1>
+    <div class="col-span-12 lg:col-span-5 md:mt-0 mt-2 top-[100px] overflow-auto h-fit">
+      <h2 class="text-[14px] md:text-[16px] title-font text-gray-500 tracking-widest">{{ getProduct?.category }}</h2>
+      <h1 class="text-gray-900 text-[20px] md:text-[26px] title-font font-medium mb-1">{{ getProduct?.name }}</h1>
       <div class="flex mb-4 items-center">
         <span class="title-font font-medium text-2xl text-gray-900">NRS{{ getProduct?.price }}</span>
         <span class="flex py-2 ml-3 pl-3 border-l border-gray-500">
@@ -126,14 +126,14 @@
           </a>
         </span>
       </div>
-      <p class="leading-relaxed">
+      <p class="leading-relaxed text-[16px] md:text-[18px]">
         {{ getProduct?.description }}
       </p>
       <div class="mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
-        <h2 class="text-lg font-bold text-gray-800">SIZE : FREE SIZE</h2>
+        <h2 class="text-[15px] md:text-[18px] font-bold text-gray-800">SIZE : FREE SIZE</h2>
 
         <div>
-          <h2 class="text-lg font-bold text-gray-800">Color</h2>
+          <h2 class="text-[15px] md:text-[18px] font-bold text-gray-800">Color</h2>
           <div class="flex flex-wrap gap-4 mt-4">
             <button
               aria-label="color"
@@ -149,7 +149,7 @@
             <strong>
               <a class="underline" href="https://www.instagram.com/losheaven17/" target="_blank">Instagram profile</a>
             </strong>
-            for a <strong>10%</strong> coupon code promoted by our influencers!
+            for a <strong>10%</strong> coupon code happy hunting..
           </p>
         </div>
       </div>
@@ -191,8 +191,8 @@
             The shipping cost is <strong>FREE</strong> within Kathmandu Valley. For returns, please refer to our terms
             and conditions at
             <strong
-              ><a href="/term-and-condition" area-label="term and condition"
-                >https://www.losheaven.com/term-and-condition</a
+              ><a class="underline" href="/term-and-condition" area-label="term and condition"
+                >term-and-condition</a
               ></strong
             >.
           </p>
@@ -203,7 +203,7 @@
     <ui-login v-if="authStore?.isLogined" :isLoginShown="authStore?.isLogined" @login-success="handleLoginSuccess" />
   </div>
   <!-- related product -->
-  <div class="py-8 2xl:px-20 md:px-6">
+  <div class="py-8 px-2 md:px-6">
     <h2 class="text-[24px] font-semibold pb-3">Similar Product</h2>
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       <div

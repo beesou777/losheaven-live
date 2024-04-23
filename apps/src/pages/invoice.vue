@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white rounded-lg shadow-lg px-8 py-10 max-w-xl mx-auto" v-if="getReceipt">
+  <div class="bg-white rounded-lg shadow-lg px-2 py-10 max-w-xl mx-auto" v-if="getReceipt">
     <div class="flex items-center justify-between mb-8">
       <div class="flex items-center">
         <svg width="136" height="25" viewBox="0 0 136 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +41,7 @@
           />
         </svg>
       </div>
-      <div class="text-gray-700">
+      <div class="text-gray-700 text-end">
         <div class="font-bold text-xl mb-2">INVOICE</div>
         <div class="text-sm">Date: {{ new Date(getReceipt?.createdAt).toDateString() }}</div>
         <div class="text-sm">Invoice No: {{ getReceipt?._id }}</div>
@@ -49,26 +49,29 @@
     </div>
     <div class="border-b-2 border-gray-300 pb-8 mb-8">
       <h2 class="text-2xl font-bold mb-4">Bill To:</h2>
-      <div class="text-gray-700 mb-2">{{ getReceipt?.customer_details?.name }}</div>
-      <div class="text-gray-700 mb-2">{{ getReceipt?.shipping_details.address }}</div>
-      <div class="text-gray-700 mb-2">{{ getReceipt?.shipping_details.city }}</div>
-      <div class="text-gray-700">{{ getReceipt?.shipping_details.email }}</div>
+      <div class="text-gray-700 mb-2">Name: {{ getReceipt?.customer_details?.name }}</div>
+      <div class="text-gray-700 mb-2">
+        Address: {{ getReceipt?.shipping_details.address }},{{ getReceipt?.shipping_details.city }}
+      </div>
+      <div class="text-gray-700">E-mail: {{ getReceipt?.shipping_details.email }}</div>
     </div>
-    <table class="w-full text-left mb-8">
-      <thead>
+    <table class="w-full text-left mb-8 border overflow-x-auto">
+      <thead class="border">
         <tr>
-          <th class="text-gray-700 font-bold uppercase py-2">Description</th>
-          <th class="text-gray-700 font-bold uppercase py-2">Quantity</th>
-          <th class="text-gray-700 font-bold uppercase py-2">Price</th>
-          <th class="text-gray-700 font-bold uppercase py-2">Total</th>
+          <th class="text-gray-700 border-2 font-bold uppercase py-2">Description</th>
+          <th class="text-gray-700 border-2 font-bold uppercase py-2">Quantity</th>
+          <th class="text-gray-700 border-2 font-bold uppercase py-2">Price</th>
+          <th class="text-gray-700 border-2 font-bold uppercase py-2">Total</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="border">
         <tr v-for="(item, index) in getReceipt?.orderItems" :key="index">
-          <td class="py-4 text-gray-700 max-w-[150px]">{{ item?.product?.name }}</td>
-          <td class="py-4 text-gray-700">{{ item?.quantity }}</td>
-          <td class="py-4 text-gray-700">NRS{{ item?.product?.price }}</td>
-          <td class="py-4 text-gray-700">NRS{{ item?.product?.price * item?.quantity }}</td>
+          <td class="py-4 border-2 text-gray-700 max-w-[150px] text-[14px] md:text-[16px]">
+            {{ item?.product?.name }}
+          </td>
+          <td class="py-4 border-2 text-gray-700">{{ item?.quantity }}</td>
+          <td class="py-4 border-2 text-gray-700">RS{{ item?.product?.price }}</td>
+          <td class="py-4 border-2 text-gray-700">RS{{ item?.product?.price * item?.quantity }}</td>
         </tr>
       </tbody>
     </table>
@@ -81,11 +84,11 @@
 
     <div class="text-right mb-8 flex flex-row justify-end">
       <p class="text-gray-700 mr-2">Discount</p>
-      <p class="text-gray-700">NRS{{ getReceipt?.redeem_code_price }}</p>
+      <p class="text-gray-700">NRS{{ parseInt(getReceipt?.redeem_code_price).toFixed(0) }}</p>
     </div>
     <div class="flex justify-end mb-8 flex-row">
       <div class="text-gray-700 mr-2">Total:</div>
-      <div class="text-gray-700 font-bold text-xl">NRS{{ getReceipt?.orderTotalPrice }}</div>
+      <div class="text-gray-700 font-bold text-xl">NRS{{ getReceipt?.orderTotalPrice.toFixed(0) }}</div>
     </div>
     <div class="flex mb-8 md:flex-row flex-col gap-3">
       <NuxtLink

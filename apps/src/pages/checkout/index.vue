@@ -128,7 +128,7 @@
               </div>
               <div class="lh-primary w-full p-4">
                 <p class="text-sm text-white">NRS {{ total }}</p>
-                <p class="text-sm text-white">NRS {{ cartStore?.cartData?.redeem_code_price }}</p>
+                <p class="text-sm text-white">NRS {{ parseInt(cartStore?.cartData?.redeem_code_price).toFixed(2) }}</p>
                 <p class="text-sm text-white">FREE</p>
                 <p class="text-lg font-bold text-white">
                   NRS {{ (total - cartStore?.cartData?.redeem_code_price).toFixed(0) }}
