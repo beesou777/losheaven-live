@@ -31,7 +31,9 @@
           <a href="https://www.facebook.com/profile.php?id=61557557091843" class="hover:underline py-2">Facebook</a>
         </li>
         <li class="my-2">
-          <a href="https://www.instagram.com/losheaven17/" class="hover:underline py-2 md:hover:underline">Instagram</a>
+          <a href="https://www.instagram.com/losheaven.official/" class="hover:underline py-2 md:hover:underline"
+            >Instagram</a
+          >
         </li>
         <li class="my-2">
           <a href="/faq" class="hover:underline py-2 md:hover:underline">FAQ</a>

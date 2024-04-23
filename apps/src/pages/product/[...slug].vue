@@ -149,7 +149,9 @@
           <p>
             visit our
             <strong>
-              <a class="underline" href="https://www.instagram.com/losheaven17/" target="_blank">Instagram profile</a>
+              <a class="underline" href="https://www.instagram.com/losheaven.official/" target="_blank"
+                >Instagram profile</a
+              >
             </strong>
             for a <strong>10%</strong> coupon code happy hunting..
           </p>

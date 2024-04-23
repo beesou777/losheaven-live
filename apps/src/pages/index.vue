@@ -70,7 +70,7 @@ useSchemaOrg([
     logo: 'https://www.losheaven.com/images/logo.png',
     description:
       'Discover trendy Losheaven clothing in Nepal. Shop now for oversized t-shirts, hoodies, and more. Elevate your fashion with Losheaven.',
-    sameAs: ['https://www.facebook.com/profile.php?id=61557557091843', 'https://www.instagram.com/losheaven17/'],
+    sameAs: ['https://www.facebook.com/profile.php?id=61557557091843', 'https://www.instagram.com/losheaven.official/'],
   },
 ]);
 </script>
