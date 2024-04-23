@@ -6,13 +6,13 @@
     <nav class="bg-gray-100 flex flex-wrap items-center justify-between px-5 md:p-10 py-4 lg:py-4">
       <ui-logo />
       <div class="flex items-center gap-10">
-        <div class="items">
+        <div class="items uppercase">
           <ul class="hidden md:flex">
             <li class="text-gray-800 p-[8px_12px]">
               <NuxtLink
                 to="/"
                 aria-current="page"
-                class="text-[18px] nav_hover"
+                class="text-[14px] nav_hover"
                 :class="{ 'font-semibold nav_active': router.currentRoute.value.name === 'index' }"
                 >Home</NuxtLink
               >
@@ -20,7 +20,7 @@
             <li class="text-gray-800 p-[8px_12px]">
               <NuxtLink
                 to="/product"
-                class="text-[18px] nav_hover"
+                class="text-[14px] nav_hover"
                 :class="{
                   'font-semibold nav_active':
                     router.currentRoute.value.name === 'product' || router.currentRoute.value.name === 'product-slug',
@@ -33,7 +33,7 @@
               <NuxtLink
                 :class="{ 'font-semibold nav_active': router.currentRoute.value.name === 'about-us' }"
                 to="/about-us"
-                class="text-[18px] nav_hover"
+                class="text-[14px] nav_hover"
                 >About us</NuxtLink
               >
             </li>
@@ -41,7 +41,7 @@
               <NuxtLink
                 :class="{ 'font-semibold nav_active': router.currentRoute.value.name === 'contact' }"
                 to="/contact"
-                class="text-[18px] nav_hover"
+                class="text-[14px] nav_hover"
                 >Contact us</NuxtLink
               >
             </li>
@@ -70,7 +70,7 @@
                 </defs>
               </svg>
             </div>
-            <ul class="flex flex-col p-10">
+            <ul class="flex flex-col p-10 uppercase">
               <li
                 @click="isToggle = !isToggle"
                 class="p-[8px_12px]"
