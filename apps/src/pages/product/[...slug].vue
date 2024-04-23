@@ -395,7 +395,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: `https://losheaven.com/product/${router.currentRoute.value.params.slug[0]}/${router.currentRoute.value.params.slug[1]}`,
+      href: `https://www.losheaven.com/product/${router.currentRoute.value.params.slug[0]}/${router.currentRoute.value.params.slug[1]}`,
     },
   ],
 });
