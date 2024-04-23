@@ -23,21 +23,21 @@
           v-for="(items, index) in getProducts"
           :key="index"
           class="relative bg-white rounded-2xl cursor-pointer group transition-all"
+          style="width: 100%; height: 100%"
+          @mouseover="showFirstImage[index] = true"
+          @mouseleave="showFirstImage[index] = false"
         >
           <NuxtLink
             :to="`/product/${items.name.toLowerCase().split(' ').join('-')}/${items._id}`"
-            class="pb-4 text-decoration-none flex items-center flex-col hover:bg-gray-100 rounded"
+            class="pb-4 text-decoration-none flex items-start flex-col hover:bg-gray-100 rounded"
+            style="width: 100%; height: 100%"
           >
-            <div
-              class="w-full max-h max-h-[800px] h-full bg-gray-200 lg:aspect-none overflow-hidden"
-              @mouseover="showFirstImage[index] = true"
-              @mouseleave="showFirstImage[index] = false"
-            >
+            <div class="w-full h-[300px] lg:h-[400px] bg-gray-200 overflow-hidden">
               <nuxt-img
                 loading="lazy"
                 :src="showFirstImage[index] ? items?.images[0] : items?.images[1]"
                 :alt="items?.name"
-                class="h-full w-full object-cover max-h-[800px] lg:h-full lg:w-full hover:scale-[1.02] duration-300 ease-in"
+                class="object-cover w-full h-full hover:scale-[1.02] duration-300 ease-in"
               />
             </div>
 
