@@ -11,6 +11,8 @@
         alt=""
         loading="lazy"
         class="h-full w-full object-cover"
+        height="500"
+        width="500"
       />
       <div class="absolute top-1/2 left-1/2 translate-x-[-50%] z-[2] text-white">
         <p class="text-[18px]">LOSHEAVEN</p>
@@ -23,6 +25,8 @@
         alt=""
         loading="lazy"
         class="h-full w-full object-cover"
+        height="500"
+        width="500"
       />
       <div class="absolute top-1/2 left-1/2 translate-x-[-50%] z-[2] text-white">
         <p class="text-[18px]">LOSHEAVEN</p>
@@ -35,6 +39,8 @@
         alt=""
         loading="lazy"
         class="h-full w-full object-cover"
+        height="500"
+        width="500"
       />
       <div class="absolute top-1/2 left-1/2 translate-x-[-50%] z-[2] text-white">
         <p class="text-[18px]">LOSHEAVEN</p>

@@ -82,6 +82,8 @@
             class="h-full w-full object-cover lg:h-full lg:w-full"
             :alt="getProduct?.name"
             :src="item"
+            width="400"
+            height="400"
           />
         </div>
       </div>
@@ -222,6 +224,8 @@
               loading="lazy"
               :src="items?.images[0]"
               :alt="items?.name"
+              height="400"
+              width="400"
               class="object-cover w-full h-full hover:scale-[1.02] duration-300 ease-in"
             />
           </div>
@@ -340,7 +344,7 @@ const updateSize = (color: any) => {
 };
 
 useHead({
-  title: getProduct.value?.name || "Loose Fit Men's Figure Print Drop Shoulder black T-Shirt",
+  title: getProduct?.value?.name,
   meta: [
     {
       name: 'description',
@@ -350,17 +354,18 @@ useHead({
     },
     {
       property: 'og:title',
-      content: getProduct.value?.name || "Loose Fit Men's Figure Print Drop Shoulder black T-Shirt",
+      content: getProduct?.value?.name || "Loose Fit Men's Figure Print Drop Shoulder black T-Shirt",
     },
     {
       property: 'og:description',
       content:
-        getProduct.value?.description ||
+        getProduct?.value?.description ||
         'Preto Casual Collar Meia manga Tecido de malha Desenho Animado,Slogan Embellished Elasticidade Baixa Tops Masculino',
     },
     {
       property: 'og:image',
-      content: getProduct.value?.images[0] || 'https://i.pinimg.com/564x/78/43/ec/7843ec2518693010f7ad2d9003b9e6bd.jpg',
+      content:
+        getProduct?.value?.images[0] || 'https://i.pinimg.com/564x/78/43/ec/7843ec2518693010f7ad2d9003b9e6bd.jpg',
     },
     {
       name: 'twitter:card',
@@ -369,17 +374,28 @@ useHead({
     },
     {
       name: 'twitter:title',
-      content: getProduct.value?.name || "Loose Fit Men's Figure Print Drop Shoulder black T-Shirt",
+      content: getProduct?.value?.name || "Loose Fit Men's Figure Print Drop Shoulder black T-Shirt",
     },
     {
       name: 'twitter:description',
       content:
-        getProduct.value?.description ||
+        getProduct?.value?.description ||
         'Preto Casual Collar Meia manga Tecido de malha Desenho Animado,Slogan Embellished Elasticidade Baixa Tops Masculino',
     },
     {
       name: 'twitter:image',
-      content: getProduct.value?.images[0] || 'https://i.pinimg.com/564x/78/43/ec/7843ec2518693010f7ad2d9003b9e6bd.jpg',
+      content:
+        getProduct?.value?.images[0] || 'https://i.pinimg.com/564x/78/43/ec/7843ec2518693010f7ad2d9003b9e6bd.jpg',
+    },
+    {
+      name: 'robots',
+      content: 'index, follow',
+    },
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: `https://losheaven.com/product/${router.currentRoute.value.params.slug[0]}/${router.currentRoute.value.params.slug[1]}`,
     },
   ],
 });

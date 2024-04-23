@@ -16,9 +16,33 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'theme-color', content: '#274c5b' },
-        { name: 'author', content: 'bishwa shah' },
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Losheaven crafts unique apparel experiences. Discover trendy, oversized clothing designed to empower your style and individuality. Shop now!',
+        },
+        { hid: 'canonical', name: 'canonical', content: 'https://www.losheaven.com/' },
+        { name: 'Publisher', content: 'Losheaven Clothing' },
         { name: 'robots', content: 'index, follow' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: 'Losheaven Clothing in Nepal | losheaven clothing' },
+        {
+          property: 'og:description',
+          content:
+            'Losheaven crafts unique apparel experiences. Discover trendy, oversized clothing designed to empower your style and individuality. Shop now!',
+        },
+        { property: 'og:image', content: 'https://i.postimg.cc/7YpWCPYH/icon-180x180.png' },
+        { property: 'og:url', content: 'https://www.losheaven.com/' },
+        { property: 'og:site_name', content: 'Losheaven Clothing' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: 'Losheaven Clothing in Nepal | losheaven clothing' },
+        {
+          name: 'twitter:description',
+          content:
+            'Losheaven crafts unique apparel experiences. Discover trendy, oversized clothing designed to empower your style and individuality. Shop now!',
+        },
+        { name: 'twitter:image', content: 'https://i.postimg.cc/7YpWCPYH/icon-180x180.png' },
       ],
       link: [
         { rel: 'icon', href: '/favicon.ico' },
@@ -28,6 +52,7 @@ export default defineNuxtConfig({
         { rel: 'manifest', href: '/apps/src/public/icons/site.webmanifest' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com', crossorigin: true },
+        { rel: 'canonical', href: 'https://www.losheaven.com' },
       ],
     },
   },

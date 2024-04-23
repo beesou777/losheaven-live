@@ -37,16 +37,18 @@
                 loading="lazy"
                 :src="showFirstImage[index] ? items?.images[0] : items?.images[1]"
                 :alt="items?.name"
+                height="300"
+                width="300"
                 class="object-cover w-full h-full hover:scale-[1.02] duration-300 ease-in"
               />
             </div>
 
             <div class="px-3 py-1">
               <p class="text-[13px] text-gray-700">{{ items?.category }}</p>
-              <h3 class="text-[14px] md:text-[16px] font-medium text-gray-800 group-hover:underline">
+              <h2 class="text-[14px] md:text-[16px] font-medium text-gray-800 group-hover:underline">
                 {{ items?.name }}
-              </h3>
-              <h4 class="text-lg text-gray-700 font-bold py-1">NRS {{ items.price }}</h4>
+              </h2>
+              <h3 class="text-lg text-gray-700 font-bold py-1">NRS {{ items.price }}</h3>
             </div>
           </NuxtLink>
         </div>
@@ -86,6 +88,7 @@ watch(getProducts, (newProducts) => {
         },
         { name: 'author', content: 'losheaven' },
       ],
+      link: [{ rel: 'canonical', href: 'https://www.losheaven.com/product' }],
     });
   });
 });

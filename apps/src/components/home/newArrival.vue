@@ -11,6 +11,8 @@
         alt=""
         loading="lazy"
         class="h-full w-full object-cover"
+        height="500"
+        width="500"
       />
       <div class="absolute top-[50%] left-[50%] translate-x-[-50%] z-[2] text-white">
         <NuxtLink
@@ -27,6 +29,8 @@
         alt=""
         class="h-full w-full object-cover"
         loading="lazy"
+        height="500"
+        width="500"
       />
       <div class="absolute top-[50%] left-[50%] translate-x-[-50%] z-[2] text-white">
         <NuxtLink
@@ -44,6 +48,8 @@
         class="h-full w-full object-cover"
         loading="lazy"
         format="jpg"
+        height="500"
+        width="500"
       />
       <div class="absolute top-[50%] left-[50%] translate-x-[-50%] z-[2] text-white">
         <NuxtLink
