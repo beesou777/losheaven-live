@@ -3,7 +3,7 @@
     <div class="py-3 text-center text-gray-100 bg-gray-800">
       <p class="md:text-[18px]">GET FREE SHIPPING ALL OVER KATHMANDU VALLEY</p>
     </div>
-    <nav class="bg-gray-100 flex flex-wrap items-center justify-between px-5 md:p-10 py-4 lg:py-4">
+    <nav class="bg-gray-100 flex flex-wrap items-center justify-between px-2 md:p-10 py-4 lg:py-4">
       <ui-logo />
       <div class="flex items-center gap-10">
         <div class="items uppercase">
