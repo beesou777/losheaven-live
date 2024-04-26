@@ -180,7 +180,7 @@
         <div class="mt-4">
           <h2 class="text-[18px] font-semibold">Fabric & Care:</h2>
           <ul class="list-disc list-inside">
-            <li>Made from 100% cotton <strong>(Thai cotton terry)</strong></li>
+            <li>Made from cotton and polyester <strong>(Thai cotton terry)</strong></li>
             <li>Ethically crafted in Nepal</li>
             <li>For best care, wash cold and lay flat to dry</li>
           </ul>
