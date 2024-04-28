@@ -44,7 +44,7 @@
       <div class="text-gray-700 text-end">
         <div class="font-bold text-xl mb-2">INVOICE</div>
         <div class="text-sm">Date: {{ new Date(getReceipt?.createdAt).toDateString() }}</div>
-        <div class="text-sm">Invoice No: {{ getReceipt?._id }}</div>
+        <div class="text-sm">Invoice No: {{ getReceipt?.orderId }}</div>
       </div>
     </div>
     <div class="border-b-2 border-gray-300 pb-8 mb-8">

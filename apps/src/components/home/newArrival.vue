@@ -25,7 +25,7 @@
     </div>
     <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
       <nuxt-img
-        src="https://i.pinimg.com/564x/4f/52/8f/4f528fea300a7abd18c2a0b2067bc9a2.jpg"
+        src="https://i.postimg.cc/qvhMsbG4/black.png"
         alt=""
         class="h-full w-full object-cover"
         loading="lazy"
@@ -43,7 +43,7 @@
     </div>
     <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
       <nuxt-img
-        src="https://activebasics.com.au/cdn/shop/files/2_a22d24c7-e355-4135-8ca5-5c0e7e0b69f0.png?v=1703137944"
+        src="https://i.postimg.cc/FH7gj4qz/blue-1.png"
         alt=""
         class="h-full w-full object-cover"
         loading="lazy"
