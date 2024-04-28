@@ -170,7 +170,7 @@
           @click="addToCart"
           class="w-full text-[#333] border border-1 py-4 px-6 focus:outline-none hover:bg-[#f6f6f6] ease-in duration-300 rounded"
         >
-          Add To Cart
+          PRE ORDER NOW
         </button>
       </div>
 

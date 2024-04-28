@@ -21,7 +21,7 @@
       <NuxtLink
         to="/product"
         class="text-white px-6 text-[18px] font-bold py-2 hover:border-gray-900 duration-300 hover:bg-gray-900 rounded border my-3"
-        >SHOP NOW</NuxtLink
+        >PRE ORDER</NuxtLink
       >
     </div>
   </div>
