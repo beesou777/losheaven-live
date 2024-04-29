@@ -71,15 +71,15 @@
   </nav>
   <div class="grid grid-cols-12 py-8 2xl:px-20 md:px-6 px-2">
     <div class="col-span-12 lg:col-span-7 pr-0 md:pr-8">
-      <div class="grid grid-cols-4 aspect-1">
+      <div class="md:grid flex flex-row items-center h-full overflow-x-auto md:min-w-full md:grid-cols-4 aspect-1">
         <div
-          class="col-span-2 flex items-center flex-col sm:flex-row bg-gray-100 aspect-1 min-h-[400px] h-full"
+          class="md:col-span-2 col-span-4 bg-gray-100 aspect-1 min-w-[400px] md:min-w-full min-h-[400px] h-full overflow-x-auto"
           v-for="(item, index) in getProduct?.images"
           :key="index"
         >
           <nuxt-img
             loading="lazy"
-            class="h-full w-full object-cover lg:h-full lg:w-full"
+            class="h-full w-full object-cover lg:h-full lg:w-full min-w-full"
             :alt="getProduct?.name"
             :src="item"
             width="400"
@@ -153,7 +153,7 @@
                 >Instagram profile</a
               >
             </strong>
-            for a <strong>10%</strong> coupon code happy hunting..
+            or use <strong> ROBEK </strong> for 10% discount on all orders
           </p>
         </div>
       </div>
@@ -182,12 +182,14 @@
           <ul class="list-disc list-inside">
             <li>Made from cotton and polyester <strong>(Thai cotton terry)</strong></li>
             <li>Ethically crafted in Nepal</li>
-            <li>For best care, wash cold and lay flat to dry</li>
+            <li>Do not wash on <strong>Washing Machine</strong></li>
+            <li>Hand Wash Only</li>
           </ul>
         </div>
         <div class="mt-4">
           <h2 class="text-[18px] font-semibold">Size & Fit :</h2>
-          <p>One size fits all, suitable for individuals of any gender, age, and body type.</p>
+          <p>Fit: Loose Fit / Over Size Fit</p>
+          <p>Size: Free size (For those who love to wear baggy / Jhole tees)</p>
         </div>
         <div class="mt-4">
           <h2 class="text-[18px] font-semibold">Shipping & Returns :</h2>
@@ -209,7 +211,7 @@
   <!-- related product -->
   <div class="py-8 px-2 md:px-6">
     <h2 class="text-[24px] font-semibold pb-3">You may also like</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       <div
         v-for="(items, index) in relatedProducts"
         :key="index"

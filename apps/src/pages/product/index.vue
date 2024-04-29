@@ -18,7 +18,7 @@
           class="relative bg-white max-h-[400px] h-[400px] rounded-2xl p-2 cursor-pointer group transition-all loader"
         ></div>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         <div
           v-for="(items, index) in getProducts"
           :key="index"
