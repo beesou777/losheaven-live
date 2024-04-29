@@ -233,16 +233,8 @@
             </div>
             <div class="mt-3">
               <h3 class="text-lg font-bold text-[#333] mb-6">Method of Payment</h3>
-              <div class="flex items-center">
-                <input
-                  checked
-                  id="checked-checkbox"
-                  type="checkbox"
-                  v-model="method_of_payment"
-                  value="COD"
-                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
-                />
-                <label for="checked-checkbox" class="ms-2 text-sm font-medium text-gray-900">Cash On Delivery</label>
+              <div class="flex items-center border p-3 mb-4 rounded w-fit" for="checked-checkbox">
+                <p class="ms-2 text-sm font-semibold text-gray-900">Cash On Delivery</p>
               </div>
               <div class="flex items-center">
                 <input
@@ -291,7 +283,7 @@ const name = ref('');
 const address = ref('');
 const phone = ref('');
 const city = ref('');
-const method_of_payment = ref('');
+const method_of_payment = ref('COD');
 const promo_code = ref('');
 const terms = ref(false);
 const emit = defineEmits(['show-cart']);

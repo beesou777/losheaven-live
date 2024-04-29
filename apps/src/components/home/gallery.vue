@@ -7,7 +7,7 @@
   <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
     <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
       <nuxt-img
-        src="https://i.postimg.cc/yNr6m6XW/losheaven-1.png"
+        src="https://i.postimg.cc/prSC4RrG/losheaven-1.webp"
         alt=""
         loading="lazy"
         class="h-full w-full object-cover"
@@ -21,7 +21,7 @@
     </div>
     <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
       <nuxt-img
-        src="https://i.postimg.cc/DfRgCqyP/losheaven-2.png"
+        src="https://i.postimg.cc/s23YnvKf/losheaven-2.webp"
         alt=""
         loading="lazy"
         class="h-full w-full object-cover"
@@ -35,7 +35,7 @@
     </div>
     <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
       <nuxt-img
-        src="https://i.postimg.cc/L4vrbQZF/losheaven-3.png"
+        src="https://i.postimg.cc/tRsMdMYS/losheaven-3.webp"
         alt=""
         loading="lazy"
         class="h-full w-full object-cover"

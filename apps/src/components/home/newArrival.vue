@@ -25,7 +25,7 @@
     </div>
     <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
       <nuxt-img
-        src="https://i.postimg.cc/qvhMsbG4/black.png"
+        src="https://i.postimg.cc/vm1Ywv00/black-1.webp"
         alt=""
         class="h-full w-full object-cover"
         loading="lazy"
@@ -43,7 +43,7 @@
     </div>
     <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
       <nuxt-img
-        src="https://i.postimg.cc/FH7gj4qz/blue-1.png"
+        src="https://i.postimg.cc/L85RjTFm/blue-1.webp"
         alt=""
         class="h-full w-full object-cover"
         loading="lazy"
