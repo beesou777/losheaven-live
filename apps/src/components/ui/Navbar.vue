@@ -159,7 +159,7 @@
         </div>
         <div
           v-if="isAccessTokenAvailable"
-          class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse relative"
+          class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse relative group"
           id="user-button"
         >
           <button aria-label="User Menu" type="button" class="flex text-sm rounded-full md:me-0 focus:ring-gray-300">
@@ -173,9 +173,8 @@
               ></path>
             </svg>
           </button>
-          <!-- Dropdown menu -->
           <div
-            class="z-50 absolute hidden user-dropdown top-[25px] right-0 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow"
+            class="z-50 absolute hidden user-dropdown top-[25px] right-0 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow group-hover:block"
             id="user-dropdown"
           >
             <div class="px-4 py-3">
