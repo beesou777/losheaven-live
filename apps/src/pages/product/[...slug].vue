@@ -181,7 +181,7 @@
           <h2 class="text-[18px] font-semibold">Clothing Feature Highlights:</h2>
           <ul class="list-disc list-inside">
             <li>Designed for individuals who prefer a trendy, loose, or Jhole style of t-shirt.</li>
-            <li>Recommended for individuals with a height of 4.9ft or taller.</li>
+            <li>Recommended for individuals with a height of 5.4ft or taller.</li>
             <li>
               Looks great when worn with high-waisted bottoms like jeans, skirts, or shorts, giving you a balanced and
               stylish look.
