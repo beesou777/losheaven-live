@@ -17,11 +17,11 @@
       conditions regarding returns:
     </p>
     <ul class="text-gray-500 text-[18px] list-disc ms-5">
-      <li>Returns must be initiated within 7 days of receiving your order.</li>
+      <li>Returns must be initiated within 2 days of receiving your order.</li>
       <li>Returned products must be in their original condition, unworn, unwashed, and with all tags attached.</li>
       <li>We reserve the right to refuse returns that do not meet these criteria.</li>
       <li>
-        Damaged or defective items are eligible for return within 7 days of receipt, provided they are unused and in
+        Damaged or defective items are eligible for return within 2 days of receipt, provided they are unused and in
         their original packaging.
       </li>
     </ul>

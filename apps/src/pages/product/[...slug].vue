@@ -176,7 +176,20 @@
 
       <!-- other detils -->
       <div class="py-3 border-t-2 mt-6">
-        <h2 class="text-[24px] font-medium">Other Details</h2>
+        <h2 class="text-[24px] font-medium">Other Details:</h2>
+        <div class="mt-4">
+          <h2 class="text-[18px] font-semibold">Clothing Feature Highlights:</h2>
+          <ul class="list-disc list-inside">
+            <li>Designed for individuals who prefer a trendy, loose, or Jhole style of t-shirt.</li>
+            <li>Recommended for individuals with a height of 4.9ft or taller.</li>
+            <li>
+              Looks great when worn with high-waisted bottoms like jeans, skirts, or shorts, giving you a balanced and
+              stylish look.
+            </li>
+            <li>Not suitable for those who prefer tight-fitting clothes</li>
+            <li>Available in one size fits all (free size), ensuring convenience for all wearers.</li>
+          </ul>
+        </div>
         <div class="mt-4">
           <h2 class="text-[18px] font-semibold">Fabric & Care:</h2>
           <ul class="list-disc list-inside">
@@ -189,7 +202,7 @@
         <div class="mt-4">
           <h2 class="text-[18px] font-semibold">Size & Fit :</h2>
           <p>Fit: Loose Fit / Over Size Fit</p>
-          <p>Size: Free size (For those who love to wear baggy / Jhole tees)</p>
+          <p>Size: Free size</p>
         </div>
         <div class="mt-4">
           <h2 class="text-[18px] font-semibold">Shipping & Returns :</h2>
