@@ -1,7 +1,7 @@
 <template>
   <div class="relative w-full h-screen">
     <img
-      src="https://i.postimg.cc/1RVXphJb/63364c192129093-65d6b06bbb968.jpg"
+      src="https://i.postimg.cc/Bn8fxzKF/homepage-dd.png"
       alt="losheaven oversize thsirt"
       class="w-full h-full object-cover"
       height="500"

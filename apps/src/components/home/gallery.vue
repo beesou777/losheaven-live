@@ -7,7 +7,7 @@
   <div class="grid grid-cols-1 md:grid-cols-4 gap-1">
     <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
       <nuxt-img
-        src="https://i.postimg.cc/0ybHWbc9/couple-blue.png"
+        src="https://i.postimg.cc/K81FYBHN/blue-1.webp"
         alt=""
         loading="lazy"
         class="h-full w-full object-cover object-top"
@@ -35,10 +35,10 @@
     </div>
     <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
       <nuxt-img
-        src="https://i.postimg.cc/SKVq6Xsk/black-face.png"
+        src="https://i.postimg.cc/YSc1nfcD/all-color.webp"
         alt=""
         loading="lazy"
-        class="h-full w-full object-cover"
+        class="h-full w-full object-cover object-top"
         height="500"
         width="500"
       />
@@ -49,7 +49,7 @@
     </div>
     <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
       <nuxt-img
-        src="https://i.postimg.cc/tJB2Dj61/couple-face.png"
+        src="https://i.postimg.cc/ncvhJvNQ/black.webp"
         alt=""
         loading="lazy"
         class="h-full w-full object-cover object-top"
