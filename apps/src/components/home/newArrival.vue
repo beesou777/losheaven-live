@@ -7,10 +7,10 @@
   <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
     <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
       <nuxt-img
-        src="https://static.kiabi.pt/images/t-shirt-elastica-de-manga-curta-bege-bgz68_4_hd1.jpg?width=800"
+        src="https://i.postimg.cc/3RvTPt1J/face-2.png"
         alt=""
         loading="lazy"
-        class="h-full w-full object-cover"
+        class="h-full w-full object-cover object-top"
         height="500"
         width="500"
       />

@@ -39,7 +39,7 @@
                 :alt="items?.name"
                 height="300"
                 width="300"
-                class="object-cover w-full h-full hover:scale-[1.02] duration-300 ease-in"
+                class="object-cover object-top w-full h-full hover:scale-[1.02] duration-300 ease-in"
               />
             </div>
 
