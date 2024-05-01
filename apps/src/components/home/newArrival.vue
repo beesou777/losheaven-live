@@ -5,13 +5,13 @@
     OUR NEW ARRIVAL
   </h2>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
-    <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
+    <div class="col-span-1 relative max-h-[600px] h-[600px] bg-gray-100">
       <nuxt-img
-        src="https://i.postimg.cc/3RvTPt1J/face-2.png"
+        src="https://i.postimg.cc/4NWgQcG8/face-tshirt.webp"
         alt=""
         loading="lazy"
-        class="h-full w-full object-cover object-top"
-        height="500"
+        class="h-full w-full object-cover"
+        height="600"
         width="500"
       />
       <div class="absolute top-[50%] left-[50%] translate-x-[-50%] z-[2] text-white">
@@ -23,9 +23,9 @@
       </div>
       <div class="absolute top-0 left-0 h-full w-full hover:bg-gray-900 hover:opacity-[10%]"></div>
     </div>
-    <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
+    <div class="col-span-1 relative max-h-[600px] h-[600px] bg-gray-100">
       <nuxt-img
-        src="https://i.postimg.cc/vm1Ywv00/black-1.webp"
+        src="https://i.postimg.cc/kGbD0yyv/black-tshirt.webp"
         alt=""
         class="h-full w-full object-cover"
         loading="lazy"
@@ -41,9 +41,9 @@
       </div>
       <div class="absolute top-0 left-0 h-full w-full hover:bg-gray-900 hover:opacity-[10%]"></div>
     </div>
-    <div class="col-span-1 relative max-h-[500px] h-[500px] bg-gray-100">
+    <div class="col-span-1 relative max-h-[600px] h-[600px] bg-gray-100">
       <nuxt-img
-        src="https://i.postimg.cc/L85RjTFm/blue-1.webp"
+        src="https://i.postimg.cc/pdf50vZX/blue-tshirt.webp"
         alt=""
         class="h-full w-full object-cover"
         loading="lazy"

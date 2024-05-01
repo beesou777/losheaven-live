@@ -32,10 +32,10 @@
             class="pb-4 text-decoration-none flex items-start flex-col hover:bg-gray-100 rounded"
             style="width: 100%; height: 100%"
           >
-            <div class="w-full h-[300px] lg:h-[400px] bg-gray-200 overflow-hidden">
+            <div class="w-full h-[300px] lg:h-[600px] bg-gray-200 overflow-hidden">
               <nuxt-img
                 loading="lazy"
-                :src="showFirstImage[index] ? items?.images[0] : items?.images[1]"
+                :src="showFirstImage[index] ? items?.images[1] : items?.images[0]"
                 :alt="items?.name"
                 height="300"
                 width="300"
