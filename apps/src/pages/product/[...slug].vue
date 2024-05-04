@@ -218,8 +218,6 @@
         </div>
       </div>
     </div>
-
-    <ui-login v-if="authStore?.isLogined" :isLoginShown="authStore?.isLogined" @login-success="handleLoginSuccess" />
   </div>
   <!-- related product -->
   <div class="py-8 px-2 md:px-6">
@@ -307,7 +305,7 @@ const addToCart = async () => {
   const cookie = useCookie('customer-access').value;
   if (!cookie) {
     toast.error('Please Login to add product to cart');
-    authStore.isLogined = true;
+    router.push('/login');
     return;
   }
   const data = {

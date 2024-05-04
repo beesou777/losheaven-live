@@ -1,27 +1,5 @@
 <template>
-  <div
-    @click="emit('login-success')"
-    class="fixed inset-0 flex flex-wrap justify-center items-center w-full h-full z-[10] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto font-[sans-serif]"
-  ></div>
-  <div
-    v-if="!isRegisterShown"
-    class="w-full max-w-lg bg-white shadow-lg rounded-md p-6 fixed !z-[9999] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
-  >
-    <svg
-      @click="emit('login-success')"
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-3.5 cursor-pointer shrink-0 fill-[#333] hover:fill-red-500 float-right"
-      viewBox="0 0 320.591 320.591"
-    >
-      <path
-        d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
-        data-original="#000000"
-      ></path>
-      <path
-        d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
-        data-original="#000000"
-      ></path>
-    </svg>
+  <div v-if="!isRegisterShown" class="w-full bg-white rounded-md p-6 max-w-[500px] mx-auto">
     <div class="space-y-4 md:space-y-6 sm:p-8">
       <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">Login to your account</h1>
       <form class="space-y-4 md:space-y-6" action="#">
@@ -100,26 +78,20 @@
           >
             Login
           </button>
-          <!-- <button
-            type="submit"
-            @click="guestLogin"
-            class="w-full text-nowrap text-gray-900 text-[18px] lh-primary hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-5 py-2.5 text-center "
-          >
-            Guest Login
-          </button> -->
         </div>
       </form>
       <p class="text-sm font-light text-gray-500">
         Don’t have an account yet?
-        <button @click="register" href="#" class="font-medium text-primary-600 hover:underline">Register</button>
+        <NuxtLink to="/register" class="font-medium text-primary-600 hover:underline">Register</NuxtLink>
       </p>
     </div>
   </div>
-  <ui-signup v-else @register-success="closeRegister" />
 </template>
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
 import { toast } from 'vue3-toastify';
+
 const props = defineProps({
   isLoginShown: Boolean,
 });
@@ -132,12 +104,13 @@ const email = ref<string>('');
 const password = ref<string>('');
 const showPassword = ref<boolean>(false);
 const isRegisterShown = ref<boolean>(false);
-/**
- * Function for handling login process.
- *
- * @param {Event} event - the event triggering the function
- * @return {void} no return value
- */
+
+onMounted(() => {
+  if (authStore.accessToken) {
+    router.push('/');
+  }
+});
+
 const Login = async (event: any) => {
   event.preventDefault();
   const data = {
@@ -147,35 +120,14 @@ const Login = async (event: any) => {
   const response = await authStore.CustomerLogin(data);
   if (response?.status === 200) {
     authStore.accessToken = response.data.access;
-    toast.success('Login Successful!!');
-    emit('login-success');
+    setTimeout(() => {
+      toast.success('Login Successful!!');
+      emit('login-success');
+    }, 500);
+    router.push('/');
   } else {
     toast.error('Invalid user details');
   }
-};
-
-const closeRegister = () => {
-  isRegisterShown.value = false;
-  emit('login-success');
-};
-
-// const guestLogin = async (event: any) => {
-//   event.preventDefault();
-//   const data = {
-//     email: 'losheaven@gmail.com',
-//     password: 'losheaven',
-//   };
-//   const response = await authStore.CustomerLogin(data);
-//   if (response.status === 200) {
-//     authStore.accessToken = response.data.access;
-//     emit('login-success');
-//   } else {
-//     console.log('error');
-//   }
-// };
-
-const register = () => {
-  isRegisterShown.value = true;
 };
 
 const togglePassword = () => {

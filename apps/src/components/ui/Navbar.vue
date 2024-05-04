@@ -1,7 +1,17 @@
 <template>
   <div class="!sticky top-[0] w-full z-[20] h-full">
-    <div class="py-3 text-center text-gray-100 bg-gray-800">
+    <div
+      class="py-3 text-center text-gray-100 bg-gray-800 flex justify-between items-center flex-col md:flex-row px-3 md:px-10"
+    >
       <p class="md:text-[18px]">GET FREE SHIPPING ALL OVER KATHMANDU VALLEY</p>
+      <div class="flex gap-4" v-if="!isAccessTokenAvailable">
+        <NuxtLink to="/login" class="text-[14px]">Login</NuxtLink>
+        <NuxtLink to="/register" class="text-[14px]">Register</NuxtLink>
+      </div>
+      <div class="flex gap-4" v-else>
+        <NuxtLink to="/setting" class="text-[14px]">Account</NuxtLink>
+        <button @click="Logout" class="text-[14px]">Logout</button>
+      </div>
     </div>
     <nav class="bg-gray-100 flex flex-wrap items-center justify-between px-2 md:p-10 py-4 lg:py-4">
       <ui-logo />
@@ -106,11 +116,7 @@
         </div>
       </div>
       <div class="flex items-center gap-5">
-        <div
-          class="cursor-pointer relative hover:bg-gray-200 p-2 rounded-full"
-          @click="showCart"
-          v-if="isAccessTokenAvailable"
-        >
+        <div class="cursor-pointer relative hover:bg-gray-200 p-2 rounded-full" @click="showCart">
           <span
             class="absolute top-[-4px] right-[20px] lh-primary text-white rounded-full w-5 h-5 flex justify-center items-center"
             >{{ cartLength || 0 }}</span
@@ -135,74 +141,6 @@
             ></path>
           </svg>
         </div>
-        <div
-          v-if="!isAccessTokenAvailable"
-          @click="Login"
-          class="cursor-pointer relative hover:bg-gray-200 p-2 rounded-full"
-        >
-          <svg
-            class="cursor-pointe"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3 20C5.33579 17.5226 8.50702 16 12 16C15.493 16 18.6642 17.5226 21 20M16.5 7.5C16.5 9.98528 14.4853 12 12 12C9.51472 12 7.5 9.98528 7.5 7.5C7.5 5.01472 9.51472 3 12 3C14.4853 3 16.5 5.01472 16.5 7.5Z"
-              stroke="black"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </svg>
-        </div>
-        <div
-          v-if="isAccessTokenAvailable"
-          class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse relative group"
-          id="user-button"
-        >
-          <button aria-label="User Menu" type="button" class="flex text-sm rounded-full md:me-0 focus:ring-gray-300">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M3 20C5.33579 17.5226 8.50702 16 12 16C15.493 16 18.6642 17.5226 21 20M16.5 7.5C16.5 9.98528 14.4853 12 12 12C9.51472 12 7.5 9.98528 7.5 7.5C7.5 5.01472 9.51472 3 12 3C14.4853 3 16.5 5.01472 16.5 7.5Z"
-                stroke="black"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-          </button>
-          <div
-            class="z-50 absolute hidden user-dropdown top-[25px] right-0 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow group-hover:block"
-            id="user-dropdown"
-          >
-            <div class="px-4 py-3">
-              <span class="block text-sm text-gray-900">{{ authStore.SingleCustomerData?.name }}</span>
-              <span class="block text-sm text-gray-500 truncate">{{ authStore.SingleCustomerData?.email }}</span>
-            </div>
-            <ul class="py-2" aria-labelledby="user-menu-button">
-              <li>
-                <button
-                  aria-label="setting"
-                  @click="router.push('/setting')"
-                  class="block px-4 py-2 text-sm w-full hover:bg-gray-100"
-                >
-                  Settings
-                </button>
-              </li>
-              <li>
-                <button
-                  aria-label="logout"
-                  @click="Logout"
-                  class="block px-4 py-2 w-full text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  Logout
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
         <div class="flex md:hidden" @click="isToggle = !isToggle">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_1222_36505)">
@@ -221,7 +159,6 @@
         </div>
       </div>
       <ui-shopping-cart v-if="cartStore.showCart" @show-cart="showCart" />
-      <ui-login v-if="authStore.isLogined" :isLoginShown="authStore.isLogined" @login-success="handleLoginSuccess" />
     </nav>
   </div>
 </template>
