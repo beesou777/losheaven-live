@@ -4,7 +4,7 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".nuxt/**", ".output/**", "dist/**"]
+      "outputs": [".nuxt/**", "dist/**"]
     },
     "build:analyze": {
       "dependsOn": ["^build"],
