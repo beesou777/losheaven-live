@@ -18,7 +18,7 @@
         <NuxtLink
           to="product/loose-fit-men's-figure-print-drop-shoulder--skin-color-t-shirt/661efcd7b9cbf45920cbe56b"
           class="text-[20px] cursor-pointer"
-          >PRE ORDER</NuxtLink
+          >ORDER</NuxtLink
         >
       </div>
       <div class="absolute top-0 left-0 h-full w-full hover:bg-gray-900 hover:opacity-[10%]"></div>
@@ -36,7 +36,7 @@
         <NuxtLink
           to="product/loose-fit-men's-figure-print-drop-shoulder-black-t-shirt/661f02b121fd285dba1c4686"
           class="cursor-pointer text-[20px]"
-          >PRE ORDER</NuxtLink
+          >ORDER</NuxtLink
         >
       </div>
       <div class="absolute top-0 left-0 h-full w-full hover:bg-gray-900 hover:opacity-[10%]"></div>
@@ -55,7 +55,7 @@
         <NuxtLink
           to="product/loose-fit-men's-figure-print-drop-shoulder-royal-blue-t-shirt/661f03cb21fd285dba1c468e"
           class="cursor-pointer text-[20px]"
-          >PRE ORDER</NuxtLink
+          >ORDER</NuxtLink
         >
       </div>
       <div class="absolute top-0 left-0 h-full w-full hover:bg-gray-900 hover:opacity-[10%]"></div>

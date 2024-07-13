@@ -82,12 +82,7 @@ export default defineNuxtConfig({
   },
   // eslint-disable-next-line unicorn/expiring-todo-comments
   // TODO: build is consistently failing because of this. check whether we need pre-render check.
-  nitro: {
-    prerender: {
-      crawlLinks: false,
-    },
-    compressPublicAssets: true,
-  },
+
   routeRules: {
     '/_ipx/**': { headers: { 'cache-control': `public, max-age=31536000, immutable` } },
     '/icons/**': { headers: { 'cache-control': `public, max-age=31536000, immutable` } },
